@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets';
+import ModLocation from './mod-location.astro';
+import '/src/styles/mod-articles.css';
+import ContentIcon from './content-icon.astro';
+
+
+interface Props {
+    mod: {
+        name: string,
+        nexusUrl: string,
+        nexusImg: string,
+        creator:string,
+        overview: string,
+        category: string,
+        wikiUrl: string | null,
+        instructions: string | null,
+        directions: string | null,
+        notes: string | null,
+        requirements: { 
+            level: number | string | null,
+            misc: string | null 
+        },
+        icons: { 
+            A: string, 
+            B: string, 
+            C: string, 
+            D: string, 
+            E: string 
+        },
+        tags: string[] | null,
+        content: string[] | null,
+        location: string[]
+    };
+}
+
+const { mod } = Astro.props;
+
+const tags = mod.tags?.map((tag) => tag.replaceAll(' ', '-'));
+const content = mod.content?.map((tag) => tag.replaceAll(' ', '-'));
+const location = mod.location?.map((tag) => tag.replaceAll(' ', '-'));
+
+const iconsMap: any[] = [];
+let i = 0;
+for (let [iconRow, iconCol] of Object.entries(mod.icons)) {
+    iconsMap[i] = [iconRow, iconCol];
+    i++;
+}
+
+let level: number | null = null;
+if(mod.requirements.level != null && Number(mod.requirements.level) > 0) {
+    level = Number(mod.requirements.level);
+} 
+let misc: string | null = null;
+if(mod.requirements.misc != null && mod.requirements.misc.length > 3) {
+    misc = mod.requirements.misc;
+} 
+
+---
+
+<article class="mod-article" data-tx-misc-tags={tags?.join(' ')} data-tx-content-tags={content?.join(' ')} data-tx-location-tags={location?.join(' ')}>
+   <div class="mod-article-container">
+    {/* Article Header */}
+<div class="mod-heading-container">
+    <div class="mod-heading">
+        
+    
+        <div class="mod-sub-heading">
+            <label >
+                <input disabled type="checkbox" class="mod-completion-checkbox" />
+            </label>
+            <header class="mod-header">    
+                <h2 class="mod-title">{mod.name}</h2>
+                <address class="mod-creator">created by {mod.creator}</address>
+            </header>
+        </div>
+
+        <div class="mod-icons-container" aria-hidden="true">
+            <div class="icon-decor left"></div>
+            {iconsMap.map((iconPair) => 
+                <ContentIcon icon={iconPair}/>)
+            }
+            <div class="icon-decor right"></div>
+        </div>
+    </div>
+</div>
+    
+    <div class="mod-overview-image-container">
+        <div class="mod-image-wrapper">
+            <Image src={mod.nexusImg} width={1600} height={900} alt={mod.name} class="mod-overview-image mod-image"/>
+        </div>
+    </div>
+    
+
+    
+    
+            
+        <div class="mod-overview mod-text-container">
+            <p class="mod-text">{mod.overview}</p>
+        </div>
+
+        {(level || misc) && <section class="mod-requirements mod-text-container">
+        <div class=" mod-text">
+            <h3>Requirements</h3>
+            <ul>
+                {level && <li>You need to be at least level {level} to start this mod.</li>}
+                {misc && <li>You need to {misc} to start this mod.</li>}
+            </ul>
+        </div></section>}
+        
+
+    
+
+        <div class="mod-controls">
+            <button class="mod-see-more-less" aria-hidden="true"></button>
+            {mod.wikiUrl && 
+            <a href={mod.wikiUrl} class="mod-wiki-link" target="_blank">Wiki</a>}
+            <a href={mod.nexusUrl} class="mod-nexus-link" target="_blank">Nexus</a>
+        </div>
+
+        {(mod.instructions || mod.directions || mod.notes) && 
+        <div class="directions-instructions-notes mod-additional-details mod-controlled" id={mod.name}>
+            {mod.instructions && <section class="mod-text-container mod-instructions">
+            <div class="mod-text">
+                <h3>Instructions</h3>
+                <p>{mod.instructions}</p>
+            </div></section>}
+            {mod.directions === 'image' && 
+            <section class="mod-image-container" aria-label="map pointer to mod's starting location">
+                <div class="mod-image-wrapper">
+                    <ModLocation modName={mod.name} />
+                </div>
+            </section>}
+            {mod.directions !== 'image' && mod.directions && <section class="mod-text-container mod-directions">
+            <div class="mod-text">
+                <h3>Directions</h3>
+                <p>{mod.directions}</p>
+            </div></section>}
+            {mod.notes && <section class="mod-text-container mod-notes">
+            <div class="mod-text">
+                <h3>Notes</h3>
+                <p>{mod.notes}</p>
+            </div></section>}
+        </div>}
+    </div>
+    </div>
+</article>
+
+<script>
+const more = "See More";
+const less = "See Less";
+const timeTr = 300;
+document.querySelectorAll('.mod-article-container').forEach((section) => {
+    const control = section.querySelector('.mod-see-more-less');
+    const controlled = section.querySelector<HTMLElement>('.mod-controlled');
+    
+    if(control && controlled) {
+        control.removeAttribute('aria-hidden');
+        control.setAttribute('aria-expanded', 'false');    
+        control.setAttribute('aria-controls', controlled.id);
+        control.textContent = more;
+        controlled.setAttribute('aria-hidden', 'true');
+        controlled.style.setProperty('--js-calc-transition', `${timeTr}ms`);
+
+        control.addEventListener('click', () => {
+            const isOpen = control.getAttribute('aria-expanded') === 'true';
+            isOpen ? control.textContent = more : control.textContent = less;
+            control.setAttribute('aria-expanded', `${!isOpen}`);
+            controlled.style.setProperty('--js-calc-max-height', `${controlled.scrollHeight}px`);
+            controlled.setAttribute('aria-hidden', `${isOpen}`);
+        })
+    }
+})
+</script>

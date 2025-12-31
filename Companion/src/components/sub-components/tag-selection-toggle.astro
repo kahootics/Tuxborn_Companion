@@ -1,0 +1,21 @@
+---
+interface Props {
+    tagsType: string,
+    checkboxId: string,
+    listboxId: string,
+    tagTypeCapitalized: string
+}
+const { tagsType, checkboxId, listboxId, tagTypeCapitalized } = Astro.props;
+---
+
+<button 
+    type="button" id={checkboxId}
+    data-tags-type={tagsType}
+    class="tag-selection-toggle"
+    aria-controls={listboxId}
+    aria-expanded="false">
+    <span>
+        {tagTypeCapitalized} Tags   
+    </span>
+    
+</button>

@@ -1,0 +1,111 @@
+---
+import '../styles/core-setup.css';
+import '../styles/themes.css';
+import '../styles/layout.css';
+
+
+import MainHeader from "../components/MainHeader.astro";
+import MetaSocials from "../components/MetaSocials.astro";
+import Filters from "../components/Filters.astro";
+
+import { Image } from 'astro:assets';
+
+import icons from '../assets/icons-sprite.png';
+
+import ModLocation from '../components/sub-components/mod-location.astro';
+
+import Data from '../data/mods-test.js';
+import ModArticle from '../components/sub-components/mod-article.astro';
+import SocialCards from '../components/SocialCards.astro';
+import WikiNav from '../components/WikiNav.astro';
+
+const pageImage = {
+	url: 'https://raw.githubusercontent.com/Omni-guides/Tuxborn/refs/heads/main/images/Splash.png',
+	type: 'image/png',
+	width: 1280,
+	height: 720
+}
+
+---
+
+<html lang="en">
+	<head>
+		<title>Mods Compendium | Tuxborn Companion</title>
+		<link rel="icon" type="image/svg+xml" href="./wuurf.svg" />
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<MetaSocials pageTitle="Tuxborn Mods Compendium" 
+					 pageAuthor="kok0" 
+					 {pageImage}
+					 description="Explore content mods from Tuxborn in a comprehensive and detailed library to help you find what to play next!" />
+	</head>
+	<body>
+		<MainHeader />
+		<WikiNav />
+		<Filters />
+		<main>
+			<header>
+				<h1>Tuxborn Mods Compendium</h1>
+				<aside><strong>Note:</strong><br>
+					This page is a <em>draft</em>! <br>
+					It currently does not support all filtering functions of the main spreadsheet or any of the checklist's features
+				</aside>
+			</header>
+			<div id="tx-mod-articles">
+				{Data.map((mod) => {
+					return <ModArticle {mod} />
+				})}	
+			</div>
+		</main>
+		
+		<footer>
+			<a href="https://discord.gg/xRrHRsb5e9" target="_blank">
+        Discord
+    </a>
+
+    <label for="edges">
+        <input type="checkbox" value="edges-off" id="edges" />
+        round edges
+    </label>
+			<SocialCards />
+		</footer>
+	</body>
+	<style is:global>
+		html {
+			border: 0;
+		}
+		body {
+			background-color: var(--tx-color-one-background);
+			background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/Companion/public/waves.svg');
+			background-attachment: fixed;
+			
+			
+			border: 0;
+		}
+		
+		main {
+			padding: var(--tx-padding-horizontal-s);
+			--max-width: 1050px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: var(--max-width);
+			border: 0;
+		}
+
+		main > header {
+			background-color: var(--tx-color-two-background-strong-alpha);
+			border-radius: var(--tx-border-radius-soft);
+			clip-path: var(--tx-clip-corners);
+			padding: var(--tx-padding-m);
+			margin-bottom: 1rem;
+		}
+		footer {
+			display: none;
+		}
+		
+		
+	</style>
+	
+</html>
