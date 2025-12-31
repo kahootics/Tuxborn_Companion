@@ -43,7 +43,7 @@
 .mod-article-container {
     
     background-color: var(--tx-color-one-background);
-    background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/Companion/public/leaf-long.svg');
+    background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/public/leaf-long.svg');
 
     /* border: var(--tx-line-width-xs) solid var(--tx-color-line); */
     border-radius: inherit;
@@ -168,7 +168,7 @@
 
     height: 100%;
 
-    background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/Companion/public/content-icons-sprite.webp');
+    background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/public/content-icons-sprite.webp');
     background-repeat: repeat; 
 
     background-size: 
@@ -359,7 +359,7 @@ label:has(> .mod-completion-checkbox:checked) {
         'd d d di di'
         'n n n n n ';
 }
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 576px) {
     .mod-additional-details {
         display: block;
     }
