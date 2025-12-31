@@ -1,0 +1,220 @@
+:root, :host {
+
+    --tx-font-family-serif: Georgia, 'Times New Roman', Times, serif;
+    --tx-font-family-sans: system-ui, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --tx-font-family-monospace: ui-monospace, Menlo, Consolas, 'Courier New', Courier, monospace;
+    --tx-font-family: var(--tx-font-family-sans);
+    --tx-title-font-family: var(--tx-font-family-serif);
+
+    --tx-font-weight: 400;
+    --tx-code-font-weight: 500;
+    --tx-title-font-weight: 700;
+    --tx-button-font-weight: 600;
+
+    --tx-font-size: 1rem;
+    --tx-h1-font-size: 2rem;
+    --tx-h2-font-size: 1.6rem;
+    --tx-h3-font-size: 1.2rem;
+
+    --tx-line-height: 1.5;
+    --tx-title-line-height: 1.3;
+    --tx-text-underline-offset: 0.1em;
+    --tx-line-width-xxs: 1px;
+    --tx-line-width-xs: 2px;
+
+    --tx-text-padding-horizontal: 0.4rem;
+
+    --tx-border-radius-soft: 0.2em;
+    --tx-border-radius-m: 0.4em;
+    --tx-border-radius-circle: 50%;
+
+    --tx-list-indent: 1.6rem;
+
+    --tx-padding-xs: 0.125rem 0.25rem;
+    --tx-padding-s: 0.25rem 0.4rem;
+    --tx-padding-m: 0.25rem 0.75rem;
+    --tx-padding-horizontal-s: 0 0.4rem;
+    --tx-padding-horizontal-m: 0 0.75rem;
+
+    --tx-spacing-xs: 0.1rem;
+    --tx-spacing-s: 0.3rem;
+
+    --tx-title-margin-bottom: 0.3em;
+
+    --tx-z-main-header: 1000;
+    --tx-z-main-nav: 1200;
+    --tx-z-modal: 1500;
+
+    /* External & internal boxes clipped to simulate border */
+    --tx-clip: 5px; /* edit in place for different clips */
+    --tx-clipped: calc(100% - var(--tx-clip));
+    --tx-clip-corners: polygon(
+        var(--tx-clip) 0%, 
+        var(--tx-clipped) 0%, 
+        100% var(--tx-clip), 
+        100% var(--tx-clipped), 
+        var(--tx-clipped) 100%, 
+        var(--tx-clip) 100%, 
+        0% var(--tx-clipped) , 
+        0% var(--tx-clip)
+    );
+
+    --tx-clip-m: 15px; /* edit in place for different clips */
+    --tx-clipped-m: calc(100% - var(--tx-clip-m));
+    --tx-clip-corners-m: polygon(
+        var(--tx-clip-m) 0%, 
+        var(--tx-clipped-m) 0%, 
+        100% var(--tx-clip-m), 
+        100% var(--tx-clipped-m), 
+        var(--tx-clipped-m) 100%, 
+        var(--tx-clip-m) 100%, 
+        0% var(--tx-clipped-m) , 
+        0% var(--tx-clip-m)
+    );
+
+    /* Single box clipped to create a frame */
+    --tx-frame-width: var(--tx-line-width-xs); /* edit in place for different frame widths */
+    --tx-clip-int: calc(var(--tx-frame-width) + var(--tx-clip));
+    --tx-line-clip: calc(100% - var(--tx-frame-width));
+    --tx-clipped-int: calc(100% - var(--tx-clip) - var(--tx-frame-width));
+    --tx-polygon-frame: polygon(
+        50% 0%,
+        var(--tx-clip) 0%,
+        0% var(--tx-clip),
+        0% var(--tx-clipped),
+        var(--tx-clip) 100%,
+        var(--tx-clipped) 100%,
+        100% var(--tx-clipped),
+        100% var(--tx-clip),
+        var(--tx-clipped) 0%,
+        50% 0%,
+        50% var(--tx-frame-width),
+        var(--tx-clipped-int) var(--tx-frame-width),
+        var(--tx-line-clip) var(--tx-clip-int),
+        var(--tx-line-clip) var(--tx-clipped-int),
+        var(--tx-clipped-int) var(--tx-line-clip),
+        var(--tx-clip-int) var(--tx-line-clip),
+        var(--tx-frame-width) var(--tx-clipped-int),
+        var(--tx-frame-width) var(--tx-clip-int),
+        var(--tx-clip-int) var(--tx-frame-width),
+        50% var(--tx-frame-width)
+    );
+    --tx-clip-int-m: calc(var(--tx-frame-width) + var(--tx-clip-m));
+    --tx-clipped-int-m: calc(100% - var(--tx-clip-m) - var(--tx-frame-width));
+    --tx-polygon-frame-m: polygon(
+        50% 0%,
+        var(--tx-clip-m) 0%,
+        0% var(--tx-clip-m),
+        0% var(--tx-clipped-m),
+        var(--tx-clip-m) 100%,
+        var(--tx-clipped-m) 100%,
+        100% var(--tx-clipped-m),
+        100% var(--tx-clip-m),
+        var(--tx-clipped-m) 0%,
+        50% 0%,
+        50% var(--tx-frame-width),
+        var(--tx-clipped-int-m) var(--tx-frame-width),
+        var(--tx-line-clip) var(--tx-clip-int-m),
+        var(--tx-line-clip) var(--tx-clipped-int-m),
+        var(--tx-clipped-int-m) var(--tx-line-clip),
+        var(--tx-clip-int-m) var(--tx-line-clip),
+        var(--tx-frame-width) var(--tx-clipped-int-m),
+        var(--tx-frame-width) var(--tx-clip-int-m),
+        var(--tx-clip-int-m) var(--tx-frame-width),
+        50% var(--tx-frame-width)
+    );
+}
+
+/* Body & inheritance *
+ * ================== */
+
+html, body {
+    /* Layout & Theme root setup */ 
+    scrollbar-width: thin;
+    scroll-behavior: var(--tx-scroll-behavior);
+    scrollbar-color: var(--tx-color-scrollbar) var(--tx-color-scrollbar-track);
+    background-color: var(--tx-color-background);
+    color: var(--tx-color-text);
+    font-weight: var(--tx-font-weight);
+    font-size: var(--tx-font-size);
+    line-height: var(--tx-line-height);
+    font-family: var(--tx-font-family);
+    text-underline-offset: var(--tx-text-underline-offset);
+    /* basic SVGs */
+    --image-placeholder-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg transform='translate(0 152) scale(0.1 -0.1)' fill='%23000000' stroke='none'%3E%3Cpath d='M0 760 l0 -760 760 0 760 0 0 760 0 760 -760 0 -760 0 0 -760z m320 637 c0 -1 -45 -47 -100 -102 l-100 -100 0 103 0 102 100 0 c55 0 100 -1 100 -3z m145 -337 l-340 -340 -3 122 -3 122 218 218 218 218 125 0 125 0 -340 -340z m935 -300 l0 -640 -640 0 -640 0 0 182 0 183 457 457 458 458 182 0 183 0 0 -640z'/%3E%3C/g%3E%3C/svg%3E");
+    --image-placeholder-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg transform='translate(0 152) scale(0.1 -0.1)' fill='%23f1f1f1' stroke='none'%3E%3Cpath d='M0 760 l0 -760 760 0 760 0 0 760 0 760 -760 0 -760 0 0 -760z m320 637 c0 -1 -45 -47 -100 -102 l-100 -100 0 103 0 102 100 0 c55 0 100 -1 100 -3z m145 -337 l-340 -340 -3 122 -3 122 218 218 218 218 125 0 125 0 -340 -340z m935 -300 l0 -640 -640 0 -640 0 0 182 0 183 457 457 458 458 182 0 183 0 0 -640z'/%3E%3C/g%3E%3C/svg%3E");
+    --loading-icon-white: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 20'%3E%3Cstyle%3E circle%7Banimation:fade 1.4s ease-in-out infinite%7D circle:nth-child(1)%7Banimation-delay:0s%7D circle:nth-child(2)%7Banimation-delay:0.175s%7D circle:nth-child(3)%7Banimation-delay:0.35s%7D circle:nth-child(4)%7Banimation-delay:0.525s%7D circle:nth-child(5)%7Banimation-delay:0.7s%7D circle:nth-child(6)%7Banimation-delay:0.875s%7D circle:nth-child(7)%7Banimation-delay:1.05s%7D circle:nth-child(8)%7Banimation-delay:1.225s%7D @keyframes fade%7B0%25%7Bopacity:1%7D50%25%7Bopacity:.3%7D100%25%7Bopacity:1%7D%7D%3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='2.5' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='17.3' cy='4.7' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='19.5' cy='10' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='17.3' cy='15.3' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='12' cy='17.5' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='6.7' cy='15.3' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='4.5' cy='10' r='1.6' fill='%23f1f1f1'/%3E%3Ccircle cx='6.7' cy='4.7' r='1.6' fill='%23f1f1f1'/%3E%3C/g%3E%3C/svg%3E");
+    --loading-icon-black: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 20'%3E%3Cstyle%3E circle%7Banimation:fade 1.4s ease-in-out infinite%7D circle:nth-child(1)%7Banimation-delay:0s%7D circle:nth-child(2)%7Banimation-delay:0.175s%7D circle:nth-child(3)%7Banimation-delay:0.35s%7D circle:nth-child(4)%7Banimation-delay:0.525s%7D circle:nth-child(5)%7Banimation-delay:0.7s%7D circle:nth-child(6)%7Banimation-delay:0.875s%7D circle:nth-child(7)%7Banimation-delay:1.05s%7D circle:nth-child(8)%7Banimation-delay:1.225s%7D @keyframes fade%7B0%25%7Bopacity:1%7D50%25%7Bopacity:.3%7D100%25%7Bopacity:1%7D%7D%3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='2.5' r='1.6' fill='%23010101'/%3E%3Ccircle cx='17.3' cy='4.7' r='1.6' fill='%23010101'/%3E%3Ccircle cx='19.5' cy='10' r='1.6' fill='%23010101'/%3E%3Ccircle cx='17.3' cy='15.3' r='1.6' fill='%23010101'/%3E%3Ccircle cx='12' cy='17.5' r='1.6' fill='%23010101'/%3E%3Ccircle cx='6.7' cy='15.3' r='1.6' fill='%23010101'/%3E%3Ccircle cx='4.5' cy='10' r='1.6' fill='%23010101'/%3E%3Ccircle cx='6.7' cy='4.7' r='1.6' fill='%23010101'/%3E%3C/g%3E%3C/svg%3E");
+    --triangle-icon-white: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpolygon%20points%3D%2712%204%2020%2020%204%2020%27%20fill%3D%27%23fff%27/%3E%3C/svg%3E");
+}
+
+html:has( #edges:checked) {
+    --tx-clip-corners: none !important;
+    --tx-polygon-frame: none !important;
+    --tx-clip-corners-m: none !important;
+    --tx-polygon-frame-m: none !important;
+}
+
+/* Titles * 
+ * ====== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--tx-title-font-weight);
+    font-family: var(--tx-title-font-family);
+    line-height: var(--tx-title-line-height);
+    margin-bottom: var(--tx-title-margin-bottom);
+}
+h2 {
+    font-size: var(--tx-h2-font-size);
+}
+h3 {
+    font-size: var(--tx-h3-font-size);
+}
+
+
+
+/* Lists *
+ * ===== */
+
+ul, dl, ol {
+    padding-left: var(--tx-list-indent);
+}
+
+
+/* Links *
+ * ===== */
+
+:where(a:not([role=button])),
+[role=link] {
+    outline: none;
+    color: var(--tx-color-for);
+    -webkit-text-decoration: var(--text-decoration);
+    text-decoration: var(--text-decoration);
+    text-decoration-color: var(--tx-color-for-line);
+    text-underline-offset: 0.125em;
+    transition: color var(--transition), outline var(--transition), -webkit-text-decoration var(--transition);
+    transition: color var(--transition), text-decoration var(--transition), outline var(--transition);
+    transition: color var(--transition), text-decoration var(--transition), outline var(--transition), -webkit-text-decoration var(--transition);
+}
+:where(a:not([role=button])):is(:hover, :active, :focus),
+[role=link]:is(:hover, :active, :focus) {
+    --text-decoration: underline;
+    color: var(--tx-color-for-accent);
+}
+
+
+:where(a:not([role=button])):visited,
+[role=link]:visited {
+    color: var(--tx-color-two);
+    text-decoration-color: var(--tx-color-two-line);
+}
+:where(a:not([role=button])):visited:is(:hover, :active, :focus),
+[role=link]:visited:is(:hover, :active, :focus) {
+    color: var(--tx-color-two-accent);
+}
+
+
+/* Buttons *
+ * ======= */
+
+

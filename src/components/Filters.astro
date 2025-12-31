@@ -1,0 +1,26 @@
+---
+import '/src/styles/companion-filters.css';
+import content_tags from "../data/content-tags";
+import misc_tags from '../data/misc-tags';
+import location_tags from '../data/location-tags';
+
+import TagSelectionField from "./sub-components/tag-selection-field.astro";
+---
+
+<aside id="tx-filters-section" hidden data-height-null="true">
+    
+    <form class="tx-framed-m">   
+        <fieldset id="tag-filters-section">
+            <legend class="hide-from-view"><strong>Filter by</strong></legend>
+            <TagSelectionField />
+
+            <button type="button" id="apply-filters" >
+            Apply selected filters
+        </button>
+        </fieldset>
+        
+    </form>
+</aside>
+
+
+<script src="/src/scripts/filter-functionalities.ts"></script>

@@ -1,0 +1,1 @@
+const location_tags = [ "Skyrim", "Eastmarch", "Windhelm", "Falkreath Hold", "Falkreath", "Haafingar", "Solitude", "Hjaalmarch", "Morthal", "The Pale", "Dawnstar", "The Reach", "Markarth", "The Rift", "Riften", "Whiterun Hold", "Whiterun", "Winterhold (Hold)", "Winterhold", "(Courier)", "Sea of Ghosts", "Soul Cairn", "Solstheim", "Alik'r Desert" ]; export default location_tags;

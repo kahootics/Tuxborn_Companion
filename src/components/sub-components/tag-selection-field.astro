@@ -1,0 +1,66 @@
+---
+/* Astro components */
+import SelectableTagsList from './selectable-tags-list.astro';
+import TagFiltersSelected from './tag-filters-selected.astro';
+import TagSelectionToggle from './tag-selection-toggle.astro';
+/* data for tags list */
+import content_tags from "../../data/content-tags";
+import misc_tags from '../../data/misc-tags';
+import location_tags from '../../data/location-tags';
+
+/* interface Props {
+    tagsList: string[],
+    tagsType: string
+}
+const { tagsList, tagsType } = Astro.props */
+
+function makeCheckboxId(tag: string): string {
+    return `${tag}-tags-create`;
+}
+function makeListboxId(tag: string): string {
+    return `${tag}-tags-list`;
+}
+function capitalize(toCap: string): string {
+    return toCap[0].toUpperCase().concat(toCap.slice(1));
+}
+
+const tagsTypeS = [
+    { type: 'misc',     list: misc_tags},
+    { type: 'content',  list: content_tags},
+    { type: 'location', list: location_tags}
+];
+/* 
+const checkboxId = `${tagsType}-tags-create`;
+const listboxId = `${tagsType}-tags-list`;
+
+const tagTypeCapitalized = tagsType[0].toUpperCase().concat(tagsType.slice(1)); */
+
+
+---
+
+<fieldset id="tags-lists-toggles">
+    <legend class="hide-from-view">Tags Lists Controls</legend>
+    {tagsTypeS.map((tagType) => 
+        <TagSelectionToggle tagsType={tagType.type} 
+            checkboxId={makeCheckboxId(tagType.type)} 
+            listboxId={makeListboxId(tagType.type)}
+            tagTypeCapitalized={capitalize(tagType.type)}
+        />
+    )}
+</fieldset>
+
+<fieldset id="tags-lists">
+    <legend class="hide-from-view">Tags Available for Filtering</legend>
+    {tagsTypeS.map((tagType) => 
+        <SelectableTagsList tagsType={tagType.type} 
+            listboxId={makeListboxId(tagType.type)} 
+            tagsList={tagType.list} 
+        />
+    )}
+</fieldset>
+
+{tagsTypeS.map((tagType) => 
+    <TagFiltersSelected tagsType={tagType.type} tagTypeCapitalized={capitalize(tagType.type)} />
+)}
+
+

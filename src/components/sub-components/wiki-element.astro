@@ -1,0 +1,9 @@
+---
+const omni = 'https://github.com/Omni-guides/Tuxborn/wiki/';
+const { wiki } = Astro.props;
+const wikiName = wiki.replaceAll('-', ' ').replace('%E2%80%90','-');
+---
+
+<li><a href={ omni + wiki } target="_blank" >
+    {wikiName}
+</a></li>

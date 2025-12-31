@@ -1,0 +1,63 @@
+---
+/* interface socials {
+    twitter?: string,
+    nexus?: string,
+    lofi?: string,
+    github?: string
+} */
+
+interface Props {
+    name: string,
+    avatarImg: string,
+    socials: any
+}
+const { name, avatarImg, socials } = Astro.props;
+if(!socials) {
+    throw new Error('Social Card must have at least ONE social profile link')
+}
+
+import { Image } from 'astro:assets';
+import SocialListItem from './social-list-item.astro';
+
+const socialList = Object.entries(socials);
+
+if(!socialList ) throw new Error('Social card empty!')
+---
+
+<article class="social-card">
+    <figure class="social-avatar">
+        <Image src={avatarImg} alt={`${name}'s profile picture'`} width=400 height=400 />
+        <figcaption>{name}</figcaption>
+    </figure>
+
+    <nav class="social-profiles" aria-label={`${name}'s social profiles'`}>
+        <ul>
+            {socialList.map((socialItem)=> 
+                <SocialListItem social={socialItem[0]} link={socialItem[0]} />
+            )}
+        </ul>
+    </nav>
+</article>
+
+<script>
+    
+</script>
+
+<style>
+
+.social-card {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+.social-avatar {
+    grid-area: im;
+    
+}
+.social-avatar > img {
+    max-width: 80px;
+}
+.social-profiles {
+    grid-area: c;
+}
+</style>

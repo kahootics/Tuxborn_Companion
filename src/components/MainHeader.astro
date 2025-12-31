@@ -1,0 +1,60 @@
+---
+
+import '../styles/companion-header.css';
+
+const omni = 'https://github.com/Omni-guides/Tuxborn';
+
+/* const colorBg='var(--tx-color-background-alpha)';
+const stroke = {
+    width: 'var(--tx-line-width-xs)',
+    color: 'var(--tx-color-line)'
+} */
+---
+
+<header id="main-header">
+    
+{/* <div class={`trapezius-svg left`}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <g transform="rotate(-90, 50, 50)">
+      <polygon points="20,0 80,0 100,100 0,100" fill={colorBg} />
+      <line x1="20" y1="0" x2="0" y2="100" stroke={stroke.color} stroke-width={stroke.width} vector-effect="non-scaling-stroke" />
+      <line x1="80" y1="0" x2="100" y2="100" stroke={stroke.color} stroke-width={stroke.width} vector-effect="non-scaling-stroke" />
+      <line x1="20" y1="0" x2="80" y2="0" stroke={stroke.color} stroke-width={`calc(${stroke.width} * 2)`} vector-effect="non-scaling-stroke" />
+    </g>
+  </svg>
+</div>
+
+<div class={`trapezius-svg right`}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <g transform="rotate(-90, 50, 50)">
+      <polygon points="20,0 80,0 100,100 0,100" fill={colorBg} />
+      <line x1="20" y1="0" x2="0" y2="100" stroke={stroke.color} stroke-width={stroke.width} vector-effect="non-scaling-stroke" />
+      <line x1="80" y1="0" x2="100" y2="100" stroke={stroke.color} stroke-width={stroke.width} vector-effect="non-scaling-stroke" />
+      <line x1="20" y1="0" x2="80" y2="0" stroke={stroke.color} stroke-width={`calc(${stroke.width} * 2)`} vector-effect="non-scaling-stroke" />
+    </g>
+  </svg>
+</div> */}
+
+
+
+    <div id="main-header-container">
+    <button type="button" id="tx-filters-section-toggle" aria-expanded="false" aria-controls="tx-filters-section">
+        Filters
+    </button>
+    
+        <button id="wiki-links" type="button" aria-expanded="false" aria-controls="wiki-links-section">
+            Wiki
+        </button>
+        
+    
+    <a href="https://docs.google.com/spreadsheets/d/1HzoB06GWpWGvLCa3qLuvxmsM4Q5IZp-GYvYIKLLCM1A/edit?gid=1883312431#gid=1883312431">
+        Spreadsheet
+    </a>
+    <a href={ omni + "#" } target="_blank">
+        Readme
+    </a>
+    </div>
+
+
+
+</header>

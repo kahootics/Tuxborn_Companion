@@ -1,0 +1,29 @@
+---
+
+interface Props {
+    icon: [
+        'A' | 'B' | 'C' | 'D' | 'E',
+        string
+    ]
+}
+const { icon } = Astro.props
+
+let iconRow :number = 0;
+switch (icon[0]) {
+    case 'A': {iconRow = 0; break;}
+    case 'B': {iconRow = 1; break;}
+    case 'C': {iconRow = 2; break;}
+    case 'D': {iconRow = 3; break;}
+    case 'E': {iconRow = 4; break;}
+}
+const iconCol = Number.parseInt(icon[1], 2);
+
+---
+
+{iconCol !== 0 && iconRow !== 0 &&
+<div 
+    class="mod-content-icon" 
+    style={
+        `--row: ${iconRow}; 
+         --col: ${iconCol-1};`}
+    ></div>}
