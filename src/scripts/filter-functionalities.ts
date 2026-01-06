@@ -20,7 +20,10 @@ if(allMods && filterToggle && filtersContainer && applyFilters && tagSelectionTo
 
     const filters = new Map<string, Set<string>>();;
 
+    let slideLock = new Set<HTMLElement>;
     function slide(toggle: HTMLElement, slided: HTMLElement, duration: number, open?: boolean): void {
+        if(slideLock.has(slided)) { return;
+        } else { slideLock.add(slided)}
         /* acts as toggle if open state is not forced */
         if(typeof open === 'undefined') {
             open = toggle.getAttribute('aria-expanded') === 'true';
@@ -28,15 +31,19 @@ if(allMods && filterToggle && filtersContainer && applyFilters && tagSelectionTo
         
         if(!open) { 
             slided.hidden = open;
+            setTimeout(() => {
+                slideLock.delete(slided);
+            }, duration)     
         } else { 
             setTimeout(() => {
                 slided.hidden = open;
+                slideLock.delete(slided);
             }, duration)
         }
         requestAnimationFrame(() => {
             toggle.setAttribute('aria-expanded', `${!open}`);
             slided.setAttribute('data-height-null', `${open}`);
-        });        
+        });      
     }
 
     
@@ -46,12 +53,13 @@ if(allMods && filterToggle && filtersContainer && applyFilters && tagSelectionTo
     filtersContainer.style.setProperty('--js-calc-duration', `${dur}ms`);
     filterToggle.addEventListener('click', () => {
         slide(filterToggle,filtersContainer,dur)
-        slide(wikiLinks,wikiLinksSection,200,false)
+        slide(wikiLinks,wikiLinksSection,dur,false)
     });
 
     /* wiki nav animation */
+    wikiLinksSection.style.setProperty('--js-calc-duration', `${dur}ms`);
     wikiLinks.addEventListener('click', () => {
-        slide(wikiLinks,wikiLinksSection,200)
+        slide(wikiLinks,wikiLinksSection,dur)
         slide(filterToggle,filtersContainer,dur,false)
     })
 
@@ -143,6 +151,7 @@ if(allMods && filterToggle && filtersContainer && applyFilters && tagSelectionTo
         setBusy(true);
 
         setTimeout(() => {
+            scroll({top: 0});
             allMods.forEach((mod) => {
             
             const shouldShow = modFilter(mod,filters);

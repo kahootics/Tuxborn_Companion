@@ -27,16 +27,25 @@ const omni = 'https://github.com/Omni-guides/Tuxborn';
 
 #wiki-links-section {
     position: fixed;
-    top: var(--tx-main-header-height);
+    top: var(--tx-body-padding-top);
     z-index: var(--tx-z-main-nav);
-    left: 50%;
-    height: calc(98vh - var(--tx-main-header-height));
-    width: max-content;
-    max-width: 90vw;
-    transform: translate(-50%,0);
+    /* left: 50%; */
+    height: calc(98% - var(--tx-body-padding-top));
+    width: calc(100% - var(--tx-right-offset) - var(--tx-left-offset));
+    padding: 0;
+    /* max-width: 90vw; */
     
-    transition: 200ms height;
+    /* transition: 400ms height; */
     overflow-y: hidden;
+    --delay: calc(var(--js-calc-duration)/10*6);
+    transition: var(--js-calc-duration) height, calc(var(--js-calc-duration)/10*4) transform var(--delay) ease-out;
+    transform-origin: top;
+    transform: scale(1, 0);
+    --tx-clip: 15px;
+}
+#wiki-links-section[data-height-null=false] {
+    --delay: 0s;
+    transform: none;
 }
 #wiki-links-section > div {
     width: 100%;

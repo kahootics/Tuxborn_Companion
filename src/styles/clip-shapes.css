@@ -1,3 +1,9 @@
+:root, :host {
+    --tx-clip: 5px; /* edit in place for different clips */
+    --tx-clip-offset-left: 6rem; /* edit in place for different clips */
+    --tx-clip-offset-right: 2rem;
+}
+
 .clip-frame, .clip-shape {
     --tx-clip: 5px; /* edit in place for different clips */
     --tx-clipped: calc(100% - var(--tx-clip));
@@ -75,4 +81,47 @@
         0 var(--tx-frame-width)
     );
     clip-path: var(--tx-clip-arrow-frame);
+}
+
+.clip-frame.inset {
+    --tx-clip-offset: 0.2rem;
+    --tx-clip-inset-frame: polygon(
+        0 100%,
+        var(--tx-clip-offset-left) 100%,
+        calc(var(--tx-clip-offset-left) + var(--tx-clip)) var(--tx-clipped),
+        calc(100% - var(--tx-clip-offset-right) - var(--tx-clip)) var(--tx-clipped),
+        calc(100% - var(--tx-clip-offset-right)) 100%,
+        100% 100%,
+        100% 0,
+        0 0
+    );
+    clip-path: var(--tx-clip-inset-frame);
+}
+.clip-frame.inset::after {
+    content: '';
+    background-color: var(--tx-color-line);
+    display: block;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    
+    --tx-clip-inset-frame: polygon(
+        0 var(--tx-line-clip),
+        0 100%,
+        var(--tx-clip-offset-left) 100%,
+        calc(var(--tx-clip-offset-left) + var(--tx-clip)) var(--tx-clipped),
+
+        calc(100% - var(--tx-clip-offset-right) - var(--tx-clip)) var(--tx-clipped),
+        calc(100% - var(--tx-clip-offset-right)) 100%,
+        100% 100%,
+        100% var(--tx-line-clip),
+        calc(100% - var(--tx-clip-offset-right)) var(--tx-line-clip),
+        calc(100% - var(--tx-clip-offset-right) - var(--tx-clip)) var(--tx-clipped-int),
+
+        calc(var(--tx-clip-offset-left) + var(--tx-clip)) var(--tx-clipped-int),
+        var(--tx-clip-offset-left) var(--tx-line-clip)
+    );
+    clip-path: var(--tx-clip-inset-frame);
 }

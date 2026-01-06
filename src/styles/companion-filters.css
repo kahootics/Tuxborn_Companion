@@ -26,12 +26,22 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
     z-index: var(--tx-z-main-nav);
     overflow-y: hidden;
     position: fixed;
-    top: var(--tx-main-header-height);
-    left: 2.5%;
-    transition: var(--js-calc-duration) height;
+    top: var(--tx-body-padding-top);
+    /* left: 0; */
+    --delay: calc(var(--js-calc-duration)/10*6);
+    transition: var(--js-calc-duration) height, calc(var(--js-calc-duration)/10*4) transform var(--delay) ease-out;
+    transform-origin: top;
+    transform: scale(1, 0);
+    --tx-clip: 15px;
     
-    height: calc(98% - var(--tx-main-header-height));
-    width: 95%;
+    height: calc(98% - var(--tx-body-padding-top));
+    width: calc(100% - var(--tx-right-offset) - var(--tx-left-offset));
+    padding: 0;
+    margin: 0 auto;
+}
+#tx-filters-section[data-height-null=false] {
+    --delay: 0s;
+    transform: none;
 }
 #tx-filters-section fieldset {
     border: 0;
@@ -110,6 +120,8 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
     width: 0.4rem;
 }
 .tag-selection-toggle {
+    --distance: 6vw;
+    --dostance: 2vw;
     color: inherit;
     z-index: 10;
     background-color: transparent;
@@ -118,14 +130,14 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
     text-align: right;
     position: relative;
     display: flex;
-    padding-right: 0.8rem;
+    padding-right: var(--dostance);
     border: var(--tx-frame-width) solid transparent;
 }
 .tag-selection-toggle > span {
     display: inline-block;
     width: 100%;
     height: 100%;
-    padding-right: 2.2rem;
+    padding-right: calc(var(--distance) - var(--dostance));
 }
 
 
@@ -178,7 +190,7 @@ html:not(:has( #edges:checked)) .tag-selection-toggle[aria-expanded=true] > span
     z-index: 100;
 }
 .tag-selection-toggle[aria-expanded=true] > span {
-    padding-right: 3rem;
+    padding-right: var(--distance);
     clip-path: polygon(
         0 0, 
         var(--tx-clipped) 0,
@@ -368,7 +380,7 @@ html:not(:has( #edges:checked)) .tag-selection-toggle[aria-expanded=true] > span
 
 
 [data-height-null=true] {
-    height: 0 !important;
+    height: calc(var(--tx-clip)*2) !important;
 }
 
 

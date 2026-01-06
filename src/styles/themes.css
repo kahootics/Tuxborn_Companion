@@ -3,19 +3,21 @@
     --tx-color-text: hsl(0, 0%, 95%);
     --tx-color-background: hsl(0, 0%, 5%);
     --tx-color-background-accent: hsl(0, 0%, 20%);
-    --tx-color-background-alpha: hsla(0, 0%, 5%, 0.9);
+    --tx-color-background-alpha: var(--tx-color-fiv-background-alpha) /* hsla(0, 0%, 5%, 0.9) */;
     --tx-color-background-accent-alpha: hsla(0, 0%, 20%, 0.9);
     --tx-color-line: hsl(28, 6%, 90%);
     --tx-color-line-alpha: hsl(28, 6%, 90%, 0.9);
     
+    --tx-color-fiv-background-alpha: hsla(156, 9%, 6%, 0.9);
 
-    --tx-color-scrollbar: grey;
-    --tx-color-scrollbar-track: transparent;
+    --tx-color-scrollbar: hsla(161, 19%, 30%);
+    --tx-color-scrollbar-track: hsla(156, 9%, 10%, 0.9);
 
     --tx-color-one-background: #C06A3A /* ad5c14 */;
     --tx-color-one-background-accent: hsl(21, 66%, 55%);
     --tx-color-one-background-alpha: hsla(21, 54%, 49%, 0.7) /* ad5c14 */;
     --tx-color-one-background-accent-alpha: hsl(21, 66%, 55%, 0.7);
+    --tx-color-one-background-strong: hsl(10, 56%, 28%);
     --tx-color-one-line: hsl(45, 97%, 50%);
 
     
@@ -31,13 +33,16 @@
     --tx-color-tre-accent: hsl(162, 24%, 67%);
     --tx-color-tre-line: hsl(158, 19%, 45%);
 
-    --tx-color-for: hsl(210, 49%, 59%);
-    --tx-color-for-accent: hsl(210, 54%, 74%);
-    --tx-color-for-background: #2C3E50;
-    --tx-color-for-line: hsl(210, 35%, 48%);
+    --tx-color-for: hsl(210, 59%, 75%);
+    --tx-color-for-accent: hsl(210, 64%, 89%);
+    --tx-color-for-background: hsl(210, 39%, 39%);
+    --tx-color-for-line: hsl(210, 45%, 64%);
 
 
     --image-placeholder: var(--image-placeholder-white);
     --loading-icon: var(--loading-icon-white);
     --triangle-icon: var(--triangle-icon-white);
+
+    --tx-mod-article-background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/public/leaf-long.svg');
+    --tx-main-header-background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/public/leaves.svg');
 }

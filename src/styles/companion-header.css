@@ -1,68 +1,38 @@
 #main-header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: var(--tx-z-main-header);
     height: var(--tx-main-header-height);
-    padding: 0.2rem 1.2rem;
-}
-/* 
-#main-header > .trapezius-svg.right {
-    position: absolute;
-    right: 0.8rem;
-    width: 1.2rem;
-    height: calc(100% - 0.4rem);
-    top: 0.2rem;
-    transform: rotate(180deg);
-}
-#main-header > .trapezius-svg.left {
-    position: absolute;
-    left: 0.8rem;
-    width: 1.2rem;
-    height: calc(100% - 0.4rem);
-    top: 0.2rem;
-}
-
-.trapezius-svg > svg {
-    width: 100%;
-    height: 100%;
-    border: 0;
+    background-color: var(--tx-color-fiv-background-alpha); 
+    background-image: var(--tx-main-header-background-image);
     padding: 0;
-    margin: 0;
-}
-use {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: 0;
-    margin: 0;
+    padding-bottom: calc(var(--tx-clip) + var(--tx-frame-width));
+    --tx-clip: var(--tx-main-header-clip);
+    --tx-clip-offset-left: 2rem;
+    --tx-clip-offset-right: 2rem;
+    --tx-frame-width: var(--tx-line-width-s);
 }
 
+:root {
+    --tx-left-offset: calc(2rem + 7.5px);
+    --tx-right-offset: calc(7.5px + 2rem);
+}
 
-.trapezius-svg::before {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 10%;
-    border-top: var(--tx-line-width-xs) solid var(--tx-color-line); 
-    border-bottom: var(--tx-line-width-xs) solid var(--tx-color-line);    
-    content: '';
-} */
-
-html:not(:has( #edges:checked)) #main-header::after {
+/* html:not(:has( #edges:checked)) #main-header::after {
     content: '';
     z-index: 100;
     position: absolute;
     top: 50%;
 	right: 50%;
     transform: translate(50%,-50%);
-    width: calc(100% - 2.4rem);
-    height: calc(100% - 0.4rem);
+    width: 100%;
+    height: 100%;
+
     background-color: var(--tx-color-line);
-    
     clip-path: var(--tx-polygon-frame-m);
-}
+} */
 
 #main-header-container {
     position: relative;
@@ -73,18 +43,41 @@ html:not(:has( #edges:checked)) #main-header::after {
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
-    background-color: var(--tx-color-background-alpha);  
-    border: var(--tx-frame-width) solid var(--tx-color-line); 
-    border-radius: var(--tx-border-radius-m);
-    clip-path: var(--tx-clip-corners-m);
+     
+    /* border: var(--tx-frame-width) solid var(--tx-color-line);  */
+    /* border-radius: var(--tx-border-radius-m); */
+    /* clip-path: var(--tx-clip-corners-m); */
     padding: 0;
+}
+#main-header-container > :not(button) {
+    display: inline-block;
+    padding: var(--tx-padding-xs);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 #main-header-container > :not(button):hover {
     background-color: var(--tx-color-background-accent-alpha);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
-    --tx-main-header-height: 3.4rem;
-    padding-top: var(--tx-main-header-height);
+    --tx-main-header-clip: 15px;
+    --tx-main-header-height: 4.2rem;
+    --tx-body-padding-top: calc(var(--tx-main-header-height) - var(--tx-main-header-clip)/2);
+    padding: var(--tx-body-padding-top) var(--tx-left-offset) 0 var(--tx-right-offset);
 }
 
 #wiki-links {

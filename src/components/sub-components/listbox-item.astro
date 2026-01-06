@@ -8,7 +8,7 @@ const normTag = tag.trim().replaceAll(' ', '-');
 ---
 
 <li class="selectable-tag">
-    <label for={tag}>
+    <label for={normTag.toLowerCase()}>
         <input type="checkbox" id={normTag.toLowerCase()} class="selectable-tag-checkbox" value={normTag}/>
         {tag}
     </label>

@@ -27,6 +27,7 @@
 }
 
 .mod-article {
+    /* act as a border */
     padding: var(--tx-line-width-xs);
     background-color: var(--tx-color-line);
     
@@ -42,8 +43,8 @@
 
 .mod-article-container {
     
-    background-color: var(--tx-color-one-background);
-    background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/public/leaf-long.svg');
+    background-color: var(--tx-color-one-background-strong);
+    background-image: var(--tx-mod-article-background-image);
 
     /* border: var(--tx-line-width-xs) solid var(--tx-color-line); */
     border-radius: inherit;

@@ -4,7 +4,7 @@
   preserveAspectRatio="xMidYMid slice"
 >
   
-  <rect width="1200" height="600" fill="#d87641" />
+  <rect width="1200" height="600" fill="none" />
 
   
   <path
