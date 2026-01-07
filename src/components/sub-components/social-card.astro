@@ -28,7 +28,7 @@ if(!socialList ) throw new Error('Social card empty!')
         <nav class="social-profiles" aria-label={`${name}'s social profiles'`}>
             <ul>
                 {socialList.map((socialItem)=> 
-                    <SocialListItem social={socialItem[0]} link={socialItem[0]} />
+                    <SocialListItem social={socialItem[0]} link={socialItem[1]} />
                 )}
             </ul>
         </nav>
