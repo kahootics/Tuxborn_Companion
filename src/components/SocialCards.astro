@@ -1,14 +1,32 @@
 ---
 import SocialCard from "./sub-components/social-card.astro"
-const ouro = "https://avatars.nexusmods.com/45888982/100";
-const ourosocial = {
-    github: 'https://github.com/Ouruboros',
-    "Ko-fi": 'https://ko-fi.com/ouruboros'
-}
+
+import ouro from '../data/social/ouro.json';
+import omni from '../data/social/omni.json';
+import anna from '../data/social/anna.json';
 
 ---
 
 <section>
     <h2>Tuxborn Team</h2>
-    <SocialCard name="Ouroboros" avatarImg={ouro} socials={ourosocial}/>
+    <div>
+        <SocialCard name={ouro.name} description={ouro.description} avatarImg={ouro.avatar} socials={ouro.socials}/>
+        <SocialCard name={omni.name} description={omni.description} avatarImg={omni.avatar} socials={omni.socials}/>
+        <SocialCard name={anna.name} description={anna.description} avatarImg={anna.avatar} socials={anna.socials}/>
+    </div>
 </section>
+
+<style>
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section > div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+</style>

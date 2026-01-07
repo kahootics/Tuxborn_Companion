@@ -113,7 +113,10 @@ if(mod.requirements.misc != null && mod.requirements.misc.length > 3) {
     
 
         <div class="mod-controls">
-            <button class="mod-see-more-less" aria-hidden="true"></button>
+            {((mod.instructions || mod.directions || mod.notes) && 
+            <button class="mod-see-more-less"></button>) || 
+            <button class="mod-see-more-less" aria-hidden="true" disabled></button>
+            }
             {mod.wikiUrl && 
             <a href={mod.wikiUrl} class="mod-wiki-link" target="_blank">Wiki</a>}
             <a href={mod.nexusUrl} class="mod-nexus-link" target="_blank">Nexus</a>
@@ -128,8 +131,11 @@ if(mod.requirements.misc != null && mod.requirements.misc.length > 3) {
             </div></section>}
             {mod.directions === 'image' && 
             <section class="mod-image-container" aria-label="map pointer to mod's starting location">
-                <div class="mod-image-wrapper">
-                    <ModLocation modName={mod.name} />
+                <div class="mod-text">
+                    <h3>Map Location</h3>
+                    <div class="mod-image-wrapper">
+                        <ModLocation modName={mod.name} />
+                    </div>
                 </div>
             </section>}
             {mod.directions !== 'image' && mod.directions && <section class="mod-text-container mod-directions">
@@ -166,9 +172,14 @@ document.querySelectorAll('.mod-article-container').forEach((section) => {
         control.addEventListener('click', () => {
             const isOpen = control.getAttribute('aria-expanded') === 'true';
             isOpen ? control.textContent = more : control.textContent = less;
-            control.setAttribute('aria-expanded', `${!isOpen}`);
             controlled.style.setProperty('--js-calc-max-height', `${controlled.scrollHeight}px`);
-            controlled.setAttribute('aria-hidden', `${isOpen}`);
+            setTimeout(() => {
+                control.setAttribute('aria-expanded', `${!isOpen}`);
+                controlled.setAttribute('aria-hidden', `${isOpen}`);
+            });            
+            setTimeout(() => {
+                controlled.style.removeProperty('--js-calc-max-height');
+            }, timeTr);
         })
     }
 })

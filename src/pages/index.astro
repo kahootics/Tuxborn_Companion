@@ -19,6 +19,7 @@ import Data from '../data/mods-test.js';
 import ModArticle from '../components/sub-components/mod-article.astro';
 import SocialCards from '../components/SocialCards.astro';
 import WikiNav from '../components/WikiNav.astro';
+import MainFooter from '../components/MainFooter.astro';
 
 const pageImage = {
 	url: 'https://raw.githubusercontent.com/Omni-guides/Tuxborn/refs/heads/main/images/Splash.png',
@@ -45,6 +46,7 @@ const pageImage = {
 	<body>
 		<MainHeader />
 		<WikiNav />
+	<div id="tx-page-content">
 		<Filters />
 		<main>
 			<header>
@@ -60,6 +62,8 @@ const pageImage = {
 				})}	
 			</div>
 		</main>
+	</div>
+		<MainFooter />
 		
 		{/* <footer>
 			<a href="https://discord.gg/xRrHRsb5e9" target="_blank">
@@ -103,10 +107,6 @@ const pageImage = {
 			padding: var(--tx-padding-m);
 			margin-bottom: 1rem;
 		}
-		footer {
-			display: none;
-		}
-		
 		
 	</style>
 	

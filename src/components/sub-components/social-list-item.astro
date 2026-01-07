@@ -6,7 +6,17 @@ interface Props {
 const { social, link } = Astro.props;
 ---
 
-<li>
-    Find me on
-    <a href={link} >{social}</a>
+<li class="clip-shape octagone">
+    <address>
+        <a href={link} >{social}</a>
+    </address>
+    
 </li>
+
+<style>
+
+li {
+    padding: var(--tx-padding-xs);
+    background-color: var(--tx-color-two-background-alpha);
+}
+</style>

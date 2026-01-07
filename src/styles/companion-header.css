@@ -18,6 +18,11 @@
 :root {
     --tx-left-offset: calc(2vw + 7.5px);
     --tx-right-offset: calc(7.5px + 2vw);
+
+    --tx-main-header-clip: 15px;
+    --tx-main-header-height: 4.2rem;
+    --tx-body-padding-top: calc(var(--tx-main-header-height) - var(--tx-main-header-clip)/2);
+    --tx-top-offset: calc(var(--tx-main-header-height) - var(--tx-main-header-clip)/2);
 }
 
 /* html:not(:has( #edges:checked)) #main-header::after {
@@ -73,10 +78,7 @@
 
 
 
-body {
-    --tx-main-header-clip: 15px;
-    --tx-main-header-height: 4.2rem;
-    --tx-body-padding-top: calc(var(--tx-main-header-height) - var(--tx-main-header-clip)/2);
+#tx-page-content {
     padding: var(--tx-body-padding-top) var(--tx-left-offset) 0 var(--tx-right-offset);
 }
 

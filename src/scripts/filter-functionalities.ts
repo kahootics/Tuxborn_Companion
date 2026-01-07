@@ -51,14 +51,13 @@ if(allMods && filterToggle && filtersContainer && applyFilters && resetFilters &
 
     /* filter container animation */
     const dur = 400;
-    filtersContainer.style.setProperty('--js-calc-duration', `${dur}ms`);
+    document.documentElement.style.setProperty('--js-calc-duration', `${dur}ms`);
     filterToggle.addEventListener('click', () => {
         slide(filterToggle,filtersContainer,dur)
         slide(wikiLinks,wikiLinksSection,dur,false)
     });
 
     /* wiki nav animation */
-    wikiLinksSection.style.setProperty('--js-calc-duration', `${dur}ms`);
     wikiLinks.addEventListener('click', () => {
         slide(wikiLinks,wikiLinksSection,dur)
         slide(filterToggle,filtersContainer,dur,false)

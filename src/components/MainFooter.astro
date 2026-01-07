@@ -1,0 +1,51 @@
+---
+import '../styles/companion-footer.css';
+import SocialCards from './SocialCards.astro';
+---
+
+<footer id="main-footer" class="clip-frame inset-top">
+    <div id="main-footer-container">
+        <SocialCards />
+    </div>    
+</footer>
+
+<script>
+
+const footer = document.getElementById('main-footer');
+const header = document.getElementById('main-header');
+
+if(footer && header) {
+
+const OFFSET = 0;
+let lastTop: string | null = null;
+
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    const divergence = entry.intersectionRect.height - OFFSET;
+
+    if (entry.isIntersecting && divergence > 0) {
+      const topValue = `-${divergence}px`;
+
+      if (lastTop !== topValue) {
+        header.style.top = topValue;
+        header.style.pointerEvents = 'none';
+        lastTop = topValue;
+      }
+    } else if (lastTop !== null) {
+      header.style.removeProperty('top');
+      header.style.removeProperty('pointer-events');
+      lastTop = null;
+    }
+  },
+  {
+    threshold: Array.from({ length: 1000 }, (_, i) => i / 1000)
+  }
+);
+
+observer.observe(footer);
+
+
+}
+
+
+</script>

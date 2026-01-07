@@ -316,6 +316,15 @@ label:has(> .mod-completion-checkbox:checked) {
     transform: rotate(180deg);
 }
 
+.mod-see-more-less[aria-hidden=true] {
+    padding: var(--tx-padding-s);
+    border: 0;
+}
+.mod-see-more-less[aria-hidden=true]::after {
+    content: ' ';
+    white-space: pre;
+}
+
 
 .mod-controlled {
     overflow-y: hidden;
@@ -348,10 +357,15 @@ label:has(> .mod-completion-checkbox:checked) {
 }
 
 
-
 .mod-additional-details {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        'd d d d d'
+        'n n n n n';
+}
+
+.mod-additional-details:has(> .mod-image-container) {
     grid-template-areas:
         'im im d d d'
         'n n n n n';
