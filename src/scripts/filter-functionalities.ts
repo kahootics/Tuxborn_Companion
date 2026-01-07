@@ -10,12 +10,13 @@ const filtersContainer = document.getElementById('tx-filters-section') as HTMLEl
 const tagSelectionToggles = document.querySelectorAll('.tag-selection-toggle');
 /* filters activaction trigger */
 const applyFilters = document.getElementById('apply-filters');
+const resetFilters = document.getElementById('reset-filters');
 
 const wikiLinksSection = document.getElementById('wiki-links-section') as HTMLElement;
     const wikiLinks = document.getElementById('wiki-links');
 
 
-if(allMods && filterToggle && filtersContainer && applyFilters && tagSelectionToggles && wikiLinks && wikiLinksSection) {
+if(allMods && filterToggle && filtersContainer && applyFilters && resetFilters && tagSelectionToggles && wikiLinks && wikiLinksSection) {
 
 
     const filters = new Map<string, Set<string>>();;
@@ -125,6 +126,17 @@ if(allMods && filterToggle && filtersContainer && applyFilters && tagSelectionTo
         }
     })
 
+
+    /*reset filters */
+    resetFilters.addEventListener('click', () => {
+        filters.forEach(filter => filter.clear());
+        document.querySelectorAll(`.filters-selected[data-tags-type]`)?.forEach(selectedFilter => {
+            let firstChild: ChildNode | null = null;
+            while((firstChild = selectedFilter.firstChild) !== null) {
+                selectedFilter.removeChild(firstChild);
+            }
+        });;
+    })
 
     function setBusy(getBusy: boolean): void {
         getBusy ? document.getElementById('tx-mod-articles')?.setAttribute('aria-busy', 'true')

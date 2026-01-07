@@ -57,6 +57,9 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
     width: 100%;
     
     background-color: var(--tx-color-background-alpha);
+    background-image: var(--tx-navs-background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     --tx-tag-sel-field-height: 4rem;
     --tx-filter-sec-legend-height: 1rem;
@@ -82,7 +85,7 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
     gap: 0.4rem 0;
     grid-template-areas:
         'tagToggles tagToggles tagToggles tagLists tagLists tagLists'
-        '         .          .          apply       apply    apply    apply'
+        '         reset          reset          reset       apply    apply    apply'
         'selM selM selC selC selL selL';
 }
 
@@ -121,7 +124,7 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
 }
 .tag-selection-toggle {
     --distance: 6vw;
-    --dostance: 2vw;
+    --dostance: 0.4rem;
     color: inherit;
     z-index: 10;
     background-color: transparent;
@@ -143,10 +146,22 @@ html:not(:has( #edges:checked)) .tx-framed-m::before {
 
 .tag-selection-toggle:is(:hover, :active, [aria-expanded=true]) > span {
     background-image: linear-gradient(to left, 
-        var(--tx-color-background-accent),var(--tx-color-background-accent),
-        var(--tx-color-background-accent-alpha),var(--tx-color-background-accent-alpha),
+        var(--tx-color-background-accent),var(--tx-color-fiv-background-accent),
+        var(--tx-color-fiv-background-accent-alpha),var(--tx-color-fiv-background-accent-alpha),
         transparent, transparent
     );
+}
+
+.tag-selection-toggle:is(:hover, :active, [aria-expanded=true]) > span::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    z-index: -1;
+    right: var(--dostance);
+    height: 100%;
+    background-image: var(--tx-main-header-background-image);
+    opacity: 0.4;
+
 }
 
 html:not(:has( #edges:checked)) .tag-selection-toggle[aria-expanded=true] > span::before {
@@ -258,6 +273,10 @@ html:not(:has( #edges:checked)) .tag-selection-toggle[aria-expanded=true] > span
 #apply-filters {
     grid-area: apply;
 }
+#reset-filters {
+    grid-area: reset;
+}
+
 #apply-filters {
     color: inherit;
     background-color: var(--tx-color-two-background);
@@ -271,6 +290,21 @@ html:not(:has( #edges:checked)) .tag-selection-toggle[aria-expanded=true] > span
 }
 #apply-filters:is(:active, :focus) {
     background-color: var(--tx-color-two-background-accent);
+}
+
+#reset-filters {
+    color: inherit;
+    background-color: var(--tx-color-for-background);
+    border: var(--tx-line-width-xs) solid transparent;
+    border-radius: var(--tx-border-radius-soft);
+    padding: var(--tx-padding-s);
+}
+#reset-filters:hover {
+    border: var(--tx-line-width-xs) solid var(--tx-color-for-line);
+    background-color: var(--tx-color-for-background-strong-alpha);
+}
+#reset-filters:is(:active, :focus) {
+    background-color: var(--tx-color-for-background-accent);
 }
 
 

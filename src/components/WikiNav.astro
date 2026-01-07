@@ -43,6 +43,9 @@ const omni = 'https://github.com/Omni-guides/Tuxborn';
     transform: scale(1, 0);
     --tx-clip: 15px;
 }
+html:has( #wiki-links-section[data-height-null=false]) {
+	overflow: hidden;
+}
 #wiki-links-section[data-height-null=false] {
     --delay: 0s;
     transform: none;
@@ -51,6 +54,9 @@ const omni = 'https://github.com/Omni-guides/Tuxborn';
     width: 100%;
     height: 100%;
     background-color: var(--tx-color-background-alpha);
+    background-image: var(--tx-navs-background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-right: 1rem;
 }
 #wiki-sub-links {

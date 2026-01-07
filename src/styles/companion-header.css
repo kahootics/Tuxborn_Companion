@@ -10,14 +10,14 @@
     padding: 0;
     padding-bottom: calc(var(--tx-clip) + var(--tx-frame-width));
     --tx-clip: var(--tx-main-header-clip);
-    --tx-clip-offset-left: 2rem;
-    --tx-clip-offset-right: 2rem;
+    --tx-clip-offset-left: 2vw;
+    --tx-clip-offset-right: 2vw;
     --tx-frame-width: var(--tx-line-width-s);
 }
 
 :root {
-    --tx-left-offset: calc(2rem + 7.5px);
-    --tx-right-offset: calc(7.5px + 2rem);
+    --tx-left-offset: calc(2vw + 7.5px);
+    --tx-right-offset: calc(7.5px + 2vw);
 }
 
 /* html:not(:has( #edges:checked)) #main-header::after {

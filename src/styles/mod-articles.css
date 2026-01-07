@@ -45,6 +45,7 @@
     
     background-color: var(--tx-color-one-background-strong);
     background-image: var(--tx-mod-article-background-image);
+    background-repeat: no-repeat;
 
     /* border: var(--tx-line-width-xs) solid var(--tx-color-line); */
     border-radius: inherit;
