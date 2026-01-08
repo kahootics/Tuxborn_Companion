@@ -1,0 +1,64 @@
+---
+/* 
+import fs from 'fs'; */
+import { parse } from 'csv-parse/sync';
+
+
+
+
+const masterSheetId = '1P6SDVB4JGRTPY1pzMrjG47BlsLpAA4FEeRI16P5umPk';
+const masterSheetGid = '1976759086';
+
+async function fetchSheetCSV(sheetId:string, sheetGID: string) {
+
+    const URL = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${sheetGID}`;
+    const res = await fetch(URL);
+
+    if (!res.ok) {
+        throw new Error(`Fetch failed: ${res.status}`);
+    }
+
+    return res.text()
+}
+
+const output = await fetchSheetCSV(masterSheetId, masterSheetGid);
+
+const modified = (await fetchSheetCSV(masterSheetId, masterSheetGid)).split('\n');
+const maurice = modified.map((mod) => {
+    return mod.split(',');
+})
+
+const csv = await fetchSheetCSV(masterSheetId, masterSheetGid);
+
+const records: { [key: string]: string }[] = parse(csv, {
+  columns: true,
+  skip_empty_lines: false,
+});
+
+---
+
+<html lang="en">
+	<head>
+		<title>Mods Compendium | Tuxborn Companion</title>
+		<link rel="icon" type="image/svg+xml" href="./wuurf.svg" />
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    </head>
+    <body>
+        
+
+            {
+                records.map((record) => <p>{
+                    Object.entries(record).map(([key, val]) => {
+                        return <p>{key}: {val}</p>
+                    })
+                    }</p>)
+            }
+
+
+        
+        
+    </body>
+</html>
