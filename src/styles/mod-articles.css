@@ -371,9 +371,10 @@ label:has(> .mod-completion-checkbox:checked) {
         'n n n n n';
 }
 .mod-additional-details:has(> .mod-directions) {
+    grid-template-columns: repeat(2, auto);
     grid-template-areas:
-        'd d d di di'
-        'n n n n n ';
+        'd di'
+        'n n';
 }
 @media screen and (max-width: 576px) {
     .mod-additional-details {

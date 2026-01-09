@@ -1,0 +1,35 @@
+---
+
+import csvUnpack from '../scripts/data-management/csv-unpack';
+import validateTypeMods from '../scripts/data-management/validate-type-mods';
+import companionDatasheets from '../data/companion-datasheets.json';
+
+
+const records = await csvUnpack(companionDatasheets.modsCompendium.id, companionDatasheets.modsCompendium.gid);
+
+const filteredRecords = records.filter((record) => record.enabled === true);
+
+const validatedRecords = validateTypeMods(filteredRecords);
+
+---
+
+<html lang="en">
+	<head>
+		<title>Mods Compendium | Tuxborn Companion</title>
+		<link rel="icon" type="image/svg+xml" href="./wuurf.svg" />
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    </head>
+    <body>
+        
+
+            {
+                <p style="white-space: pre;">
+                    {JSON.stringify(validatedRecords, null, 2)}
+                </p>
+            }
+
+    </body>
+</html>
