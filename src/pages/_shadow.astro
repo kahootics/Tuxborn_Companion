@@ -1,15 +1,21 @@
 ---
 
 import csvUnpack from '../scripts/data-management/csv-unpack';
-import validateTypeMods from '../scripts/data-management/validate-type-mods';
+import { validateTypeMod, modMiniMap } from '../scripts/data-management/validate-type-mods';
 import companionDatasheets from '../data/companion-datasheets.json';
+
+
 
 
 const records = await csvUnpack(companionDatasheets.modsCompendium.id, companionDatasheets.modsCompendium.gid);
 
 const filteredRecords = records.filter((record) => record.enabled === true);
 
-const validatedRecords = validateTypeMods(filteredRecords);
+const validatedRecords = filteredRecords.map( filteredRecord => validateTypeMod(filteredRecord));
+
+const minifiedRecords = filteredRecords.map(modMiniMap);
+/* 
+const minifiedRecords = test.map(validateTypeMiniModMap); */
 
 ---
 
@@ -25,11 +31,18 @@ const validatedRecords = validateTypeMods(filteredRecords);
     <body>
         
 
-            {
+            <!-- {
                 <p style="white-space: pre;">
                     {JSON.stringify(validatedRecords, null, 2)}
                 </p>
-            }
+            } -->
+            
+        {
+            <p style="white-space: pre;">
+                    {JSON.stringify(minifiedRecords)}
+                </p>
+            
+        }
 
     </body>
 </html>

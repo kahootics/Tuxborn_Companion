@@ -1,8 +1,10 @@
 import { z } from "zod";
 
-const SchemaMod = z.object({
-    id: z.string(),
-    enabled: z.boolean(),
+const hasId = z.object({
+    id: z.string()
+})
+
+const SchemaMiniModIdless = z.object({
     name: z.object({
         short: z.string(),
         full: z.string(),
@@ -10,16 +12,6 @@ const SchemaMod = z.object({
     }),
     relatedMods: z.array(z.string()).nullable(),
     creator: z.string(),
-    image: z.object({
-        int: z.string().nullable(),
-        ext: z.string()
-    }),
-    overview: z.string(),
-    link: z.object({
-        nexus: z.string(),
-        wiki: z.string().nullable(),
-        misc: z.string().nullable(),
-    }),
     version: z.object({
         added: z.number(),
         available: z.array(z.number())
@@ -39,6 +31,22 @@ const SchemaMod = z.object({
     quest: z.object({
         initial: z.string().nullable(),
         other: z.array(z.string()).nullable()
+    })
+});
+
+const SchemaMiniMod = hasId.merge(SchemaMiniModIdless);
+
+const SchemaOptionalsMod = z.object({
+    enabled: z.boolean(),
+    image: z.object({
+        int: z.string().nullable(),
+        ext: z.string()
+    }),
+    overview: z.string(),
+    link: z.object({
+        nexus: z.string(),
+        wiki: z.string().nullable(),
+        misc: z.string().nullable(),
     }),
     howTo: z.object({
         text: z.string().nullable(),
@@ -58,11 +66,34 @@ const SchemaMod = z.object({
     })
 });
 
+const SchemaMod = SchemaOptionalsMod.merge(SchemaMiniMod);
 
-export default function validateTypeMods(records: any[]) {
-    return records.map( record => (SchemaMod.parse(record)));
+
+export function validateTypeMiniMod(miniRecord: {}) {
+    return SchemaMiniMod.parse(miniRecord);
 }
 
 export function validateTypeMod(record: {}) {
     return SchemaMod.parse(record);
+}
+
+export function validateTypeModMiniMap(
+    record: any[]
+): [string, z.infer<typeof SchemaMiniModIdless>] {
+    return [
+        z.string().parse(record[0]),
+        SchemaMiniModIdless.parse(record[1])
+    ];
+}
+
+
+export function modMiniMap(record: unknown
+): [string, z.infer<typeof SchemaMiniModIdless>] {
+
+    const { id, ...rest } = record as any;
+
+    return [
+        z.string().parse(id),
+        SchemaMiniModIdless.parse(rest)
+    ];
 }

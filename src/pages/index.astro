@@ -4,20 +4,17 @@ import '../styles/themes.css';
 import '../styles/layout.css';
 import '../styles/clip-shapes.css';
 
+/* Build the compendium JSOn files */
+import '../data/write-mods-compendium.ts';
+
+
 
 import MainHeader from "../components/MainHeader.astro";
 import MetaSocials from "../components/MetaSocials.astro";
 import Filters from "../components/Filters.astro";
 
-import { Image } from 'astro:assets';
-
-import icons from '../assets/icons-sprite.png';
-
-import ModLocation from '../components/sub-components/mod-location.astro';
-
 import Data from '../data/mods-test.js';
 import ModArticle from '../components/sub-components/mod-article.astro';
-import SocialCards from '../components/SocialCards.astro';
 import WikiNav from '../components/WikiNav.astro';
 import MainFooter from '../components/MainFooter.astro';
 

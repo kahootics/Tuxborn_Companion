@@ -1,0 +1,20 @@
+
+import writeStaticAsJson from "../scripts/data-management/write-static-as-json";
+import csvUnpack from '../scripts/data-management/csv-unpack';
+import { validateTypeMod, modMiniMap } from '../scripts/data-management/validate-type-mods';
+import companionDatasheets from '../data/companion-datasheets.json';
+
+
+import '../scripts/data-management/write-static-as-json.ts'
+
+const records = await csvUnpack(companionDatasheets.modsCompendium.id, companionDatasheets.modsCompendium.gid);
+
+const filteredRecords = records.filter((record) => record.enabled === true);
+
+const validatedRecords = filteredRecords.map(validateTypeMod);
+
+const minifiedRecords = filteredRecords.map(modMiniMap);
+
+
+writeStaticAsJson(validatedRecords, './public/data/mods-compendium.json', false);
+writeStaticAsJson(minifiedRecords, './public/data/mods-mini-compendium.json', true);
