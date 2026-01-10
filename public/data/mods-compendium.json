@@ -24,7 +24,7 @@
       }
     },
     "notes": {
-      "text": "You won't be allowed passage through the gate unless you are sided with the Imperial Legion or are recognized as having accomplished some great deed (such as becoming Harbringer of the Companions or fullfilling your duty as the Dragonborn); alternatively you can kill the guards or use an alternate route (Serpent's Trail or Gromm's Pass). [\\\\n]Once you get to Cyrodiil, the border gates will be open from either side.",
+      "text": "You won't be allowed passage through the gate unless you are sided with the Imperial Legion or are recognized as having accomplished some great deed (such as becoming Harbringer of the Companions or fullfilling your duty as the Dragonborn); alternatively you can kill the guards or use an alternate route (Serpent's Trail or Gromm's Pass). \nOnce you get to Cyrodiil, the border gates will be open from either side.",
       "title": null
     },
     "id": "modId_0000",
@@ -571,7 +571,7 @@
       }
     },
     "notes": {
-      "text": "The mod is focused around stealth gameplay and puzzles, but doesn't force any playstile. The Remnants of Hammerfell also take place in the Alik'r Desert. Another quest bundle further expands the exploration of Hammerfell.[\\\\n]The mod introduces various artifacts with enchantments useful to locate valuables, chests and people.",
+      "text": "The mod is focused around stealth gameplay and puzzles, but doesn't force any playstile. The Remnants of Hammerfell also take place in the Alik'r Desert. Another quest bundle further expands the exploration of Hammerfell.\nThe mod introduces various artifacts with enchantments useful to locate valuables, chests and people.",
       "title": null
     },
     "id": "modId_0050",
@@ -1068,7 +1068,7 @@
       }
     },
     "notes": {
-      "text": "The mod is bundled with the Legacy of the Dragonborn; if you have at least 70 displays in the Dragonborn Museum and are at least level 18, the curator will task you with recovering the staff of Indarys (This will start the quest \"It Belongs in a Museum\"); you will receive a letter to investigate a Khajiit caravan that will lead you to Elsweyr.[\\\\n]You don't have to wait until you meet these requirements; you are free to start the mod as soon as you complete The Way of the Voice.",
+      "text": "The mod is bundled with the Legacy of the Dragonborn; if you have at least 70 displays in the Dragonborn Museum and are at least level 18, the curator will task you with recovering the staff of Indarys (This will start the quest \"It Belongs in a Museum\"); you will receive a letter to investigate a Khajiit caravan that will lead you to Elsweyr.\nYou don't have to wait until you meet these requirements; you are free to start the mod as soon as you complete The Way of the Voice.",
       "title": null
     },
     "id": "modId_0100",
@@ -1155,7 +1155,7 @@
       }
     },
     "notes": {
-      "text": "It's recommended not to bring followers along since the mod uses cut-scenes and they may bug out due to followers.[\\\\n]The choice to have quest marker during your exploration is free.",
+      "text": "It's recommended not to bring followers along since the mod uses cut-scenes and they may bug out due to followers.\nThe choice to have quest marker during your exploration is free.",
       "title": null
     },
     "id": "modId_0110",
@@ -1666,7 +1666,7 @@
       }
     },
     "notes": {
-      "text": "It is recommended you be above level 25 before trying the mod, and also pay attention to the notes and your surroundings since most enemies have special ways of being defeated. [\\\\n]Do not exit the dialogue with the holograms until they are finished to prevent bugs in the quest.[\\\\n]The mod adds various dwemer staves.",
+      "text": "It is recommended you be above level 25 before trying the mod, and also pay attention to the notes and your surroundings since most enemies have special ways of being defeated. \nDo not exit the dialogue with the holograms until they are finished to prevent bugs in the quest.\nThe mod adds various dwemer staves.",
       "title": null
     },
     "id": "modId_0170",
@@ -1837,7 +1837,7 @@
       }
     },
     "notes": {
-      "text": "You need to have the Keening in your inventory for the quest (it will become a quest item); if the quest starts without the Keening becoming a quest item you can try to drop it and pick it up again then leave the location. When the Keening can't be dropped the quest has started successfully.[\\\\n]The mod introduces various race shapeshifting spells.",
+      "text": "You need to have the Keening in your inventory for the quest (it will become a quest item); if the quest starts without the Keening becoming a quest item you can try to drop it and pick it up again then leave the location. When the Keening can't be dropped the quest has started successfully.\nThe mod introduces various race shapeshifting spells.",
       "title": null
     },
     "id": "modId_0190",
@@ -2020,7 +2020,7 @@
       }
     },
     "notes": {
-      "text": "A FAQ section specific to this mod is available on the Tuxborn Wiki. [\\\\n]The mod introduces a peculiar follower: Imp; he won't leave you until you finish his quest. [\\\\n]A minimum level of 10 is recommended.",
+      "text": "A FAQ section specific to this mod is available on the Tuxborn Wiki. \nThe mod introduces a peculiar follower: Imp; he won't leave you until you finish his quest. \nA minimum level of 10 is recommended.",
       "title": null
     },
     "id": "modId_0210",
@@ -2478,7 +2478,7 @@
       }
     },
     "notes": {
-      "text": "You won't be able to leave the place until the main quest is finished! It's recommended to dismiss all your followers before starting the mod. [\\\\n]Your companions' quest will fail if not completed before a certain point of no-return in the main questline (you will be warned of this in-game too).[\\\\n]All 5 vanilla bugs in a jar (displayables) are available at Snowdrift Estate.",
+      "text": "You won't be able to leave the place until the main quest is finished! It's recommended to dismiss all your followers before starting the mod. \nYour companions' quest will fail if not completed before a certain point of no-return in the main questline (you will be warned of this in-game too).\nAll 5 vanilla bugs in a jar (displayables) are available at Snowdrift Estate.",
       "title": null
     },
     "id": "modId_0260",
@@ -2760,7 +2760,7 @@
       }
     },
     "notes": {
-      "text": "Some quest rewards can be disenchanted to learn powerful new enchantments.[\\\\n]Once all side quests are completed you will be able to improve Meridia's gifts.",
+      "text": "Some quest rewards can be disenchanted to learn powerful new enchantments.\nOnce all side quests are completed you will be able to improve Meridia's gifts.",
       "title": null
     },
     "id": "modId_0290",
@@ -3319,7 +3319,7 @@
       }
     },
     "notes": {
-      "text": "Cairns are used to mark the start of the climb; use the wind to help you find the path.[\\\\n]Each climb you manage will grant an elemental resistance buff under some circumstances.",
+      "text": "Cairns are used to mark the start of the climb; use the wind to help you find the path.\nEach climb you manage will grant an elemental resistance buff under some circumstances.",
       "title": null
     },
     "id": "modId_0360",
@@ -3461,7 +3461,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Speak with the Redguard Talhik in Solitude; you can find him at his ship near Solitude Lighthouse or at the Winking Skeever during the late hours. [\\\\n]Once you find the ship, you can either use fast travel or activate the smaller ship on the shore nearby to get on board.[\\\\n][\\\\n][\\\\n]",
+      "text": "Speak with the Redguard Talhik in Solitude; you can find him at his ship near Solitude Lighthouse or at the Winking Skeever during the late hours. \nOnce you find the ship, you can either use fast travel or activate the smaller ship on the shore nearby to get on board.",
       "title": null
     },
     "where": {
@@ -3473,7 +3473,7 @@
       }
     },
     "notes": {
-      "text": "It's recommended to experience the mod without followers or at least not have them with you during the first travel to the new worldspace.[\\\\n]The mod is a prologue to a larger unreleased project involving Thras, as such it may feel incomplete at the moment.",
+      "text": "It's recommended to experience the mod without followers or at least not have them with you during the first travel to the new worldspace.\nThe mod is a prologue to a larger unreleased project involving Thras, as such it may feel incomplete at the moment.",
       "title": null
     },
     "id": "modId_0380",
@@ -3552,7 +3552,7 @@
       }
     },
     "notes": {
-      "text": "You won't be able to exit the place after the mod starts. The mod introduces three new forms of magic. Level 25+ recommended.[\\\\n]Once you have completed the quest, return to Gravewind to grab the spells: they will be in the throne room and in the boss arenas. [\\\\n]Depending on which ending you chose you will get different rewards.",
+      "text": "You won't be able to exit the place after the mod starts. The mod introduces three new forms of magic. Level 25+ recommended.\nOnce you have completed the quest, return to Gravewind to grab the spells: they will be in the throne room and in the boss arenas. \nDepending on which ending you chose you will get different rewards.",
       "title": null
     },
     "id": "modId_0390",
@@ -3649,7 +3649,7 @@
       }
     },
     "notes": {
-      "text": "Some steps of the mod don't have quest markers. You will get a different reward at the end of the quest depending on the ending you get.[\\\\n]The names of some keys are swapped.[\\\\n]The mod introduces sleep related spells and bows and day/night related equipment.",
+      "text": "Some steps of the mod don't have quest markers. You will get a different reward at the end of the quest depending on the ending you get.\nThe names of some keys are swapped.\nThe mod introduces sleep related spells and bows and day/night related equipment.",
       "title": null
     },
     "id": "modId_0400",
@@ -3736,7 +3736,7 @@
       }
     },
     "notes": {
-      "text": "You will obtain a new Follower: Daumbra. This is no ordinary follower (it's a floating sword); you can find out more details on the mod page or discover everything by playing.[\\\\n]You may need to progress in A Daedra's Best Friend and Blood on the Ice quests to reach certain objectives in the questline.",
+      "text": "You will obtain a new Follower: Daumbra. This is no ordinary follower (it's a floating sword); you can find out more details on the mod page or discover everything by playing.\nYou may need to progress in A Daedra's Best Friend and Blood on the Ice quests to reach certain objectives in the questline.",
       "title": null
     },
     "id": "modId_0410",
@@ -3815,7 +3815,7 @@
       }
     },
     "notes": {
-      "text": "The mod is designed for high level characters playing as the Dragonborn; 600+ Health is advised.[\\\\n]Visit the mod page on Nexus for information about the reward weapon's enchantment.",
+      "text": "The mod is designed for high level characters playing as the Dragonborn; 600+ Health is advised.\nVisit the mod page on Nexus for information about the reward weapon's enchantment.",
       "title": null
     },
     "id": "modId_0420",
@@ -3992,7 +3992,7 @@
       }
     },
     "notes": {
-      "text": "The mod adds a book (Fort Icemoth: A Mercenary's Diary) that will add a pointer to the Old Wooden Jetty on the map. You can find the book as random loot or look for it in Dragonsreach.[\\\\n]Some areas and dungeon can only be accessed by diving underwater.",
+      "text": "The mod adds a book (Fort Icemoth: A Mercenary's Diary) that will add a pointer to the Old Wooden Jetty on the map. You can find the book as random loot or look for it in Dragonsreach.\nSome areas and dungeon can only be accessed by diving underwater.",
       "title": null
     },
     "id": "modId_0440",
@@ -4080,7 +4080,7 @@
       }
     },
     "notes": {
-      "text": "The mod adds Lingering Void Energy spots across the Reach (and Blackreach) with associated treasure chests; 4 of them will drop Dwemer Tonal Glyphs that give passive bonuses while worn, without using equipment slots.[\\\\n]The mod introduces a themed spell pack whose spell tomes are obtineable at a smelter by using the Pieces of Void dropped by the void apparitions and as a rare drop from said apparitions.",
+      "text": "The mod adds Lingering Void Energy spots across the Reach (and Blackreach) with associated treasure chests; 4 of them will drop Dwemer Tonal Glyphs that give passive bonuses while worn, without using equipment slots.\nThe mod introduces a themed spell pack whose spell tomes are obtineable at a smelter by using the Pieces of Void dropped by the void apparitions and as a rare drop from said apparitions.",
       "title": null
     },
     "id": "modId_0450",
@@ -4333,7 +4333,7 @@
       }
     },
     "notes": {
-      "text": "The hatchery in the Arcane Grotto (new player home) resets and is NOT safe for storage.[\\\\n]You will learn a spell that teleports you to the custom player home from anywhere.[\\\\n]Completing the quest about the home you will be able to trasmute iron ore into gold.",
+      "text": "The hatchery in the Arcane Grotto (new player home) resets and is NOT safe for storage.\nYou will learn a spell that teleports you to the custom player home from anywhere.\nCompleting the quest about the home you will be able to trasmute iron ore into gold.",
       "title": null
     },
     "id": "modId_0480",
@@ -4405,7 +4405,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the large spriggan cave / Nord temple north of Robber's Gorge. [\\\\n]Alternatively, read Legends of Grimroot Hollow to add the dungeon marker to your map; you can find the book at the Temple of Kynareth in Whiterun or at Karthspire Camp.",
+      "text": "Enter the large spriggan cave / Nord temple north of Robber's Gorge. \nAlternatively, read Legends of Grimroot Hollow to add the dungeon marker to your map; you can find the book at the Temple of Kynareth in Whiterun or at Karthspire Camp.",
       "title": null
     },
     "where": {
@@ -4485,7 +4485,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "North of Markarth. [\\\\n]Alternatively, read The Two Stones to add the dungeon marker to your map; you can find the book at the Karthspire Redoubt and in Delphine's basement at the Sleeping Giant Inn in Riverwood.",
+      "text": "North of Markarth. \nAlternatively, read The Two Stones to add the dungeon marker to your map; you can find the book at the Karthspire Redoubt and in Delphine's basement at the Sleeping Giant Inn in Riverwood.",
       "title": null
     },
     "where": {
@@ -4562,7 +4562,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the sea cave west of Broken Oar Grotto, near Solitude. [\\\\n]Alternatively, read Urik the Red to add the dungeon marker to your map; you can find the book at the Wreck of the Brinehammer and at the Wreck of the Winter War.",
+      "text": "Enter the sea cave west of Broken Oar Grotto, near Solitude. \nAlternatively, read Urik the Red to add the dungeon marker to your map; you can find the book at the Wreck of the Brinehammer and at the Wreck of the Winter War.",
       "title": null
     },
     "where": {
@@ -4642,7 +4642,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the mine south of Falkreath. [\\\\n]Alternatively, read the The Pit of Strife to add the dungeon marker to your map; you can find it in Bilegulch Mine and in Left Hand Mine.",
+      "text": "Enter the mine south of Falkreath. \nAlternatively, read the The Pit of Strife to add the dungeon marker to your map; you can find it in Bilegulch Mine and in Left Hand Mine.",
       "title": null
     },
     "where": {
@@ -4719,7 +4719,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the Nord ruin northeast of Windhelm. [\\\\n]Alternatively, read the Old Intelligence Report to add the dungeon marker to your map; you can find it at Castle Dour and at the Palace of Kings.",
+      "text": "Enter the Nord ruin northeast of Windhelm. \nAlternatively, read the Old Intelligence Report to add the dungeon marker to your map; you can find it at Castle Dour and at the Palace of Kings.",
       "title": null
     },
     "where": {
@@ -4797,7 +4797,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the cavern beneath Stonehill Bluff, south-east of Morthal. [\\\\n]Alternatively, read the book A Giant's Slayer's Guide to Giantology to add the dungeon marker to your map; you can find the book at Halted Stream Camp and in Jorrvaskr Living Quarters.",
+      "text": "Enter the cavern beneath Stonehill Bluff, south-east of Morthal. \nAlternatively, read the book A Giant's Slayer's Guide to Giantology to add the dungeon marker to your map; you can find the book at Halted Stream Camp and in Jorrvaskr Living Quarters.",
       "title": null
     },
     "where": {
@@ -4877,7 +4877,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the cave near Avanchnzel in the Rift.[\\\\n]Alternatively, read the Farewell Note to add the dungeon marker to your map; you can find the note at Mauhulakh's Longhouse in Narzulbur and at Burguk's Longhouse in Dushnikh Yal.",
+      "text": "Enter the cave near Avanchnzel in the Rift.\nAlternatively, read the Farewell Note to add the dungeon marker to your map; you can find the note at Mauhulakh's Longhouse in Narzulbur and at Burguk's Longhouse in Dushnikh Yal.",
       "title": null
     },
     "where": {
@@ -4956,7 +4956,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "Enter the cave near Steamcrag Camp in the Eastmarch.[\\\\n]Alternatively, read the book Life on the Edge to add the dungeon marker to your map; you can find the book at the White Phial in Windhelm or Arcadia's Cauldron in Whiterun.",
+      "text": "Enter the cave near Steamcrag Camp in the Eastmarch.\nAlternatively, read the book Life on the Edge to add the dungeon marker to your map; you can find the book at the White Phial in Windhelm or Arcadia's Cauldron in Whiterun.",
       "title": null
     },
     "where": {
@@ -6783,7 +6783,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "You can recruit Jesper at Bannered Mare in Whiterun.[\\\\n]You can marry Jesper but there isn't a special romance questline.[\\\\n]Jesper doesn't have as much custom dialogue as the other dedicated follower mods (The mod is still a work in progress).",
+      "text": "You can recruit Jesper at Bannered Mare in Whiterun.\nYou can marry Jesper but there isn't a special romance questline.\nJesper doesn't have as much custom dialogue as the other dedicated follower mods (The mod is still a work in progress).",
       "title": "How to Start & Notes"
     },
     "where": {
@@ -7112,7 +7112,7 @@
       }
     },
     "notes": {
-      "text": "The displays from this mod expand those of the Divine Crusader Creation. The mod's armor and weapons are the same as the version of Legacy of the Dragonborn, as such, this mod's pieces will count towards the completion of the LotD's version of the quest which has specific quest markers you will lose. [\\\\n]This mod is supposed to be played as a scavenger-hunt by using the hints from the journal of Sir Areldur and the Thalmor's Orders and does not have its own marked quest. Completing either this quest mod or the LotD's version (or a mixture of the two) will complete the Creation's displays.",
+      "text": "The displays from this mod expand those of the Divine Crusader Creation. The mod's armor and weapons are the same as the version of Legacy of the Dragonborn, as such, this mod's pieces will count towards the completion of the LotD's version of the quest which has specific quest markers you will lose. \nThis mod is supposed to be played as a scavenger-hunt by using the hints from the journal of Sir Areldur and the Thalmor's Orders and does not have its own marked quest. Completing either this quest mod or the LotD's version (or a mixture of the two) will complete the Creation's displays.",
       "title": null
     },
     "id": "modId_0830",
@@ -7272,7 +7272,7 @@
       }
     },
     "notes": {
-      "text": "Tuxborn uses GTheGenerous's Voiced Narrative mod to expand the NPCs' dialogues.[\\\\n]Some items are already distributed through the world.",
+      "text": "Tuxborn uses GTheGenerous's Voiced Narrative mod to expand the NPCs' dialogues.\nSome items are already distributed through the world.",
       "title": null
     },
     "id": "modId_0870",
@@ -7798,7 +7798,7 @@
       }
     },
     "notes": {
-      "text": "The mod expands the quest Lights Out! (Talk to Jaree-Ra in Solitude to pick it up) allowing for more paths including killing Jaree-Ra, reporting him or even doubling down to join him in his \"deed\" with a renewed attitude.[\\\\n]Depending on you choices, Jaree-Ra may become your follower.",
+      "text": "The mod expands the quest Lights Out! (Talk to Jaree-Ra in Solitude to pick it up) allowing for more paths including killing Jaree-Ra, reporting him or even doubling down to join him in his \"deed\" with a renewed attitude.\nDepending on you choices, Jaree-Ra may become your follower.",
       "title": null
     },
     "id": "modId_0960",
@@ -7876,7 +7876,7 @@
       }
     },
     "notes": {
-      "text": "Some dialogue from main characters is unvoiced at the moment; it will be silent.[\\\\n]The questline will not unlock the Dark Brotherhood display in the Dragonborn Gallery.",
+      "text": "Some dialogue from main characters is unvoiced at the moment; it will be silent.\nThe questline will not unlock the Dark Brotherhood display in the Dragonborn Gallery.",
       "title": "Warnings"
     },
     "id": "modId_0970",
@@ -7943,7 +7943,7 @@
       "misc": null
     },
     "howTo": {
-      "text": "There are 4 quests that can be started by talking to following NPCs at the Bards College in Solitude: Delric Merick, Aia Arria, Jorn and Viarmo.[\\\\n]These are more or less simple fetch quests.",
+      "text": "There are 4 quests that can be started by talking to following NPCs at the Bards College in Solitude: Delric Merick, Aia Arria, Jorn and Viarmo.\nThese are more or less simple fetch quests.",
       "title": null
     },
     "where": {
@@ -8266,7 +8266,7 @@
       }
     },
     "notes": {
-      "text": "Variants of the armors and weapons can be crafted at a forge if you have the originals.[\\\\n]The mod introduces many necromantic spells, including some \"summon army\" spells.",
+      "text": "Variants of the armors and weapons can be crafted at a forge if you have the originals.\nThe mod introduces many necromantic spells, including some \"summon army\" spells.",
       "title": null
     },
     "id": "modId_1120",

@@ -2,7 +2,11 @@ import { z } from "zod";
 
 const hasId = z.object({
     id: z.string()
-})
+});
+
+const addElement = z.object({
+    element: z.any()
+});
 
 const SchemaMiniModIdless = z.object({
     name: z.object({
@@ -35,6 +39,7 @@ const SchemaMiniModIdless = z.object({
 });
 
 const SchemaMiniMod = hasId.merge(SchemaMiniModIdless);
+
 
 const SchemaOptionalsMod = z.object({
     enabled: z.boolean(),
@@ -86,6 +91,9 @@ export function validateTypeModMiniMap(
     ];
 }
 
+export type MiniModIdless = z.infer<typeof SchemaMiniModIdless>;
+const SchemaUseMap = addElement.merge(SchemaMiniModIdless);
+export type MiniMod = z.infer<typeof SchemaUseMap>;
 
 export function modMiniMap(record: unknown
 ): [string, z.infer<typeof SchemaMiniModIdless>] {
