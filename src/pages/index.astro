@@ -5,7 +5,7 @@ import '../styles/layout.css';
 import '../styles/clip-shapes.css';
 
 /* Build the compendium JSOn files */
-import '../data/write-mods-compendium.ts';
+import WriteModsCompendium from  '../data/write-mods-compendium.astro';
 
 
 
@@ -41,6 +41,7 @@ const pageImage = {
 					 description="Explore content mods from Tuxborn in a comprehensive and detailed library to help you find what to play next!" />
 	</head>
 	<body>
+		<WriteModsCompendium />
 		<MainHeader />
 		<WikiNav />
 	<div id="tx-page-content">

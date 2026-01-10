@@ -1,4 +1,4 @@
-
+---
 import writeStaticAsJson from "../scripts/data-management/write-static-as-json";
 import csvUnpack from '../scripts/data-management/csv-unpack';
 import { validateTypeMod, modMiniMap } from '../scripts/data-management/validate-type-mods';
@@ -18,3 +18,4 @@ const minifiedRecords = filteredRecords.map(modMiniMap);
 
 writeStaticAsJson(validatedRecords, './public/data/mods-compendium.json', false);
 writeStaticAsJson(minifiedRecords, './public/data/mods-mini-compendium.json', true);
+---
