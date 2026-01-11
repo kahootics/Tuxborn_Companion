@@ -40,8 +40,8 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
             #bottom {
                 cursor: pointer;
             }
-            #target {
-                white-space: pre-wrap;
+            div[id] {
+                margin: 2rem auto;
             }
         </style>
     </head>
@@ -57,7 +57,8 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
             
         <div id="target" >
             {validatedRecords.map( piece => {
-               return  <p id={piece.id}><div>ID: {piece.id}</div>
+               return  <div id={piece.id}>
+                <div>ID: {piece.id}</div>
                <div>Name: {piece.name.full}</div>
                <div>Creator: {piece.creator}</div>
                <div>Category: {piece.category}</div>
@@ -66,7 +67,7 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
                {/* JSON.stringify(piece) */}
                <div>Overview: {piece.overview}</div>
                <div>Notes: {piece.notes.text}</div>
-               </p>
+               </div>
             })
             }
         </div>
@@ -99,12 +100,10 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
 
             /* Testing setup speed */
             import type { MiniMod } from '../scripts/data-management/validate-type-mods';
-            const response = await fetch(`/Tuxborn_Companion/data/mods-mini-compendium.json`);
+            const response = await fetch(`/Tuxborn_Companion/data/mods-mini-compendium.json?nocache=${crypto.randomUUID()}`);
             if(!response.ok) throw new Error('Fetch failded: ' + response.status);
             const result = await response.json();
-            if(target) {
-                target.textContent += result;
-            }
+            /* if(target) { target.textContent += JSON.stringify(result, null, 2)} */
             const mapping: Map<string, MiniMod> = new Map(result);
             for (const [key, value] of mapping) {
                 mapping.set(key, { ...value, element: document.getElementById(key) });
