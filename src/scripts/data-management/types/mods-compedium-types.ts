@@ -93,6 +93,7 @@ export function validateTypeModMiniMap(
 
 export type MiniModIdless = z.infer<typeof SchemaMiniModIdless>;
 const SchemaUseMap = addElement.merge(SchemaMiniModIdless);
+
 export type MiniMod = z.infer<typeof SchemaUseMap>;
 
 export function modMiniMap(record: unknown

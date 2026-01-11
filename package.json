@@ -6,10 +6,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "write:companion": "tsx src/scripts/data-management/node/write-companion-data.ts"
   },
   "dependencies": {
     "astro": "^5.16.6",
-    "csv-parse": "^6.1.0"
+    "csv-parse": "^6.1.0",
+    "tsx": "^4.21.0"
   }
 }

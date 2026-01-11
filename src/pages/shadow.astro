@@ -1,19 +1,6 @@
 ---
 
-
-
-import csvUnpack from '../scripts/data-management/csv-unpack';
-import { validateTypeMod, modMiniMap } from '../scripts/data-management/validate-type-mods';
-import '../scripts/data-management/write-static-as-json.ts'
-import companionDatasheets from '../data/companion-datasheets.json';
-
-const records = await csvUnpack(companionDatasheets.modsCompendium.id, companionDatasheets.modsCompendium.gid);
-
-const filteredRecords = records.filter((record) => record.enabled === true);
-
-const validatedRecords = filteredRecords.map(validateTypeMod);
-
-const minifiedRecords = filteredRecords.map(modMiniMap);
+import { modsCompendium } from "../scripts/data-management/companion-data-fetch.ts";
 
 const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
 
@@ -56,7 +43,7 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
 
             
         <div id="target" >
-            {validatedRecords.map( piece => {
+            {modsCompendium.map( piece => {
                return  <div id={piece.id}>
                 <div>ID: {piece.id}</div>
                <div>Name: {piece.name.full}</div>
@@ -99,7 +86,8 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
             start = performance.now();
 
             /* Testing setup speed */
-            import type { MiniMod } from '../scripts/data-management/validate-type-mods';
+            import type { MiniMod } from '../scripts/data-management/types/mods-compedium-types';;
+
             const response = await fetch(`/Tuxborn_Companion/data/mods-mini-compendium.json?nocache=${crypto.randomUUID()}`);
             if(!response.ok) throw new Error('Fetch failded: ' + response.status);
             const result = await response.json();

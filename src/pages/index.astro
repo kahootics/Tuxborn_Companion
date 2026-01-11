@@ -4,11 +4,6 @@ import '../styles/themes.css';
 import '../styles/layout.css';
 import '../styles/clip-shapes.css';
 
-/* Build the compendium JSOn files */
-import WriteModsCompendium from  '../data/write-mods-compendium.astro';
-
-
-
 import MainHeader from "../components/MainHeader.astro";
 import MetaSocials from "../components/MetaSocials.astro";
 import Filters from "../components/Filters.astro";
@@ -34,7 +29,7 @@ const pageImage = {
 			window.location.href = './M-test/';
 		</script>*/} 
 		<title>Mods Compendium | Tuxborn Companion</title>
-		<link rel="icon" type="image/svg+xml" href="./wuurf.svg" />
+		<link rel="icon" type="image/svg+xml" href="./helmet.svg" />
 		<meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
@@ -45,9 +40,6 @@ const pageImage = {
 					 description="Explore content mods from Tuxborn in a comprehensive and detailed library to help you find what to play next!" />
 	</head>
 	<body>
-		{/* WRITES ONLY AT DEV */}
-		<WriteModsCompendium />
-		{/* !! DO NOT REMOVE !! */}
 
 		<MainHeader />
 		<WikiNav />

@@ -2,13 +2,13 @@
 
 import { parse } from 'csv-parse/sync';
 import normalizeCellValue from './normalize-cell-value';
-import fetchSheetCSV from './fetch-sheet-csv';
+import fetchSheetAsCSV from './fetch-sheet-as-csv';
 import normalizeCellArray from './normalize-cell-array';
 
 
-export default async function csvUnpack(sheetId: string, sheetGID: string | number) {
+export default async function fetchSheetDataset(sheetId: string, sheetGID: string | number, newLineReplacer?: string, arraySeparator?: string) {
 
-    const csv = await fetchSheetCSV(sheetId, `${sheetGID}`);
+    const csv = await fetchSheetAsCSV(sheetId, `${sheetGID}`);
 
     const records: { [key: string]: string }[] = parse(csv, {
         columns: true,
@@ -31,9 +31,9 @@ export default async function csvUnpack(sheetId: string, sheetGID: string | numb
                 if(isLast) {
                     
                     if(splitKey.endsWith('[]')) {
-                        current[splitKey.replaceAll('[]', '')] = normalizeCellArray(value);
+                        current[splitKey.replaceAll('[]', '')] = normalizeCellArray(value, arraySeparator, newLineReplacer);
                     } else {
-                        current[splitKey] = normalizeCellValue(value, '[//n]');
+                        current[splitKey] = normalizeCellValue(value, newLineReplacer);
                     }
                     
                 } else {
@@ -49,10 +49,3 @@ export default async function csvUnpack(sheetId: string, sheetGID: string | numb
     return data;
     
 }
-
-
-
-
-
-
-
