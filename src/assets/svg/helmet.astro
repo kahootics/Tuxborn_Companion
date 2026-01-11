@@ -1,5 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+---
+
+const { omni } = Astro.props;
+---
+
+
+<div id="readme" class="clip-shape octagone">
+			<a id="readme-link" href={ omni + "#" } target="_blank" class="clip-shape octagone">
+				
+<svg viewBox="0 0 300 300"
+  preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 300 300">
   <g transform="matrix(1, 0, 0, 1, -19.844443, -25.179871)">
     <path style="fill: rgb(255, 255, 0); stroke: rgb(0, 0, 0); stroke-width: 4; transform-origin: 263.045px 117.199px;" d="M 221.085 157.19 C 179.454 179.651 204.383 228.323 231.431 218.889 C 353.74 204.685 319.441 37.248 267.004 32.708 C 281.799 34.331 274.647 157.008 221.085 157.19 Z"/>
     <path style="fill: rgb(252, 252, 207); stroke: none; stroke-width: 1;" d="M 296.119 181.953 L 292.125 174.272 C 318.765 146.311 314.621 92.318 310.557 96.855 C 320.653 99.261 310.359 179.869 296.119 181.953 Z"/>
@@ -30,3 +41,44 @@
     <path style="fill: hsla(210, 80%, 80%, 0.7); stroke: none; stroke-width: 1;" d="M 295.397 248.724 C 293.097 246.943 297.817 246.459 298.278 247 C 299.333 245.326 304.647 270.096 302.187 269.614 C 302.069 270.611 299.911 271.817 298.587 270.436 C 300.17 269.857 298.931 254.906 295.397 248.724 Z"/>
   </g>
 </svg>
+<span class="hide-on-small-screens">Readme</span>
+			</a>
+    	</div>
+
+
+        <style>
+	#readme, #readme:is(:hover, :active, :focus) {
+		display: block;
+		height: 80%;
+		border-radius: var(--tx-border-radius-soft);
+		padding: var(--tx-line-width-xs);
+		background-color: var(--tx-color-line);
+		--tx-clip: 3px;
+	}
+	#readme-link {
+		display: block;
+		color: var(--tx-color-text);
+		text-decoration: none;
+		--background: var(--tx-color-two-background);
+		padding: var(--tx-line-width-xxs);
+		height: 100%;
+		background-color: var(--background);
+		border-radius: inherit;
+		display: flex;
+		align-items: center;
+	}
+	#readme-link:hover {
+		--background: var(--tx-color-two-background-strong);
+	}
+	#readme-link:is(:active, :focus) {
+		--background: var(--tx-color-two-background-accent);
+	}
+	#readme span {
+		display: inline-block;	
+    	padding: var(--tx-padding-s);
+	}
+	#readme svg {
+		height: 100%;
+		aspect-ratio: 1;
+	}
+</style>
