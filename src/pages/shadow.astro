@@ -40,6 +40,9 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
             #bottom {
                 cursor: pointer;
             }
+            #target {
+                white-space: pre-wrap;
+            }
         </style>
     </head>
     <body>
@@ -96,9 +99,12 @@ const sortlist = ['id', 'name', 'category', 'creator', 'length', 'level'];
 
             /* Testing setup speed */
             import type { MiniMod } from '../scripts/data-management/validate-type-mods';
-            const response = await fetch(`/Tuxborn_Companion/data/mods-mini-compendium.json?nocache=${crypto.randomUUID()}`);
+            const response = await fetch(`/Tuxborn_Companion/data/mods-mini-compendium.json`);
             if(!response.ok) throw new Error('Fetch failded: ' + response.status);
             const result = await response.json();
+            if(target) {
+                target.textContent += result;
+            }
             const mapping: Map<string, MiniMod> = new Map(result);
             for (const [key, value] of mapping) {
                 mapping.set(key, { ...value, element: document.getElementById(key) });
