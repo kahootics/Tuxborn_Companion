@@ -20,7 +20,7 @@
     --tx-right-offset: calc(7.5px + 2vw);
 
     --tx-main-header-clip: 15px;
-    --tx-main-header-height: 4.2rem;
+    --tx-main-header-height: 5.2rem;
     --tx-body-padding-top: calc(var(--tx-main-header-height) - var(--tx-main-header-clip)/2);
     --tx-top-offset: calc(var(--tx-main-header-height) - var(--tx-main-header-clip)/2);
 }

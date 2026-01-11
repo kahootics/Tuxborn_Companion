@@ -138,6 +138,15 @@ template {
     clip-path: circle(0);
 }
 
+
+@media (max-width: 576px) {
+    .hide-on-small-screens {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        clip-path: circle(0);
+    }
+}
+
 .show-even-if-hidden {
     display: block;
 }

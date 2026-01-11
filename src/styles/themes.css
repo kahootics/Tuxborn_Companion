@@ -27,6 +27,7 @@
     --tx-color-two-accent: hsl(2, 54%, 56%);
     --tx-color-two-background: hsl(14, 78%, 27%);
     --tx-color-two-background-accent: hsl(14, 70%, 34%);
+    --tx-color-two-background-strong: hsl(14, 85%, 20%);
     --tx-color-two-background-alpha: hsla(14, 79%, 24%, 0.7);
     --tx-color-two-background-accent-alpha: hsla(14, 70%, 34%, 0.7);
     --tx-color-two-background-strong-alpha: hsla(14, 85%, 20%, 0.75);
