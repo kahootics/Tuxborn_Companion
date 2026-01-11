@@ -17,7 +17,7 @@ const omni = 'https://github.com/Omni-guides/Tuxborn';
 				<Helmet /><span class="hide-on-small-screens">Readme</span>
 			</a>
     	</div> */}
-		<Helmet />
+		<Helmet {omni}/>
     <button type="button" id="tx-filters-section-toggle" aria-expanded="false" aria-controls="tx-filters-section">
         Filters
     </button>
@@ -37,39 +37,3 @@ const omni = 'https://github.com/Omni-guides/Tuxborn';
 
 </header>
 
-<style>
-	#readme, #readme:is(:hover, :active, :focus) {
-		display: block;
-		height: 80%;
-		border-radius: var(--tx-border-radius-soft);
-		padding: var(--tx-line-width-xs);
-		background-color: var(--tx-color-line);
-		--tx-clip: 3px;
-	}
-	#readme-link {
-		display: block;
-		color: var(--tx-color-text);
-		text-decoration: none;
-		--background: var(--tx-color-two-background);
-		padding: var(--tx-line-width-xxs);
-		height: 100%;
-		background-color: var(--background);
-		border-radius: inherit;
-		display: flex;
-		align-items: center;
-	}
-	#readme-link:hover {
-		--background: var(--tx-color-two-background-strong);
-	}
-	#readme-link:is(:active, :focus) {
-		--background: var(--tx-color-two-background-accent);
-	}
-	#readme span {
-		display: inline-block;	
-    	padding: var(--tx-padding-s);
-	}
-	#readme svg {
-		height: 100%;
-		aspect-ratio: 1;
-	}
-</style>
