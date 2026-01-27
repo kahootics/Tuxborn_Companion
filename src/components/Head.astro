@@ -1,0 +1,54 @@
+---
+
+import MetaSocials from "../components/MetaSocials.astro";
+
+interface Props {
+    pageTitle: string, 
+    siteName?: string, 
+    pageFullUrl: string,
+    iconUrl: string, 
+    iconType: string, 
+    metaTitle: string, 
+    author: string, 
+    siteType?: string,
+    locale: string,
+    imageUrl: string, 
+    imageWidth?: string | number, 
+    imageHeight?: string | number, 
+    imageType?: string, 
+    description: string,
+    appleTouchIconUrl?: string, 
+    manifestUrl?: string, 
+    sitemapUrl?: string
+}
+
+const { pageTitle, siteName, pageFullUrl, iconUrl, iconType, metaTitle, 
+    author, imageUrl, imageWidth, imageHeight, imageType , description,
+    locale, siteType, appleTouchIconUrl, manifestUrl, sitemapUrl
+} = Astro.props;
+
+const pageImage = {
+    url: imageUrl,
+    type: imageType,
+    width: imageWidth,
+    height: imageHeight
+}
+---
+
+
+<head>
+	<title>{pageTitle}{siteName && ` | ${siteName}`}</title>
+	<link rel="icon" type={iconType} href={iconUrl} />
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="generator" content={Astro.generator} />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<MetaSocials pageTitle={metaTitle}
+				 pageAuthor={author} {pageImage}
+				 {description} {locale}
+   				 {siteName}	 type={siteType}
+   				 pageFullUrl={pageFullUrl}
+                 {appleTouchIconUrl}
+                 {manifestUrl} {sitemapUrl} />
+    <slot />
+</head>

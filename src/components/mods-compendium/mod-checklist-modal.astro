@@ -1,0 +1,33 @@
+---
+---
+
+<form id="new-checklist-creator" class="modal-checklist-form">
+    <label for="new-checklist-name">Give a name to the checklist:</label>
+        
+    <span class="clip-shape clip-as-border octagone">
+
+    
+    <input 
+      type="text" 
+      name="new-checklist-name" 
+      id="new-checklist-name" 
+      class="clip-shape octagone"
+      required 
+      minlength="4"
+      maxlength="64"
+      pattern="^[a-zA-Z0-9 ]+$"
+      title="Insert name for new checklist"
+      placeholder="Insert new checklist name..."
+    />
+  </span>
+
+    <button type="reset" class="clip-shape clip-as-border octagone">
+      <span class="clip-shape octagone">Reset</span>
+    </button>
+    <button type="submit" class="clip-shape clip-as-border octagone">
+      <span class="clip-shape octagone">Submit</span>
+    </button>
+
+    
+</form>
+<script src="/src/scripts/mods-compendium/checklist.ts"></script>

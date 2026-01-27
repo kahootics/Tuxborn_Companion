@@ -1,0 +1,25 @@
+---
+
+import '../styles/companion-header-controls.css';
+import DropdownControl from './navigation/dropdown-control.astro';
+import TuxbornLogo from './TuxbornLogo.astro';
+
+---
+
+<div id="companion-main-header-wrapper">
+<header id="companion-main-header" class="clip-frame inset-bottom inset-double-bottom">
+    <div id="main-header-left">
+       <TuxbornLogo />
+    </div>
+    <div id="main-header-center">
+        <slot />
+    </div>
+    <div id="main-header-right">
+        <DropdownControl name={'main-nav-toggle'} controlledId='main-nav-wrapper' >
+            <div class="nav-bar clip-shape hexagone"></div>
+            <div class="nav-bar clip-shape hexagone"></div>
+            <div class="nav-bar clip-shape hexagone"></div>
+        </DropdownControl>
+    </div>
+</header>
+</div>

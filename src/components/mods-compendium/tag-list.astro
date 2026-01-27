@@ -1,0 +1,32 @@
+---
+import TagListItem from './tag-list-item.astro';
+
+
+export interface Tag {
+    id: string,
+    name: string,
+    matches: string[],
+    icon: string | null,
+    class?: string,
+    image?: {
+        int: string | null,
+        ext: string
+    }
+}
+
+interface Props {
+    tags: Tag[],
+    type: string
+}
+
+const { tags, type } = Astro.props;
+
+
+---
+
+<fieldset id={`${type}-tags-fieldset`} class="filters-fieldset tag-filters-fieldset full-size flip-commander" >
+    <legend class="flip-target hide-on-small-screens"><strong>Filter by {type} tag</strong></legend>
+    <ul class="tag-filters-list full-size flip-scene" data-type={type}>
+        {tags.map(tag => <TagListItem {tag} {type} input={`${type === 'location' ? 'radio' : 'checkbox'}`} />)}
+    </ul>
+</fieldset>

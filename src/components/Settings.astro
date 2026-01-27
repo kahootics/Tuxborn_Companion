@@ -1,0 +1,51 @@
+
+<form id="settings-form">
+    <ul class="flip-scene">
+        <li class="flip-target flip-backwards clip-frame octagone item-dropdown">
+            <span>
+                <input type="checkbox" value="on" name="clip-shapes" id="smooth-borders" class="hide-from-view" checked>
+                <label for="smooth-borders" class="add-tick">Chipped Borders</label>
+            </span>
+        </li>
+        <li class="flip-target flip-backwards clip-frame octagone item-dropdown">
+            <span>
+                <input type="checkbox" value="on" name="flip-cards" id="flip-cards" class="hide-from-view" checked>
+                <label for="flip-cards" class="add-tick">3D Card Flipping</label>
+            </span>
+        </li>
+    </ul>
+</form>
+
+<script>
+
+
+const settings: HTMLInputElement[] = [
+    document.getElementById('smooth-borders') as HTMLInputElement,
+    document.getElementById('flip-cards') as HTMLInputElement
+]
+
+function updateSetting(toggleOn: boolean, storageItem: string, rootAttribute?: string, offValue?: string) {
+    rootAttribute = rootAttribute ?? `data-${storageItem}`;
+    if(toggleOn) {
+        localStorage.removeItem(storageItem);
+        document.documentElement.removeAttribute(rootAttribute);
+    } else {
+        const off = offValue ?? 'off';
+        localStorage.setItem(storageItem,off);
+        document.documentElement.setAttribute(rootAttribute, off);
+    }
+}
+if(settings) {
+    settings.forEach((setting) => {
+        setting.addEventListener('input', () => updateSetting(setting.checked,setting.name));
+        window.addEventListener('load',() => {
+            if(localStorage.getItem(setting.name)) {
+                setting.checked = false;
+            }
+        })
+
+    })
+
+
+}
+</script>

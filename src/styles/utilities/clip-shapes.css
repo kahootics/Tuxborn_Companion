@@ -1,0 +1,474 @@
+
+/* Arg: utility *
+ * ### Clip Functions
+ * clip element borders using clip-shape property & polygon() CSS function *
+ * =================================================================== *
+ * clip-shape classes must be used on a wrapper/container styled with 
+ * * background-color as border color
+ * * padding as border-width
+ * also clip the contained element *
+ * * Note: transparent background on the contained will be stained by the
+ * * wrapper background; use clip-frame for a transparent background
+ * =================================================================== *
+ * use clip-shape on a lone element to clip its corners 
+ * * Note: the border will not clip correctly; use a wrapper if there is a border
+ * =================================================================== *
+ * use clip-frame on a lone element with a transparent background
+ * * the ::after pseudo-element will be used to create a frame  
+ * =================================================================== *
+ * IMPORTANT: in order not to mess with the clip rules and fallbacks, 
+ * USE A WRAPPER for the content, DO NOT put content directly 
+ * in the clipped element since it uses the padding and border property and the ::after element as well;
+ * DO NOT set borders for clipped elements
+ * =================================================================== *
+ * START */
+
+
+/*
+ * Root & Utility Variables Setup  *
+ * ========================================================================== *
+ */
+
+/* Root *
+ * ==== */
+ /* redeclare variable on the element to customize */
+:root, :host {
+    --tx-clip: 5px; /* edit in place for different clips */
+
+    --tx-frame-width: var(--tx-line-width-xs); /* edit in place for different frame widths */
+    --tx-color-frame: var(--tx-color-line); /* edit in place for different frame colors */
+    --tx-color-back: black;
+
+    --tx-clip-offset-left: 6rem; /* edit in place for different offsets (only for inset) */
+    --tx-clip-offset-right: 2rem; /* edit in place for different offsets (only for inset) */
+
+    --tx-clip-offset-center: 4rem; /* edit in place for different offsets (only for triple inset) */
+    --tx-clip-left-inset-width: 15rem; /* edit in place for different offsets (only for triple inset) */
+    --tx-clip-right-inset-width: 10rem; /* edit in place for different offsets (only for triple inset) */
+
+    --tx-border-fallback: var(--tx-frame-width); /* don't change */
+    --tx-padding-fallback: 0px;
+}
+
+/* Utility (!! don't edit !!) *
+ * Dictionary: 
+ * * _m: minus (subtraction)
+ * * _p: plus  (addition)
+ * * _fw: frame-width (abbreviation)
+ * ==================== */
+
+@supports (
+  (clip-path: polygon(0 0)) or
+  (-webkit-clip-path: polygon(0 0))
+) {
+    html:not([data-clip-shapes=off]) .clip-frame,
+    html:not([data-clip-shapes=off]) .clip-shape {
+        --tx-100-_m-clip: calc(100% - var(--tx-clip));
+        --tx-border-fallback: 0px;
+        --tx-padding-fallback: var(--tx-frame-width);
+    }
+    html:not([data-clip-shapes=off]) .clip-frame {
+        --tx-clip-_p-_fw: calc(var(--tx-frame-width) + var(--tx-clip));
+        --tx-100-_m-frame-width: calc(100% - var(--tx-frame-width));
+        --tx-100-_m-clip-_m-_fw: calc(100% - var(--tx-clip) - var(--tx-frame-width));
+    }
+    html:not([data-clip-shapes=off]) .clip-frame::after {
+        background-color: var(--tx-color-frame);
+        display: block;
+        content: '';
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+    }
+    :where(html:not([data-clip-shapes=off]) .clip-frame) {
+        position: relative;
+    }
+    html:not([data-clip-shapes=off]) .inset-bottom,
+    html:not([data-clip-shapes=off]) .inset-top,
+    html:not([data-clip-shapes=off]) .inset-triple-bottom {
+        --tx-clip-offset-left-_p-clip: calc(var(--tx-clip-offset-left) + var(--tx-clip));
+        --tx-100-_m-clip-offset-right: calc(100% - var(--tx-clip-offset-right));
+        --tx-100-_m-clip-offset-right-_m-clip: calc(100% - var(--tx-clip-offset-right) - var(--tx-clip));
+    }
+}
+
+.clip-shape.clip-as-border > .clip-shape {
+    background-color: var(--tx-color-back);
+    border-radius: inherit;
+}
+.clip-shape.clip-as-border {
+    background-color: var(--tx-color-frame);
+}
+
+
+/*
+ * CLIP OCTAGONE  *
+ * ========================================================================== *
+ */
+
+/* Octagone *
+ * ======== */
+
+.octagone {
+    --tx-clip-shape-octagone: polygon(
+        var(--tx-clip) 0%, 
+        var(--tx-100-_m-clip) 0%, 
+        100% var(--tx-clip), 
+        100% var(--tx-100-_m-clip), 
+        var(--tx-100-_m-clip) 100%, 
+        var(--tx-clip) 100%, 
+        0% var(--tx-100-_m-clip) , 
+        0% var(--tx-clip)
+    );
+    --tx-clip-frame-octagone: polygon(
+        50% 0%,
+        0 0,
+        0% 100%,
+        100% 100%,
+        100% 0%,
+        50% 0%,
+        50% var(--tx-frame-width),
+        var(--tx-100-_m-clip-_m-_fw) var(--tx-frame-width),
+        var(--tx-100-_m-frame-width) var(--tx-clip-_p-_fw),
+        var(--tx-100-_m-frame-width) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-100-_m-clip-_m-_fw) var(--tx-100-_m-frame-width),
+        var(--tx-clip-_p-_fw) var(--tx-100-_m-frame-width),
+        var(--tx-frame-width) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-frame-width) var(--tx-clip-_p-_fw),
+        var(--tx-clip-_p-_fw) var(--tx-frame-width),
+        50% var(--tx-frame-width)
+    );
+}
+.clip-shape.octagone,
+.clip-frame.octagone {
+    --tx-clip-shape: var(--tx-clip-shape-octagone);
+    border-radius: var(--tx-clip);
+}
+.clip-frame.octagone,
+.clip-shape.clip-as-border.octagone {
+    padding: var(--tx-padding-fallback);
+    border: var(--tx-border-fallback) solid var(--tx-color-frame);
+}
+
+.clip-frame.octagone::after {
+    top: 0;
+    left: 0;
+    --tx-clip-frame: var(--tx-clip-frame-octagone);
+}
+
+
+/*
+ * CLIP ARROW  *
+ * ========================================================================== *
+ */
+
+.arrow {
+    --tx-clip-shape-arrow: polygon(
+        0 0, 
+        var(--tx-100-_m-clip) 0,
+        100% 50%, 
+        var(--tx-100-_m-clip) 100%,
+        0 100%
+    );
+    --tx-clip-frame-arrow: polygon(
+        0 0, 
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 var(--tx-100-_m-frame-width),
+        var(--tx-100-_m-clip-_m-_fw) var(--tx-100-_m-frame-width),
+        var(--tx-100-_m-frame-width) 50%,
+        var(--tx-100-_m-clip-_m-_fw) var(--tx-frame-width),
+        0 var(--tx-frame-width)
+    );
+}
+.clip-shape.arrow,
+.clip-frame.arrow {
+    --tx-clip-shape: var(--tx-clip-shape-arrow);
+}
+div .clip-frame.arrow::after,
+.clip-frame.arrow::after {
+    top: 0;
+    left: 0;
+    --tx-clip-frame: var(--tx-clip-frame-arrow);
+    background-color: transparent;
+    background-image: linear-gradient(to left,
+        var(--tx-color-frame), var(--tx-color-frame), 
+        var(--tx-color-frame), var(--tx-color-frame), 
+        transparent, transparent, transparent);
+}
+
+.arrow {
+    padding-right: var(--tx-padding-fallback);
+    border-radius: 0 var(--tx-clip) var(--tx-clip) 0;
+    border-right: var(--tx-border-fallback) solid var(--tx-color-frame);
+}
+
+
+/*
+ * CLIP HEXAGONE  *
+ * ========================================================================== *
+ */
+
+.hexagone {
+    --tx-clip-shape-hexagone: polygon(
+        0 50%,
+        var(--tx-clip) 0, 
+        var(--tx-100-_m-clip) 0,
+        100% 50%, 
+        var(--tx-100-_m-clip) 100%,
+        var(--tx-clip) 100%
+    );
+    --tx-clip-frame-hexagone: polygon(
+        100% 100%,
+        100% 0,
+        0 0,
+        0 50%,
+        var(--tx-frame-width) 50%,
+        var(--tx-clip-_p-_fw) var(--tx-frame-width),
+        var(--tx-100-_m-clip-_m-_fw) var(--tx-frame-width),
+        var(--tx-100-_m-frame-width) 50%,
+        var(--tx-100-_m-clip-_m-_fw) var(--tx-100-_m-frame-width),
+        var(--tx-clip-_p-_fw) var(--tx-100-_m-frame-width),
+        var(--tx-frame-width) 50%,
+        0 50%,
+        0 100%
+    );
+}
+.clip-shape.hexagone,
+.clip-frame.hexagone {
+    --tx-clip-shape: var(--tx-clip-shape-hexagone);
+}
+.clip-frame.hexagone::after {
+    top: 0;
+    left: 0;
+    --tx-clip-frame: var(--tx-clip-frame-hexagone);
+}
+
+.hexagone {
+    padding: var(--tx-padding-fallback);
+    border-radius: var(--tx-clip);
+    border: var(--tx-border-fallback) solid var(--tx-color-frame);
+}
+
+
+/*
+ * CLIP INSET *
+ * ========================================================================== *
+ */
+
+/* Inset Top |‾‾\______/‾‾| *
+ * ======================== */
+
+.inset-top {
+    --tx-clip-shape-top-inset: polygon(
+        0 0,
+        var(--tx-clip-offset-left) 0,
+        var(--tx-clip-offset-left-_p-clip) var(--tx-clip),
+        var(--tx-100-_m-clip-offset-right-_m-clip) var(--tx-clip),
+        var(--tx-100-_m-clip-offset-right) 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );    
+    --tx-clip-frame-top-inset: polygon(
+        0 0,
+        0 var(--tx-frame-width),
+        var(--tx-clip-offset-left) var(--tx-frame-width),
+        var(--tx-clip-offset-left-_p-clip) var(--tx-clip-_p-_fw),
+
+        var(--tx-100-_m-clip-offset-right-_m-clip) var(--tx-clip-_p-_fw),
+        var(--tx-100-_m-clip-offset-right) var(--tx-frame-width),
+        100% var(--tx-frame-width),
+        100% 0
+    );
+}
+.clip-shape.inset-top,
+.clip-frame.inset-top {
+    --tx-clip-shape: var(--tx-clip-shape-top-inset);
+}
+
+.clip-frame.inset-top::after {
+    top: 0;
+    left: 0;
+    --tx-clip-frame: var(--tx-clip-frame-top-inset);
+}
+
+.inset-top {
+    padding-top: var(--tx-clip);
+    border-top: var(--tx-border-fallback) solid var(--tx-color-frame);
+}
+
+/* Inset Bottom |__/‾‾‾‾‾‾\__| *
+ * =========================== */
+
+.inset-bottom {
+    --tx-clip-shape-inset-bottom: polygon(
+        0 100%,
+        var(--tx-clip-offset-left) 100%,
+        var(--tx-clip-offset-left-_p-clip) var(--tx-100-_m-clip),
+        var(--tx-100-_m-clip-offset-right-_m-clip) var(--tx-100-_m-clip),
+        var(--tx-100-_m-clip-offset-right) 100%,
+        100% 100%,
+        100% 0,
+        0 0
+    );   
+    --tx-clip-frame-inset-bottom: polygon(
+        0 var(--tx-100-_m-frame-width),
+        0 100%,
+        100% 100%,
+        100% var(--tx-100-_m-frame-width),
+        var(--tx-100-_m-clip-offset-right) var(--tx-100-_m-frame-width),
+        var(--tx-100-_m-clip-offset-right-_m-clip) var(--tx-100-_m-clip-_m-_fw),
+
+        var(--tx-clip-offset-left-_p-clip) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-clip-offset-left) var(--tx-100-_m-frame-width)
+    );
+    
+}
+.clip-shape.inset-bottom,
+.clip-frame.inset-bottom {
+    --tx-clip-shape: var(--tx-clip-shape-inset-bottom);
+}
+.clip-frame.inset-bottom::after {
+    bottom: 0;
+    --tx-clip-frame: var(--tx-clip-frame-inset-bottom);
+}
+
+/* Inset Double Bottom |__/‾‾\__/‾‾\ __|*
+ * ====================================================== */
+
+.inset-double-bottom {
+    --tx-clip-shape-inset-double-bottom: polygon(
+        0 100%,
+        var(--tx-clip-offset-left) 100%,
+        var(--tx-clip-offset-left-_p-clip) var(--tx-100-_m-clip),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width)) var(--tx-100-_m-clip),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip)) 100%,
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center)) 100%,
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center) + var(--tx-clip)) var(--tx-100-_m-clip),
+
+        
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip)) var(--tx-100-_m-clip),
+        var(--tx-100-_m-clip-offset-right) 100%,
+        100% 100%,
+        100% 0,
+        0 0
+    );   
+    --tx-clip-frame-inset-double-bottom: polygon(
+        0 var(--tx-100-_m-frame-width),
+        0 100%,
+        100% 100%,
+
+        100% var(--tx-100-_m-frame-width),
+        var(--tx-100-_m-clip-offset-right) var(--tx-100-_m-frame-width),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip)) var(--tx-100-_m-clip-_m-_fw),
+
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center) + var(--tx-clip)) var(--tx-100-_m-clip-_m-_fw),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center)) var(--tx-100-_m-frame-width),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip)) var(--tx-100-_m-frame-width),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width)) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-clip-offset-left-_p-clip) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-clip-offset-left) var(--tx-100-_m-frame-width)
+    );
+    
+}
+.clip-shape.inset-double-bottom,
+.clip-frame.inset-double-bottom {
+    --tx-clip-shape: var(--tx-clip-shape-inset-double-bottom);
+}
+.clip-frame.inset-double-bottom::after {
+    bottom: 0;
+    left: 0;
+    --tx-clip-frame: var(--tx-clip-frame-inset-double-bottom);
+}
+
+
+/* Inset Triple Bottom |__/‾‾\__/‾‾\__/‾‾\__|*
+ * ========================================= */
+
+.inset-triple-bottom {
+    --tx-clip-shape-inset-triple-bottom: polygon(
+        0 100%,
+        var(--tx-clip-offset-left) 100%,
+        var(--tx-clip-offset-left-_p-clip) var(--tx-100-_m-clip),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width)) var(--tx-100-_m-clip),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip)) 100%,
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center)) 100%,
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center) + var(--tx-clip)) var(--tx-100-_m-clip),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width) - var(--tx-clip) - var(--tx-clip-offset-center) - var(--tx-clip)) var(--tx-100-_m-clip),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width) - var(--tx-clip) - var(--tx-clip-offset-center)) 100%,
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width) - var(--tx-clip)) 100%,
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width)) var(--tx-100-_m-clip),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip)) var(--tx-100-_m-clip),
+        var(--tx-100-_m-clip-offset-right) 100%,
+        100% 100%,
+        100% 0,
+        0 0
+    );   
+    --tx-clip-frame-inset-triple-bottom: polygon(
+        0 var(--tx-100-_m-frame-width),
+        0 100%,
+        100% 100%,
+
+        100% var(--tx-100-_m-frame-width),
+        var(--tx-100-_m-clip-offset-right) var(--tx-100-_m-frame-width),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip)) var(--tx-100-_m-clip-_m-_fw),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width)) var(--tx-100-_m-clip-_m-_fw),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width) - var(--tx-clip)) var(--tx-100-_m-frame-width),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width) - var(--tx-clip) - var(--tx-clip-offset-center)) var(--tx-100-_m-frame-width),
+        calc(var(--tx-100-_m-clip-offset-right) - var(--tx-clip) - var(--tx-clip-right-inset-width) - var(--tx-clip) - var(--tx-clip-offset-center) - var(--tx-clip)) var(--tx-100-_m-clip-_m-_fw),
+
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center) + var(--tx-clip)) var(--tx-100-_m-clip-_m-_fw),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip) + var(--tx-clip-offset-center)) var(--tx-100-_m-frame-width),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width) + var(--tx-clip)) var(--tx-100-_m-frame-width),
+        calc(var(--tx-clip-offset-left-_p-clip) + var(--tx-clip-left-inset-width)) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-clip-offset-left-_p-clip) var(--tx-100-_m-clip-_m-_fw),
+        var(--tx-clip-offset-left) var(--tx-100-_m-frame-width)
+    );
+    
+}
+.clip-shape.inset-triple-bottom,
+.clip-frame.inset-triple-bottom {
+    --tx-clip-shape: var(--tx-clip-shape-inset-triple-bottom);
+}
+.clip-frame.inset-triple-bottom::after {
+    bottom: 0;
+    left: 0;
+    --tx-clip-frame: var(--tx-clip-frame-inset-triple-bottom);
+}
+
+/* Useful Corrections *
+ * ================== */ 
+
+.inset-bottom, .inset-double-bottom, .inset-triple-bottom {
+    padding-bottom: var(--tx-clip);
+    border-bottom: var(--tx-border-fallback) solid var(--tx-color-frame);
+}
+
+/*
+ * CLIP SHAPES & FRAMES APPLICATION (FINAL STEP) *
+ * ========================================================================== *
+ */
+
+@supports (
+  (clip-path: polygon(0 0)) or
+  (-webkit-clip-path: polygon(0 0))
+) {
+    html:not([data-clip-shapes=off]) .clip-frame,
+    html:not([data-clip-shapes=off]) .clip-shape {
+    -webkit-clip-path: var(--tx-clip-shape);
+    clip-path: var(--tx-clip-shape);
+    }
+    html:not([data-clip-shapes=off]) .clip-frame::after,
+    html:not([data-clip-shapes=off]) .clip-frame::before {
+    -webkit-clip-path: var(--tx-clip-frame);
+    clip-path: var(--tx-clip-frame);
+    }
+}
+
+/* ========================================================================== *
+ * ### Clip Functions *
+ * END */

@@ -1,0 +1,125 @@
+
+#checklist-controls-section {
+    background-color: var(--tx-color-fiv-background-alpha);
+    background-image: var(--tx-navs-background-image);
+}
+#checklist-controls-section > :first-child {
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#checklist-controls-section > :last-child {
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#checklist-controls-section > div {
+    padding: var(--tx-padding-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tx-spacing-s);
+}
+#checklist-controls-section > header {
+    border-bottom-style: dashed;
+    border-bottom-color: var(--tx-color-fiv-background);
+}
+
+#other-checklists-select {
+    --tx-color-back: var(--tx-color-two-background);
+}
+#other-checklists-select:hover {
+    --tx-color-back: var(--tx-color-two-background-accent);
+}
+#other-checklists-select[disabled] {
+    --tx-color-back: var(--tx-color-two-background-muted);
+}
+#other-checklists-select + ul {
+    background-color: var(--tx-color-two-background-strong);
+}
+#other-checklists-select + ul li:hover {
+    background-color: var(--tx-color-two-background-accent);
+}
+
+#export-checklist-section {
+    display: flex;
+    align-items: center;
+}
+
+#checklist-export {
+    padding: var(--tx-padding-s);
+    border: 0;
+    height: auto;
+    background-color: var(--tx-color-two-background-strong-alpha);
+    color: inherit;
+}
+
+.modal-checklist-form button,
+#checklist-controls-section button {
+    color: inherit;
+    --tx-color-back: var(--tx-color-two-background);
+}
+.modal-checklist-form button:hover,
+#checklist-controls-section button:hover {
+    --tx-color-back: var(--tx-color-two-background-accent);
+}
+.modal-checklist-form button[disabled],
+#checklist-controls-section button[disabled] {
+    cursor: not-allowed;
+    color: var(--tx-color-text-muted);
+    --tx-color-back: var(--tx-color-two-background-muted);
+}
+.modal-checklist-form button > span,
+.modal-checklist-form input,
+#checklist-controls-section button > span {
+    display: inline-block;
+    padding: var(--tx-padding-s);
+}
+
+.modal-checklist-form > * {
+    font-size: 115%;
+    --tx-clip: 2px;
+}
+.modal-checklist-form > span {
+    color: inherit;
+    display: inline-block;
+    --tx-color-back: var(--tx-color-fiv-background-alpha);
+}
+.modal-checklist-form > span > input {
+    color: inherit;
+    border: 0;
+    background-color: var(--tx-color-back);
+}
+/* #mods-checklist-progress-wrapper {
+    display: none;
+}
+
+html:not([aria-busy=true])  */
+
+#mods-checklist-progress-wrapper:not([hidden]) {
+    display: block;
+    height: 100%;
+    aspect-ratio: 1;
+    --tx-color-back: var(--tx-color-two-background);
+    --tx-color-progress: var(--tx-color-one-background);
+}
+#mods-checklist-progress {
+    font-size: 130%;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    --progress: calc(var(--progress-percentage)*3.6deg);
+    background-image: conic-gradient(from 0deg, var(--tx-color-progress) 0deg var(--progress), transparent var(--progress));
+}
+
+@media screen and (min-width: 576px) {
+    #mods-checklist-progress-wrapper {
+        aspect-ratio: unset;
+        width: 100%;
+    }
+    #mods-checklist-progress {
+        --progress: calc(var(--progress-percentage)*1%);
+        background-image: linear-gradient(to right, var(--tx-color-progress) 0 var(--progress), transparent var(--progress));
+    }
+}

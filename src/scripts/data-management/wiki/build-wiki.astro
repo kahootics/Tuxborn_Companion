@@ -1,0 +1,51 @@
+---
+
+import type { PageNode } from '../node/write-wiki-sitemap.ts';
+import {toSafeKebab} from '../../utilities/string-parsers.ts';
+
+const wikiMapUrl = (wikiMap: string) => `https://github.com/Omni-guides/Tuxborn/wiki/${wikiMap.replaceAll(' ', '-')}`;
+
+interface Props {
+    wikiMap: PageNode,
+    skip?: boolean,
+    clip?: boolean
+};
+
+const { wikiMap, skip, clip } = Astro.props;
+let classe = '';
+let item = 'item-dropdown';
+if(clip) {
+    classe = 'flip-target flip-backwards clipped-dropdown clip-frame octagone';
+    item = 'menu-dropdown';
+}
+
+
+---
+
+{skip !== false ? 
+
+<ul>
+    {wikiMap.children &&
+    wikiMap.children.map(child => <Astro.self wikiMap={child} skip={false} clip={true}/>)}
+</ul> : 
+
+<li class={classe}>
+    <div class={item}>
+        {wikiMap.children &&
+        <button type="button" aria-expanded="false" aria-controls={toSafeKebab(wikiMap.link)}>
+            <a href={wikiMapUrl(wikiMap.link)} target="_blank">{wikiMap.link}</a>
+            <span class="hide-from-view">Toggle Dropdown</span>
+        </button>}
+
+        {typeof wikiMap.children !== 'object' && 
+        <a href={wikiMapUrl(wikiMap.link)} target="_blank">{wikiMap.link}</a>}
+
+    </div>
+
+    {wikiMap.children && 
+        <ul id={toSafeKebab(wikiMap.link)}>
+            {wikiMap.children.map(child => <Astro.self wikiMap={child} skip={false}/>)}
+        </ul>
+    }
+</li>
+}

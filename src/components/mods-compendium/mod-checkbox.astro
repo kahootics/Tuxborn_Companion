@@ -1,0 +1,22 @@
+---
+
+interface Props {
+    modId: string,
+    modName: string
+}
+
+import { idStarter, checkboxId } from '../../scripts/mods-compendium/checklist';
+
+const { modId, modName } = Astro.props
+
+const checkId = checkboxId(modId);
+const idValue = Number(modId.replace(idStarter,''))/5;
+if(Number.isNaN(idValue)) throw new Error(`Mod's id does not have correct form: ${modId} should start with ${idStarter}`);
+
+---
+
+<input type="checkbox" class="mod-completion-checkbox hide-from-view" id={checkId} data-checklist-order=`${idValue}` disabled />
+<label for={checkId} class="mod-completion-checkbox-label">
+    <span class="hide-from-view">{`${modName} completed`}</span>
+    <svg aria-hidden="true"><use href="#icon-diamond"></use></svg>
+</label>

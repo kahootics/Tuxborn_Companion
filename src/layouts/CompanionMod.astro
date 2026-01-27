@@ -1,0 +1,141 @@
+---
+
+import '../styles/mod-compendium.css';
+import {z} from 'zod';
+import {SchemaMod} from '../scripts/data-management/types/mods-compendium-types';
+import ModIcon from '../components/mods-compendium/mod-icon.astro';
+import ClippedArticle from './wrappers-containers/clipped-article.astro';
+import ModCheckbox from '../components/mods-compendium/mod-checkbox.astro';
+import ModImage from '../components/mods-compendium/mod-image.astro';
+import ModDisplays from '../components/mods-compendium/mod-displays.astro';
+import {idStarter} from '../scripts/mods-compendium/checklist.ts'
+
+
+interface Props {
+    mod: z.infer<typeof SchemaMod>;
+}
+const { mod } = Astro.props;
+
+const modIcons = Object.entries(mod.icon);
+
+/* Extra Section Preparations */
+const extraPresent = (mod.howTo.text || mod.where.desc || mod.where.image.ext || mod.notes.text);
+
+const extraId = `${mod.id.replace(idStarter, 'extraId-')}`;
+const extraImage: {
+    int: string | null,
+    ext: string
+} = {
+    int: null,
+    ext: ''
+}
+if(typeof mod.where.image.ext === 'string') {
+    extraImage.int = mod.where.image.int,
+    extraImage.ext = mod.where.image.ext
+}
+let extraClasses: string[] = [];
+if(extraPresent) {
+    if(mod.howTo.text) extraClasses.push('mod-has-how-to-start');
+    if(mod.where.desc && !(mod.where.image.ext)) extraClasses.push('mod-has-where-to-start-desc');
+    if(mod.where.image.ext) extraClasses.push('mod-has-where-to-start-image');
+    if(mod.notes.text) extraClasses.push('mod-has-notes');
+    if(extraClasses.length === 1) extraClasses.push('mod-extra-has-only-one-row')
+}
+
+---
+
+<ClippedArticle name='mod-article' id={mod.id} addClasses={extraPresent ? ['has-extra-section'] : null}> 
+
+    <div class="mod-article-inner">
+        {/* HEADER =============================================================================================== */}
+        <div class="mod-header-wrapper clip-shape octagone">
+            <div class="mod-header-container fill-container mod-section">
+
+                <div class="mod-header-content">
+                    <ModCheckbox modId={mod.id} modName={mod.name.full} />
+
+                    <header>    
+                        <h2 class="mod-title">
+                            <span class="hide-on-big-screens" aria-hidden="true">{mod.name.short}</span>
+                            <span class="hide-on-small-screens">{mod.name.full}</span>
+                        </h2>
+
+                        <address class="mod-creator">created by {mod.creator}</address>
+                    </header>
+                </div>
+                
+
+                <div class="mod-icons-wrapper">
+                    {modIcons.map(modIcon => <ModIcon {modIcon} />)}
+                </div>
+
+            </div>
+        </div>
+
+        {/* OVERVIEW ============================================================================================= */}     
+
+        <ModImage image={mod.image} alt=`${mod.name.full}` />
+
+        <div class="mod-overview-wrapper">
+            <div class="mod-overview-container">
+                {mod.displays > 0 &&
+                    <ModDisplays displays={mod.displays} modId={mod.id} />}
+                
+                <p class="mod-text mod-section clip-shape octagone">{mod.overview}</p>
+
+                {(mod.req.level || mod.req.misc) && <section class="mod-requirements mod-section clip-shape octagone">
+                    <h3>Requirements</h3>
+                    <ul>
+                        {mod.req.level > 0 && <li>You need to be at least level {mod.req.level} to start this mod.</li>}
+                        {mod.req.misc && <li>You need to {mod.req.misc} to start this mod.</li>}
+                    </ul>
+                </section>}
+            </div>
+        </div>
+
+        {/* EXTRA SECTION ======================================================================================== */}     
+
+        {extraPresent &&
+            <div class={`mod-extra-section-wrapper ${extraClasses.join(' ')}`} id={extraId}>
+                {mod.where.image.ext && 
+                    <section class="mod-where-to-start-image mod-section clip-shape octagone">
+                        <h3>{mod.where.title ? mod.where.title : 'Where to Start'}</h3>
+                        <ModImage image={extraImage} alt='' />
+                    </section>
+                } {mod.howTo.text && 
+                    <section class="mod-how-to-start mod-section clip-shape octagone">
+                        <h3>{mod.howTo.title ? mod.howTo.title : 'How to Start'}</h3>
+                        <p class="mod-text">{mod.howTo.text}</p>
+                    </section>
+                } {mod.where.desc && !(mod.where.image.ext) &&
+                    <section class="mod-where-to-start-desc mod-section clip-shape octagone">
+                        <h3>{mod.where.title ? mod.where.title : 'Where to Start'}</h3>
+                        <p class="mod-text">{mod.where.desc}</p>
+                    </section>
+                } {mod.notes.text &&
+                    <section class="mod-notes mod-section clip-shape octagone">
+                        <h3>{mod.notes.title ? mod.notes.title : 'Notes'}</h3>
+                        <p class="mod-text">{mod.notes.text}</p>
+                    </section>
+                }
+            </div>
+        }
+    </div>
+        
+    {/* CONTROLS ================================================================================================= */}     
+
+    <div class="mod-controls">
+        {(extraPresent && 
+            <button class="mod-see-more-less dropdown flip-scene" type="button" aria-expanded="false" aria-controls={extraId}>
+                <span class='hide-on-small-screens'>See </span>More/Less</button>) || 
+            <button class="mod-see-more-less" aria-hidden="true" disabled></button>
+        }
+        {mod.link.misc.url && mod.link.misc.name &&
+            <a href={mod.link.misc.url} class="mod-misc-link mod-link" target="_blank">{mod.link.misc.name}</a>}
+        {mod.link.wiki && 
+            <a href={mod.link.wiki} class="mod-wiki-link mod-link" target="_blank">Wiki</a>}
+        <a href={mod.link.nexus} class="mod-nexus-link mod-link" target="_blank">Nexus</a>
+    </div>
+
+
+</ClippedArticle>

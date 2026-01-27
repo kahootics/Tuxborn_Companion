@@ -1,0 +1,49 @@
+---
+
+import CompanionPanel from '../layouts/CompanionPanel.astro';
+import WikiList from '../scripts/data-management/wiki/WikiList.astro';
+import '../styles/companion-main-navigation.css'
+import DropdownControl from "./navigation/dropdown-control.astro";
+import Settings from './Settings.astro';
+
+---
+
+<CompanionPanel 
+    id="main-nav"
+    panel='left' 
+    name="Main Menu"
+    backButton='true'
+>
+    <div id="main-nav-controls" >
+        <DropdownControl name="Wiki" controlledId="wiki-nav">Wiki</DropdownControl>
+        <DropdownControl name="Companion" controlledId="companion-nav">Companion</DropdownControl>
+        <DropdownControl name="Support" controlledId="support-nav">Support</DropdownControl>
+        <DropdownControl name="Settings" controlledId="settings-nav">Settings</DropdownControl>
+    </div>
+
+    <nav id="wiki-nav" hidden data-shown="false" class="main-menu-nav-section flip-commander">
+        <WikiList />
+    </nav>
+
+    <nav id="companion-nav" hidden data-shown="false" class="main-menu-nav-section flip-commander" >
+        <ul class="flip-scene">
+            <li class="flip-target flip-backwards clip-frame octagone ">
+                <a class="item-dropdown" href="/Tuxborn_Companion/Mods_Compendium/" aria-current="page">Mods Compendium</a>
+                <div aria-hidden="true" class="aria-current-page"></div>
+            </li>
+        </ul>
+    </nav>
+
+    <nav id="support-nav" hidden data-shown="false" class="main-menu-nav-section flip-commander">
+        <ul class="flip-scene">
+            <li class="flip-target flip-backwards clip-frame octagone item-dropdown"><a class="item-dropdown" href="https://discord.gg/xRrHRsb5e9" target="_blank">Discord</a></li>
+            <li class="flip-target flip-backwards clip-frame octagone item-dropdown"><a class="item-dropdown" href="https://github.com/Omni-guides/Tuxborn/blob/main/Changelog.md" target="_blank">Changelog</a></li>
+        </ul>
+    </nav>
+
+    <div id="settings-nav" hidden data-shown="false" class="main-menu-nav-section flip-commander">
+        <Settings /> 
+    </div>
+
+    <script src="../scripts/main-navigation.ts"></script>
+</CompanionPanel>

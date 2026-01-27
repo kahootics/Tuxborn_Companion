@@ -1,0 +1,36 @@
+---
+
+interface Props {
+    id: string,
+    title: string,
+    transparentBg?: boolean
+}
+
+const { id, title, transparentBg } = Astro.props;
+
+function toSafeKebab(string: string) {
+    return string.trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+/g, "");
+}
+
+const titleId = toSafeKebab(title);
+
+const clipType = transparentBg === true ? 'frame' : 'shape';
+
+---
+
+<aside {id} hidden data-dropdown-closed="true" class={`dropdown${!transparentBg && ' clip-shape octagone'}`}>
+    <div class={`clip-${clipType} octagone`}>
+        <hgroup>
+            <h2 id={titleId}>{title}</h2>
+            <button id={`${id}-dropdown-closer`} type="button" aria-expanded="false" aria-controls={id}>
+                <span class="hide-from-view">Close</span>
+            </button>
+        </hgroup>
+        <div>
+            <slot />
+        </div>
+    </div>
+</aside>

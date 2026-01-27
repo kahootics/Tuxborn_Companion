@@ -1,0 +1,26 @@
+---
+
+interface Props {
+    modId: string,
+    displays: number
+}
+
+import { idStarter, displayId } from '../../scripts/mods-compendium/checklist';
+
+const { displays, modId } = Astro.props;
+
+const dispId = displayId(modId);
+
+const idValue = Number(modId.replace(idStarter,''))/5 + 1;
+if(Number.isNaN(idValue)) throw new Error(`Mod's id does not have correct form: ${modId} should start with ${idStarter}`);
+
+---
+
+<section class="mod-displays-section mod-section clip-shape octagone">
+    <h3 class="hide-from-view">Displays</h3>
+    <input type="checkbox" class="mod-displays-checkbox hide-from-view" id={dispId} data-checklist-order=`${idValue}` disabled />
+    <label for={dispId} class="mod-displays-checkbox-label">
+        <span class="hide-from-view">Mod's displays collected</span>
+    </label>
+    <p>This mod introduces <strong>{displays}</strong> new displays for the museum.</p>
+</section>

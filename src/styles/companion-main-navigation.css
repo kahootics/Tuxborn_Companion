@@ -1,0 +1,190 @@
+
+#main-nav-toggle {
+    height: 100%;
+    aspect-ratio: 1;
+    --tx-clip: 3px;
+}
+#main-nav-toggle > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    --gino: calc((100% - 1.5em)/3);
+    position: relative;
+}
+#main-nav-toggle .nav-bar {
+    padding: 0;
+    position: absolute;
+    width: calc(100% - var(--tx-spacing-m));
+    background-color: var(--tx-color-frame);
+    height: 0.3rem;
+    left: 50%;
+    transition: top 0.1s 0.2s ease-out, transform 0.2s ease-in, bottom 0.1s 0.2s ease-out, opacity 0.01s 0.2s;
+}
+.nav-bar:not(:first-child, :last-child) {
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50%);
+}
+.nav-bar:first-child {
+    top: var(--gino);
+    transform: translateX(-50%);
+}
+.nav-bar:last-child {
+    bottom: var(--gino);
+    transform: translateX(-50%);
+}
+#main-nav-toggle[aria-expanded=true] .nav-bar {
+    transition: top 0.1s ease-in, transform 0.2s 0.2s ease-out, bottom 0.1s ease-in, opacity 0.01s 0.1s;
+}
+#main-nav-toggle[aria-expanded=true] .nav-bar:not(:first-child, :last-child) {
+    opacity: 0;
+}
+#main-nav-toggle[aria-expanded=true] .nav-bar:first-child {
+    top: calc(50% - 0.15em);
+    transform: translateX(-50%) rotate(135deg);
+}
+#main-nav-toggle[aria-expanded=true] .nav-bar:last-child {
+    bottom: calc(50% - 0.15em);
+    transform: translateX(-50%) rotate(-135deg);
+}
+
+@keyframes make-x {
+    from {
+        transform: rotate();
+    }
+}
+
+#main-nav-title {
+    transform-origin: center;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+#main-nav-title.title-out {
+    animation: rotate-header-panel var(--js-anim-dur) ease-out;
+}
+
+#main-nav-controls {
+    display: flex;
+    gap: var(--tx-clip);
+    flex-direction: column;
+}
+
+@keyframes rotate-header-panel {
+    0% {
+        transform: rotateX(0);
+        
+    }
+    10% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+    
+}
+
+#main-nav-content > * {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: var(--tx-spacing-m);
+    font-size: 110%;
+}
+
+.clipped-dropdown button::after {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    vertical-align: 0.1em;
+    flex-shrink: 0;
+    height: 1.4em;
+    width: 1.4em;
+    background-image: var(--triangle-icon);
+    transform: rotate(-90deg);
+    transition: transform var(--js-anim-dur);
+    background-repeat: no-repeat;
+}
+.clipped-dropdown button[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+.clipped-dropdown button {
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu-dropdown {
+    border-bottom: var(--tx-frame-width) solid var(--tx-color-frame);
+    width: 100%;
+}
+.menu-dropdown, .item-dropdown {
+    width: 100%;
+    padding: var(--tx-padding-s);
+}
+
+.clipped-dropdown > ul {
+    transition: height var(--js-anim-dur);
+    overflow-y: hidden;
+}
+
+.main-menu-nav-section > ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tx-spacing-m);
+}
+
+.main-menu-nav-section li {
+    --tx-clip: 4px;
+    padding: var(--tx-padding-s);
+}
+
+
+#main-nav-back {
+    transition: width var(--js-anim-dur);
+    border: none;
+}
+#main-nav-back::after {
+    content: '';
+    display: block;
+    border-left: var(--tx-frame-width) solid var(--tx-color-frame);
+    padding: 0.2em;
+    width: 100%;
+    height: 100%;
+    background-image: var(--tx-back-icon);
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: 20% 25%;
+}
+#main-nav-back[data-shown=false] {
+    width: 0;    
+}
+
+
+
+.modal-content {
+    padding: var(--tx-padding-m);
+}
+
+#settings-form ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tx-spacing-m);
+}
+
+#settings-form input + label {
+    --col: 1;
+}
+#settings-form input:checked + label {
+    --col: 0;
+}
+#settings-form span {
+    padding: var(--tx-spacing-m);
+    display: flex;
+}

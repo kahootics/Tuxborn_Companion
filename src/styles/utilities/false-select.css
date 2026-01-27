@@ -1,0 +1,79 @@
+
+.false-select-container {
+    display: inline-block;
+    position: relative;
+    --js-time: 200;
+    --js-anim-dur: calc(1ms*var(--js-time));
+}
+.false-select {
+    color: inherit;
+    --tx-color-back:  var(--tx-color-fiv-background);
+}
+.false-select:hover {
+    --tx-color-back:  var(--tx-color-fiv-background-accent);
+}
+.false-select-container > ul {
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    background-color: var(--tx-color-fiv-background-strong);
+    transition: opacity var(--js-anim-dur);
+    opacity: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 300%;
+    overflow-y: auto;
+}
+
+.false-select[aria-expanded=true] + ul {
+    opacity: 1;
+}
+.false-select-container > ul label {
+    padding: var(--tx-padding-s);
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+.false-select-container > ul input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: block;
+}
+.false-select-container > ul li:hover {
+    background-color: var(--tx-color-fiv-background-accent-alpha);
+}
+.false-select span {
+    display: inline-block;
+    height: 100%;
+    padding: var(--tx-padding-s);
+}
+.false-select span::after {
+    content: '';
+    background-color: transparent;
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    position: relative;
+    left: 0.1em;
+    vertical-align: -0.1em;
+    flex-shrink: 0;
+    height: 0.8em;
+    width: 0.8em;
+    background-image: var(--triangle-icon);
+    transform: rotate(-90deg);
+    transition: transform var(--js-anim-dur);
+    background-repeat: no-repeat;
+}
+.false-select[aria-expanded=true] span::after {
+    transform: rotate(-180deg);
+}
+
+.false-select[disabled] {
+    cursor: not-allowed;
+    --tx-color-back:  var(--tx-color-fiv-background-muted);
+    color: var(--tx-color-text-muted);
+}

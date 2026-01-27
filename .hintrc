@@ -9,7 +9,8 @@
         "ignore": [
           "scrollbar-width",
           "scrollbar-color",
-          "scrollbar-width: thin"
+          "scrollbar-width: thin",
+          "text-size-adjust"
         ]
       }
     ]

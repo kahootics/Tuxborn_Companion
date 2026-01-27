@@ -1,0 +1,114 @@
+---
+import '/src/styles/mods-compendium-filters.css';
+import '/src/styles/utilities/false-select.css';
+
+import CompanionPanel from "../../layouts/CompanionPanel.astro"
+
+import modsCompendiumFilters from '../../data/mods-compendium/mods-compendium-filters.json';
+import TagList from './tag-list.astro';
+import DropdownControl from '../navigation/dropdown-control.astro';
+import FalseSelect from '../utility/false-select.astro';
+
+
+---
+
+<CompanionPanel
+    id="mods-compendium-filters"
+    panel='central' 
+    name="Filters"
+    closeButton='true'>
+
+    <form id="mods-compendium-filters-inner">
+
+        <!-- <div id="tag-filters"> -->
+            <fieldset id="tag-filters-toggles" class="filters-fieldset full-size">
+                <legend class="hide-from-view"><strong>Filter by Tag</strong></legend>
+                <button type="button" class="clip-frame arrow octagone" aria-controls="misc-tags-fieldset" aria-expanded="true"><span>Misc Tags</span></button>
+                <button type="button" class="clip-frame arrow octagone" aria-controls="content-tags-fieldset" aria-expanded="false"><span>Content Tags</span></button>
+                <button type="button" class="clip-frame arrow octagone" aria-controls="location-tags-fieldset" aria-expanded="false"><span>Location Tags</span></button>
+
+
+                {/* Tag List Selectors */}
+            </fieldset>
+
+            <div id="tag-filters-lists" class="full-size"> {/* Wraps tags list */}
+            
+                <TagList tags={modsCompendiumFilters.misc} type='misc' />
+                <TagList tags={modsCompendiumFilters.content} type='content'  />
+                <TagList tags={modsCompendiumFilters.location} type='location' />
+            
+            </div>
+        <!-- </div> -->
+        
+
+        <div id="tag-filters-active" aria-live="polite" class="flip-scene">
+            <h3 class="hide-from-view">Selected Tags</h3>
+            {/* Active filters */}
+        </div>
+
+        <div id="location-image-wrapper">
+            <div class="clip-shape octagone">
+                <div id="location-tag-active" class="clip-shape octagone"></div>
+                {/* <img id="location-tag-active" src="" alt="" aria-hidden="true" width="5200" height="3600" /> */}
+            </div>
+        </div>
+
+        <fieldset id="version-filters" class="filters-fieldset">
+            <legend><strong>Version:</strong></legend>
+            {/* Version filters */}
+
+            <ul>
+                <li class="clip-shape clip-as-border octagone">
+                    <input data-type="version" id={modsCompendiumFilters.version[0].id} type="radio" value={modsCompendiumFilters.version[1].number} name="version"  />    
+                    <label for={modsCompendiumFilters.version[0].id} class="clip-shape octagone">{modsCompendiumFilters.version[0].number}</label>
+                </li>
+                <li class="clip-shape clip-as-border octagone">
+                    <input data-type="version" id={modsCompendiumFilters.version[1].id} type="radio" value={modsCompendiumFilters.version[1].number} name="version" checked/>    
+                    <label for={modsCompendiumFilters.version[1].id} class="clip-shape octagone">{modsCompendiumFilters.version[1].number}</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset id="checklist-filters" class="filters-fieldset">
+            <legend class="hide-from-view"><strong>Completed Mods</strong></legend>
+            {/* Hide Completed */}
+            <span id="checklist-select-label">Show/Hide Completed Mods: </span>
+            <FalseSelect baseId='checklist' describedBy='checklist-select-label' />
+
+        </fieldset>
+
+        <fieldset id="sort-filters" class="filters-fieldset">
+            <legend class="hide-from-view"><strong>Sort Mods</strong></legend>
+            
+            {/* Sort by */}
+            <div>
+                <span id="sort-mods-select-label">Sort mods by </span>
+                <FalseSelect baseId='sort-mods' describedBy='sort-mods-select-label' />
+            </div>
+
+            <div>
+                <span id="sort-dir-select-label" class="hide-on-small-screens">Sort direction: </span>
+                <FalseSelect baseId='sort-dir' describedBy='sort-dir-select-label' />
+            </div>
+            
+
+        </fieldset>
+
+        <div class="filters-controls filters-fieldset">
+            <input type="checkbox" name="remember-me" id="remember-mods-compendium-filters" />
+            <label for="remember-mods-compendium-filters">
+                Save
+                <span class="hide-from-view">Selection</span>
+            </label>                
+            <button type="reset" id="reset-filters" >
+                <span>Reset</span>
+            </button>
+            <button type="button" id="apply-filters" >
+                <span>Apply</span>
+            </button>
+        </div>
+
+    </form>
+    <script src="../../scripts/mods-compendium/mods-compendium-filters.ts"></script>
+</CompanionPanel>
+

@@ -1,0 +1,41 @@
+---
+
+import {toSafeKebab} from '../scripts/utilities/string-parsers.ts';
+
+interface Props {
+    id: string,
+    panel: 'left' | 'right' | 'central', 
+    name: string,
+    backButton?: boolean | 'true',
+    closeButton?: boolean | 'true'
+}
+
+const { id, panel, name, backButton, closeButton } = Astro.props;
+
+const content = panel === 'central' ? 'dropdowns-content' : 'content';
+const inner = panel === 'central' ? 'dropdowns-inner' : 'inner';
+
+const safeId = toSafeKebab(id);
+if(safeId != id) throw new Error(`${id} is malformed! Please use a well-formed id`);
+
+---
+
+<div id=`${id}-wrapper` class=`${panel}-panel-${content}` data-panel={panel}>
+    <aside id=`${id}-container` class="clip-frame octagone flip-slide flip-backwards" data-shown=`${panel === 'central' ? 'false' : 'true'}`>
+
+        <header class="panel-header">
+            {/* <div aria-hidden="true"></div> */}
+            <h2 id=`${id}-title` class="flip-scene">{name}</h2>
+            {backButton && 
+                <button type="button" id={`${id}-back`} aria-label={`Back to ${name}`} hidden data-shown="false"></button>}
+            {closeButton && 
+                <button type="button" id={`${id}-close`} aria-label={`Close ${name}`} data-shown="true">CLOSE</button>}
+        </header>
+
+        <div id=`${id}-content` class=`${panel}-panel-${inner}`>
+            <slot />
+        </div>
+                
+    </aside>   
+</div>
+<script src="../scripts/dropdowns.ts"></script>

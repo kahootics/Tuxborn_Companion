@@ -1,0 +1,31 @@
+---
+
+interface Props {
+    id: string,
+    title: string,
+    openerId: string
+}
+
+
+const { id, title, openerId} = Astro.props;
+
+
+const titleId = `${id}-title`
+---
+
+<div hidden {id}
+    class="modal-wrapper"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby={titleId}
+    data-openedby={openerId}
+    data-shown="false"
+  ><div class="modal-container clip-frame octagone">
+    <header class="panel-header">
+        <h2 id={titleId}>{title}</h2>
+        <button id={`${id}-closer`} type="button" aria-label="close dialog" class="modal-closer">CLOSE</button>
+    </header>
+    <div class="modal-content">
+        <slot />
+    </div>
+</div></div>

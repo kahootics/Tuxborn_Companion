@@ -9,11 +9,19 @@ interface Props {
     pageTitle: string,
     pageAuthor: string,
     pageImage: pageImage,
-    description: string
+    description: string,
+    locale: string,
+    siteName?: string,
+    type?: string,
+    pageFullUrl: string,
+    appleTouchIconUrl?: string,
+    manifestUrl?: string,
+    sitemapUrl?: string
 }
 
-const { pageTitle, pageAuthor, pageImage, description} = Astro.props;
+const { pageTitle, pageAuthor, pageImage, description, locale, siteName, type, pageFullUrl, appleTouchIconUrl, manifestUrl, sitemapUrl } = Astro.props;
 ---
+
 {/*  Generic tags  */}
 <meta name="author" content={pageAuthor} />
 <meta name="description" content={description} />
@@ -21,8 +29,12 @@ const { pageTitle, pageAuthor, pageImage, description} = Astro.props;
 {/*  Open Graph tags  */}
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="it_IT" />
+<meta property="og:locale" content={locale} />
+<meta property="og:url" content={pageFullUrl} />
+{siteName &&
+<meta property="og:site_name" content={siteName} />}
+{type &&
+<meta property="og:type" content={type} />}
 {pageImage && 
 <meta property="og:image" content={pageImage.url} />}
 {pageImage?.type &&
@@ -32,8 +44,25 @@ const { pageTitle, pageAuthor, pageImage, description} = Astro.props;
 <meta property="og:image:height" content={`${pageImage.height}`} />}
 
 {/*  Twitter Card tags  */}
+<meta name="twitter:creator" content={pageAuthor} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={pageTitle} />
+{siteName && 
+<meta name="twitter:site" content={siteName} />}
 <meta name="twitter:description" content={description} />
-{pageImage && 
-<meta name="twitter:image" content={pageImage.url} />}
+<meta name="twitter:image" content={pageImage.url} />
+
+{/*  Apple Touch Icon  */}
+{appleTouchIconUrl &&
+<link rel="apple-touch-icon" href={appleTouchIconUrl} />}
+
+{/*  WEB Manifest  */}
+{manifestUrl &&
+<link rel="manifest" href={manifestUrl} />}
+
+{/*  Sitemap */}
+{sitemapUrl && 
+<link rel="sitemap" href={sitemapUrl} />}
+
+{/*  Page URL  */}
+<link rel="canonical" href={pageFullUrl} />

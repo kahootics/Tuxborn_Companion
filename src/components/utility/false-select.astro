@@ -1,0 +1,25 @@
+---
+
+import '../../styles/utilities/false-select.css';
+
+interface Props {
+    baseId: string,
+    disabled?: boolean,
+    describedBy?: string
+}
+
+const { baseId, disabled , describedBy} = Astro.props;
+let isDisabled: boolean = false
+if(disabled) isDisabled = disabled;
+
+---
+
+<div id=`${baseId}-select-container`
+  class="false-select-container">
+    <button 
+      id=`${baseId}-select` 
+      type="button" 
+      class="false-select clip-shape clip-as-border octagone" 
+      disabled={isDisabled} 
+      aria-labelledby={describedBy}></button>
+</div>

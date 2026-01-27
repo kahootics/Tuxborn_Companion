@@ -1,23 +1,21 @@
 #main-footer {
     position: relative;
     width: 100%;
+    
+    
+    --tx-clip: 14px;
+    --tx-frame-width: var(--tx-line-width-s);
+    padding: 0;
+}
+
+#main-footer-container {
+    position: relative;
+    padding: calc(var(--tx-main-header-height) - var(--tx-clip)) var(--tx-right-offset) 0 var(--tx-left-offset);
     background-color: var(--tx-color-fiv-background-alpha); 
     background-image: var(--tx-main-header-background-image);
     background-size: auto var(--tx-main-header-height);
     background-repeat: repeat-x;
-    
-    --tx-clip: var(--tx-main-header-clip);
-    --tx-clip-offset-left: 2vw;
-    --tx-clip-offset-right: 2vw;
-    --tx-frame-width: var(--tx-line-width-s);
-    padding: calc(var(--tx-clip) + var(--tx-frame-width)) 0;
 }
-
-#main-footer-container {
-    padding: calc(var(--tx-main-header-height) - var(--tx-clip)) var(--tx-right-offset) 0 var(--tx-left-offset);
+#main-footer-container > section {
+    padding: 1rem;
 }
-
-/* html:not(:has( #wiki-links-section[hidden]):has( #tx-filters-section[hidden])) #main-footer {
-    position: fixed;
-    top: calc(100% - var(--tx-clip)*2 + var(--tx-frame-width)*2);
-} */

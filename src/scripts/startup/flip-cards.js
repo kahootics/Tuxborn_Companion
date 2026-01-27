@@ -1,0 +1,1 @@
+export default () => {if(localStorage.getItem('flip-cards'))document.documentElement.setAttribute('data-flip-cards','off')}

@@ -1,0 +1,55 @@
+---
+
+import '../../styles/mods-compendium-checklist.css'
+
+import FalseSelect from "../utility/false-select.astro";
+import ModalTrigger from "../utility/modal-trigger.astro";
+
+---
+
+<section id="checklist-controls-section" class="clip-shape octagone">
+    <header class="panel-header">
+        <h2>Checklist</h2>
+    {/* Currently active checklist */}
+    </header>
+    <div>
+        <p>Currently active checklist: <strong id="current-checklist">no checklist active</strong></p>
+    {/* Select another checklist */}
+        <div>
+        <span id="other-checklists-desc">
+            <span class="hide-on-small-screens">Selected</span> Checklist: 
+        </span>
+        <FalseSelect baseId="other-checklists" disabled describedBy="other-checklists-desc" />
+        <button type="button" id="load-different-checklist" class="clip-shape clip-as-border octagone" disabled>
+            <span class="clip-shape octagone">Load <span class="hide-on-small-screens">Checklist</span></span>
+        </button>
+        <button type="button" id="delete-checklist" disabled class="clip-shape clip-as-border octagone">
+            <span class="clip-shape octagone">Delete <span class="hide-on-small-screens">Checklist</span></span>
+        </button>
+    </div>
+    
+    
+    <div>
+        <label for="checklist-export">Export Checklist Data: </label>
+        <div id="export-checklist-section">
+            <textarea id="checklist-export" readonly disabled class="clip-shape octagone"></textarea>
+            <button type="button" id="checklist-export-trigger" disabled class="clip-shape clip-as-border octagone">
+                <span class="clip-shape octagone">Copy to Clipboard</span>
+            </button>
+        </div>
+        
+    </div>  
+
+    <div>
+        <ModalTrigger id='open-import-over-checklist' modalId='import-over-checklist' classList={['clip-shape', 'clip-as-border', 'octagone']}>
+            <span class="clip-shape octagone">Import Checklist</span></ModalTrigger>
+        <ModalTrigger id='open-create-new-checklist' modalId='new-checklist' classList={['clip-shape', 'clip-as-border', 'octagone']}>
+            <span class="clip-shape octagone">Create New Checklist</span></ModalTrigger>
+    </div>
+
+    </div>
+    
+    
+    
+
+</section>

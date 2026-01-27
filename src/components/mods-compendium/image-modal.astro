@@ -1,0 +1,36 @@
+---
+---
+
+<div id="image-modal-recipient-wrapper">
+<img id="image-modal-recipient" src="" alt="" aria-hidden="true"/>
+</div>
+
+<script>
+
+const recipient = document.getElementById('image-modal-recipient');
+if(!(recipient instanceof HTMLImageElement)) throw new Error('la madonna');
+const docs = document.querySelectorAll<HTMLButtonElement>('button.modal-trigger[data-ext-src]');
+if(docs) {
+    docs.forEach((image) => {
+        const source = image.getAttribute('data-ext-src');
+        if(source) {
+            image.addEventListener('click', () => {
+                recipient.src = source;
+                
+            })
+        }
+    })
+}
+</script>
+
+<style>
+
+#image-modal-recipient-wrapper {   
+    overflow: hidden;
+}
+#image-modal-recipient {
+    overflow: hidden;
+    object-fit: contain;
+    max-height: calc(100vh - var(--tx-panel-header-height) - 3*var(--tx-spacing-s));
+}
+</style>

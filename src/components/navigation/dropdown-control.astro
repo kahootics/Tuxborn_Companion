@@ -1,0 +1,22 @@
+---
+import {toSafeKebab} from "../../scripts/utilities/string-parsers";
+
+interface Props {
+    name: string,
+    controlledId: string
+}
+
+const { name, controlledId } = Astro.props;
+---
+
+<button 
+  id={toSafeKebab(name)}
+  class="octagone clip-frame menu-control flip-card flip-backwards"
+  type="button" 
+  aria-label=`Open ${name} Menu`
+  aria-controls={controlledId} 
+  aria-expanded="false">
+  <span>
+    <slot />
+  </span>
+</button>

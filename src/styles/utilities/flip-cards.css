@@ -1,0 +1,112 @@
+
+
+/* Arg: utility *
+ * ### Flip Functions
+ * clip element borders using clip-shape property & polygon() CSS function *
+ * =================================================================== *
+ * clip-shape classes must be used on a wrapper/container styled with 
+ * * background-color as border color
+ * * padding as border-width
+ * also clip the contained element *
+ * * Note: transparent background on the contained will be stained by the
+ * * wrapper background; use clip-frame for a transparent background
+ * =================================================================== *
+ * use clip-shape on a lone element to clip its corners 
+ * * Note: the border will not clip correctly; use a wrapper if there is a border
+ * =================================================================== *
+ * use clip-frame on a lone element with a transparent background
+ * * the ::after pseudo-element will be used to create a frame  
+ * =================================================================== *
+ * IMPORTANT: in order not to mess with the clip rules and fallbacks, 
+ * USE A WRAPPER for the content, DO NOT put content directly 
+ * in the clipped element since it uses the padding and border property and the ::after element as well;
+ * DO NOT set borders for clipped elements
+ * =================================================================== *
+ * START */
+
+
+/*
+ * Root & Utility Variables Setup  *
+ * ========================================================================== *
+ */
+
+/* Root *
+ * ==== */
+ /* redeclare variable on the element to customize */
+
+:root, :host {
+    --tx-flip-duration: var(--js-anim-dur);
+    --tx-flip-in-delay: 0s;
+    --tx-flip-out-delay: 0s;
+
+    --tx-flip-height-max: 100%;
+    --tx-flip-height-min: 20%;
+    --tx-flip-duration: calc(1.5*var(--js-anim-dur-half));
+    --tx-flip-slide-duration: calc(2.5*var(--js-anim-dur-half));
+}
+
+
+
+/* Utility (!! don't edit !!) *
+ * ========================== */
+
+@supports 
+    (-moz-backface-visibility: hidden) 
+    or (-webkit-backface-visibility: hidden) 
+    or (backface-visibility: hidden) 
+{
+    html:not([data-flip-cards=off]) .flip-card, 
+    html:not([data-flip-cards=off]) .flip-target,
+    html:not([data-flip-cards=off]) .flip-slide {
+        transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden; 
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    html:not([data-flip-cards=off]) .flip-backwards {
+        --tx-flip: rotateX(180deg);
+    }
+    html:not([data-flip-cards=off]) .flip-forwards {
+        --tx-flip: rotateX(-180deg);
+    }
+    html:not([data-flip-cards=off]) .flip-scene {
+        perspective: 800px;
+    }
+    html:not([data-flip-cards=off]) :has(>.flip-target, >.flip-card, >.flip-slide) {
+        perspective: 800px;
+    }
+}
+/* Fallbacks */
+.flip-card, .flip-target {
+    transform-origin: center;
+    transition: transform ease-in-out var(--tx-flip-duration) var(--tx-flip-in-delay);
+}
+.flip-backwards, .flip-forwards {
+    --tx-flip: scale(1, 0);
+
+}
+.flip-slide {
+    max-height: var(--tx-flip-height-max);
+    transition: max-height var(--tx-flip-slide-duration) var(--tx-flip-duration) ease-in-out, transform  var(--tx-flip-duration) ease-in-out;  
+    transform-origin: center;
+}
+
+
+/*
+ * Flip-cards: flip on shown  *
+ * Commander + Target: commander doesn't flip, targets do  *
+ * slide: flip and then slides on opening, reverse on closing  *
+ * ========================================================================== *
+ */
+
+.flip-card[data-shown=false],
+.flip-commander[data-shown=false] .flip-target {
+    transition: transform ease-in-out var(--tx-flip-duration) var(--tx-flip-out-delay);
+    transform: var(--tx-flip);
+}
+
+.flip-slide[data-shown=false] {
+    max-height: var(--tx-flip-height-min);
+    transition: max-height var(--tx-flip-slide-duration) ease-in-out, transform var(--tx-flip-duration) var(--tx-flip-slide-duration) ease-in-out;
+    transform: var(--tx-flip);
+}

@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+    modIcon: [string, {int: number, alt: string | null}]
+}
+const { modIcon } = Astro.props;
+
+
+let iconRow :number = 0;
+switch (modIcon[0]) {
+    case 'A': {iconRow = 0; break;}
+    case 'B': {iconRow = 1; break;}
+    case 'C': {iconRow = 2; break;}
+    case 'D': {iconRow = 3; break;}
+    case 'E': {iconRow = 4; break;}
+    default: 
+        throw new Error(`Could not find icon's row index: ${JSON.stringify(modIcon, null, 4)}`);
+}
+const iconCol = modIcon[1].int;
+
+---
+
+{iconCol !== 0 && 
+    (modIcon[1].alt === null 
+    ?
+        <div aria-hidden="true"
+          class="mod-content-icon standard-icon" 
+          style={
+            `--row: ${iconRow}; 
+             --col: ${iconCol-1};`}
+        ></div> 
+    :
+        <div class="mod-content-icon">
+        <Image 
+          src={modIcon[1].alt}
+          aria-hidden="true"
+          alt=""
+          width={75}
+          height={65}
+        />
+        </div>
+    )
+}

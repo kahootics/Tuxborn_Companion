@@ -1,0 +1,110 @@
+---
+import '../styles/core-setup.css';
+import '../styles/themes.css';
+import '../styles/layout.css';
+import '../styles/utilities/clip-shapes.css';
+import '../styles/utilities/flip-cards.css';
+
+/* Images import */
+import contentIconsSprite from "/src/assets/mods-compendium/content-icons-sprite.png";
+import contentIconsSpriteBlack from "/src/assets/mods-compendium/content-icons-sprite-black.png";
+import icons from "/src/assets/mods-compendium/icons-generic.png";
+/* Image optimization */
+import imageToFormat from '../scripts/utilities/image-to-format';
+const iconsSpriteWebp = (await imageToFormat(contentIconsSprite, 'webp')).src;
+const iconsSpritePng = contentIconsSprite.src;/* 
+const iconsSpriteBlackWebp = (await imageToFormat(contentIconsSpriteBlack, 'webp')).src;
+const iconsSpriteBlackPng = contentIconsSpriteBlack.src; */
+const iconsWebp = (await imageToFormat(icons, 'webp')).src;
+const iconsPng = icons.src;
+
+/* SVGs */
+import {getSVGsStyleString} from '../scripts/utilities/import-svgs';
+
+const svgs = getSVGsStyleString(['green-leaves','helmet','waves','butterleaves', 'forest']);
+
+import CompanionHead from "../layouts/CompanionHead.astro";
+import CompanionHeader from "../components/CompanionHeader.astro";
+import LeftPanel from "../layouts/wrappers-containers/left-panel.astro";
+import RightPanel from "../layouts/wrappers-containers/right-panel.astro";
+import MainNav from '../components/MainNav.astro';
+import modsCompendium from "../data/mods-compendium/mods-compendium.json";
+
+import CompanionMod from '../layouts/CompanionMod.astro';
+import ModsFiltersPanel from '../components/mods-compendium/mods-filters-panel.astro';
+import DropdownControl from '../components/navigation/dropdown-control.astro';
+import Modal from '../layouts/Modal.astro';
+import ModChecklistModal from '../components/mods-compendium/mod-checklist-modal.astro';
+import ModsChecklistControls from '../components/mods-compendium/mods-checklist-controls.astro';
+import ModsChecklistImportModal from '../components/mods-compendium/mods-checklist-import-modal.astro';
+import Checkbox from '../assets/svg/checkbox.astro';
+import IconsLegend from '../components/mods-compendium/icons-legend.astro';
+import ImageModal from '../components/mods-compendium/image-modal.astro';
+import ModsChecklistCompletionBar from '../components/mods-compendium/mods-checklist-completion-bar.astro';
+import MainFooter from '../components/MainFooter.astro';
+import Filter from '../assets/svg/filter.astro';
+
+const sortedModsCompendium = modsCompendium.sort((a, b) => {
+    return a.category.order - b.category.order
+})
+
+---
+
+<html lang="en" style=`--tx-content-icons-sprite-webp: url('${iconsSpriteWebp}'); --tx-content-icons-sprite-png: url('${iconsSpritePng}');--tx-generic-icons-webp: url("${iconsWebp}"); ${svgs}; `>
+	<CompanionHead 
+        title="Mods Compendium" 
+		description="Explore content mods from Tuxborn in a comprehensive and detailed library to help you find what to play next and keep track of what you played already!"
+    	pageFullUrl={Astro.url.href}
+        startupScripts={['clips', 'themes', 'flips', 'modsCompendium']}>
+	</CompanionHead>
+	<body style=`--tx-generic-icons: url("${iconsPng}");`>
+
+        <CompanionHeader>
+            <ModsChecklistCompletionBar />
+            <DropdownControl name="Filters" controlledId="mods-compendium-filters">
+                <Filter fill="var(--tx-filters-fill)" stroke="var(--tx-color-line)" />
+            </DropdownControl>
+        </CompanionHeader>
+
+        <LeftPanel>
+            <MainNav />
+        </LeftPanel>
+
+        <div id="modal-backdrop" hidden>
+            <Modal title='New Checklist?' id='new-checklist' openerId='open-create-new-checklist' >
+                <ModChecklistModal />
+            </Modal>
+            <Modal title='Import Checklist?' id='import-over-checklist' openerId='open-import-over-checklist' >
+                <ModsChecklistImportModal />
+            </Modal>
+            <Modal title='Image' id='image-modal' openerId='images' >
+                <ImageModal />
+            </Modal>
+        </div>
+
+        <main id="main-page-content">
+            <div id="central-panel">
+
+                <div id="central-panel-dropdowns-wrapper" style="display: none;">
+                    <div id="central-panel-dropdowns-container">
+                        <ModsFiltersPanel />
+                    </div>
+                </div>
+
+
+
+                <ModsChecklistControls />
+
+                <div id="mods-compendium">
+                    <Checkbox color='var(--tx-color-line)'/>
+                    <IconsLegend />
+                    {sortedModsCompendium.map((mod) => 
+                        <CompanionMod {mod} />
+                    )}
+                </div>
+                <MainFooter />
+            </div>
+        </main>
+        
+    </body>
+</html>

@@ -1,0 +1,128 @@
+---
+import LegendIconRow from "./legend-icon-row.astro";
+
+---
+
+<section id="mod-icons-legend" class="clip-shape octagone">
+    <header class="panel-header">
+        <h2>Icons Legend</h2>
+        <button type="button" class="dropdown" aria-expanded="false" aria-controls="legend-table">Open</button>
+    </header>
+
+    <div id="legend-table" hidden>
+        <table >
+        <thead>
+            <tr>
+                <th scope="col">Icon</th>
+                <th scope="col">Legend</th>
+            </tr>
+        </thead>
+        <tbody>
+            <LegendIconRow row="E" col={1} alt="https://imgur.com/dMuLH95.png">
+                The mod introduces one or more new displays to the Dragonborn Gallery.
+            </LegendIconRow>
+            <LegendIconRow row="A" col={1}>
+                The mod features a quest or more; such quest(s) are marked on your map at the exact location of your objective.
+            </LegendIconRow>
+            <LegendIconRow row="A" col={2}>
+                The mod features a quest or more; such quest(s) are (for the most part) not marked on your map but appear in your journal.
+            </LegendIconRow>
+            <LegendIconRow row="A" col={3}>
+                The mod features a quest or more; such quest(s) are not marked on your map and do not appear in your journal.
+            </LegendIconRow>
+            <LegendIconRow row="B" col={2}>
+                The mod introduces new wearable armor pieces to the game.
+            </LegendIconRow>
+            <LegendIconRow row="B" col={4}>
+                The mod introduces new wieldable weapons to the game (includes one or more of one/two handed weapons, bows, crossbows, staves and/or guns).
+            </LegendIconRow>
+            <LegendIconRow row="B" col={4} alt="https://imgur.com/hyaWDrC.png">
+                Alternative icon for Weapons (The mod introduces new Guns in particular)
+            </LegendIconRow>
+            <LegendIconRow row="B" col={1}>
+                The mod introduces new wearable clothing to the game (includes any wearable piece of clothing that has no armor rating, including jewelry).
+            </LegendIconRow>
+            <LegendIconRow row="B" col={1} alt="https://imgur.com/X7b3zRr.png">
+                Alternative icon for Clothing items (Witch Hunter themed)
+            </LegendIconRow>
+            <LegendIconRow row="C" col={4}>
+                The mod introduces new learnable spells to the game (includes learnable powers; smaller spells used for teleporting followers are NOT considered).
+            </LegendIconRow>
+            <LegendIconRow row="C" col={2}>
+                The mod introduces new craftable potions and/or harvestable ingredients.
+            </LegendIconRow>
+            <LegendIconRow row="C" col={1}>
+                The mod introduces new learnable enchantments (any enchantment that is obviously not supposed to be used by the player is excluded).
+            </LegendIconRow>
+            <LegendIconRow row="D" col={4}>
+                The mod introduces a new separate and explorable worldspace to the game (size may vary, however, worldspaces smaller than a town and not explorable more than once are not considered).
+            </LegendIconRow>
+            <LegendIconRow row="D" col={1}>
+                The mod introduces one or more new player houses.
+            </LegendIconRow>
+            <LegendIconRow row="D" col={2}>
+                The mod introduces one or more new explorable dungeons (dungeon must have more than one room/small area).
+            </LegendIconRow>
+            <LegendIconRow row="E" col={2}>
+                The mod introduces one or more new shout(s) and possibly word walls.
+            </LegendIconRow>
+            <LegendIconRow row="E" col={4}>
+                The mod introduces one or more new skill or attribute buffing mechanics accessible to all kinds of playstyles (includes permanent buffs, perk additions and buffs only obtineable through certain player choices).
+            </LegendIconRow>
+            <LegendIconRow row="E" col={1}>
+                The mod introduces one or more new followers to the game.
+            </LegendIconRow>
+            
+            
+
+        </tbody>
+
+    </table>
+    </div>
+    
+
+
+</section>
+
+<style is:global>
+
+#mod-icons-legend {
+    --tx-color-frame: var(--tx-color-fiv-background);
+}
+#mod-icons-legend > :first-child {
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#mod-icons-legend > :last-child {
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#legend-table {
+    transition: height 600ms;
+    background-color: var(--tx-color-fiv-background-alpha);
+    background-image: var(--tx-navs-background-image);
+}
+#legend-table tbody {
+    --mod-icons-height: 4rem;
+}
+@media screen and (min-width: 576px) {
+    #legend-table tbody {
+        --mod-icons-height: 5rem;
+    }
+}
+#legend-table tbody td,
+#legend-table tbody th {
+    padding: var(--tx-spacing-s);
+    min-height: var(--mod-icons-height);
+}
+#legend-table tbody td {
+    border-left: var(--tx-line-width-xs) dashed var(--tx-color-fiv-background);
+}
+#legend-table tr:not(:last-child),
+#legend-table thead tr {
+    border-bottom: var(--tx-line-width-xs) dashed var(--tx-color-fiv-background);
+
+}
+</style>

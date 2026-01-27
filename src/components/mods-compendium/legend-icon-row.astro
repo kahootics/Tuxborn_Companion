@@ -1,0 +1,20 @@
+---
+
+import { undefined } from "astro:schema";
+import ModIcon from "./mod-icon.astro";
+
+interface Props {
+    row: 'A' | 'B' | 'C' | 'D' | 'E',
+    col: number
+    alt?: string
+}
+const {row, col, alt} = Astro.props;
+
+---
+
+<tr>
+    <th scope="row" class="mod-icons-wrapper" ><ModIcon modIcon={[row, {int: col, alt: alt ?? null}]} /></th>
+    <td>
+        <slot />
+    </td>
+</tr>

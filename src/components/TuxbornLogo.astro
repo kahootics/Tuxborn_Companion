@@ -1,0 +1,14 @@
+---
+import Helmet from '../assets/svg/helmet.astro';
+import TuxbornTitle from '../assets/svg/tuxborn-title.astro';
+const omni = 'https://github.com/Omni-guides/Tuxborn';
+
+---
+
+<a id="home" href={ omni + "#" } target="_blank" class="clip-frame octagone">
+	<div id="home-link">
+		<Helmet />
+        <TuxbornTitle color='var(--tx-color-text)' colorB='var(--tx-color-background)' class:list={'hide-on-small-screens'}/>
+        <span class="hide-from-view">Tuxborn HOME</span>
+	</div>
+</a> 

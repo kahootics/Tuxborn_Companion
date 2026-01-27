@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "write:companion": "tsx src/scripts/data-management/node/write-companion-data.ts"
+    "write:companion": "tsx src/scripts/data-management/node/write-companion-data.ts",
+    "write:wiki": "tsx src/scripts/data-management/node/write-wiki-sitemap.ts"
   },
   "dependencies": {
     "astro": "^5.16.6",

@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props {
+    id: string,
+    modalId: string,
+    classList?: string[]
+}
+
+const {id, modalId, classList, ...rest} = Astro.props;
+---
+
+<button
+    id={id}
+    type="button"
+    class=`modal-trigger ${classList ? classList.join(' ') : ''}`
+    aria-haspopup="dialog"
+    aria-controls={modalId}
+    {...rest}
+>
+<slot />
+
+</button>
+
+<script src="../../scripts/modals.ts"></script>

@@ -1,0 +1,21 @@
+
+
+<form id="checklist-import-form" class="modal-checklist-form">
+    <label for="checklist-import">Paste Checklist Data</label>
+    <span class="clip-shape clip-as-border octagone">
+        <input id="checklist-import" 
+          class="clip-shape octagone"
+          type="text" 
+          name="checklist-import"  
+          required 
+          minlength="100"
+          maxlength="500"
+          pattern="^[a-zA-Z0-9 ]+$"
+          title="Insert checklist data"
+          placeholder="Insert checklist data..."
+    /></span>
+    <button type="submit" id="checklist-import-trigger" class="clip-shape clip-as-border octagone">
+        <span class="clip-shape octagone">Import Checklist</span>
+    </button>
+</form>
+<p role="alert"><strong>NOTE: This action will overwrite your currently active checklist!</strong></p>

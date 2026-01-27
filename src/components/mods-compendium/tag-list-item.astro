@@ -1,0 +1,54 @@
+---
+import {toSafeKebab} from "../../scripts/utilities/string-parsers";
+
+import imageToFormat from "../../scripts/utilities/image-to-format";
+import extractImageFromName from "../../scripts/utilities/extract-image-from-name";
+
+import type { Tag } from "./tag-list.astro";
+import type { GetImageResult } from "astro";
+
+interface Props {
+    tag: Tag,
+    type: string,
+    input: 'checkbox' | 'radio'
+}
+
+const starter = 'tagId_';
+
+const { tag, type, input } = Astro.props
+
+if(!(tag.id.startsWith(starter))) throw new Error(`Tag ${tag.name} has incorrect id: ${tag.id}; should start with ${starter}`);
+
+const inputName = input === 'radio' ? type : toSafeKebab(tag.name);
+
+let intImage: GetImageResult;
+let intIm = '';
+if(tag.image && tag.image.int) {
+    const meta = await extractImageFromName(tag.image.int);
+    intImage = await imageToFormat(meta, 'webp');
+    intIm = intImage.src;
+}
+
+
+
+---
+
+<li class="flip-target clip-shape clip-as-border hexagone tag-list-item">
+    <input id={tag.id} 
+        name={inputName} 
+        value={`${tag.id.replace(starter, '')}`} 
+        type={input} 
+        data-text-content={tag.name} 
+        data-type={type} 
+        checked={type === 'location' && tag.name === 'Everywhere' ? true : undefined} 
+        data-location-src={tag.image ? (tag.image.int ? intIm : tag.image.ext) : undefined}
+    />
+    <label for={tag.id} class="tag-list-item-label clip-shape hexagone max-size" data-type={type}>
+        
+        <span class="tag-list-item-text">{tag.name}</span>
+
+        <span class="tag-list-item-ui">         
+        </span>
+    </label>
+    
+</li>

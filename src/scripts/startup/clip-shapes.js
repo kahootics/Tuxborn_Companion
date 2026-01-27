@@ -1,0 +1,1 @@
+export default () => {if(localStorage.getItem('clip-shapes'))document.documentElement.setAttribute('data-clip-shapes','off')}

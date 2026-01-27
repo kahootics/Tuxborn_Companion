@@ -2,99 +2,27 @@
 import '../styles/core-setup.css';
 import '../styles/themes.css';
 import '../styles/layout.css';
-import '../styles/clip-shapes.css';
+import '../styles/utilities/clip-shapes.css';
 
-import MainHeader from "../components/MainHeader.astro";
-import MetaSocials from "../components/MetaSocials.astro";
-import Filters from "../components/Filters.astro";
+import CompanionHead from '../layouts/CompanionHead.astro';
 
-import Data from '../data/mods-test.js';
-import ModArticle from '../components/sub-components/mod-article.astro';
-import WikiNav from '../components/WikiNav.astro';
-import MainFooter from '../components/MainFooter.astro';
+const referer = Astro.url.href;
+if(!referer) throw new Error('page url absent')
 
-const pageImage = {
-	url: 'https://raw.githubusercontent.com/Omni-guides/Tuxborn/refs/heads/main/images/Splash.png',
-	type: 'image/png',
-	width: 1280,
-	height: 720
-}
+
 
 ---
 
 <html lang="en">
-	<head>
+	<CompanionHead title="Mods Compendium" 
+				   description="Explore content mods from Tuxborn in a comprehensive and detailed library to help you find what to play next!"
+    			   pageFullUrl={referer}>
 		{/* REDIRECT */}
-		{/* <script is:inline>
-			window.location.href = './M-test/';
-		</script>*/} 
-		<title>Mods Compendium | Tuxborn Companion</title>
-		<link rel="icon" type="image/svg+xml" href="./helmet.svg" />
-		<meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<MetaSocials pageTitle="Tuxborn Mods Compendium" 
-					 pageAuthor="kok0" 
-					 {pageImage}
-					 description="Explore content mods from Tuxborn in a comprehensive and detailed library to help you find what to play next!" />
-	</head>
+		<script is:inline>
+			window.location.href = './Mods_Compendium/';
+		</script>
+	</CompanionHead>
 	<body>
-
-		<MainHeader />
-		<WikiNav />
-	<div id="tx-page-content">
-		<Filters />
-		<main>
-			<header>
-				<h1>Tuxborn Mods Compendium</h1>
-				<aside><strong>Note:</strong><br>
-					This page is a <em>draft</em>! <br>
-					It currently does not support all filtering functions of the main spreadsheet or any of the checklist's features
-				</aside>
-			</header>
-			<div id="tx-mod-articles">
-				{Data.map((mod) => {
-					return <ModArticle {mod} />
-				})}	
-			</div>
-		</main>
-	</div>
-		<MainFooter />
-		
 	</body>
-	<style is:global>
-		html {
-			border: 0;
-			background-color: var(--tx-color-one-background);
-		}
-		body {
-			background-color: var(--tx-color-one-background);
-			background-image: url('https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/public/waves.svg');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: cover;
-			border: 0;
-		}
-		
-		main {
-			/* padding: var(--tx-padding-horizontal-s); */
-			--max-width: 1050px;
-			margin-left: auto;
-			margin-right: auto;
-			max-width: var(--max-width);
-			border: 0;
-			min-height: 120vh;
-		}
-
-		main > header {
-			background-color: var(--tx-color-two-background-strong-alpha);
-			border-radius: var(--tx-border-radius-soft);
-			clip-path: var(--tx-clip-corners);
-			padding: var(--tx-padding-m);
-			margin-bottom: 1rem;
-		}
-		
-	</style>
 	
 </html>

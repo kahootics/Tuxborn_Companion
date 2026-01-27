@@ -1,0 +1,36 @@
+---
+import Head from "../components/Head.astro";
+import startupScriptsInliner from "../scripts/startup/startup-scripts.ts";
+import type {ScriptName} from "../scripts/startup/startup-scripts.ts";
+
+interface Props {
+    pageFullUrl: string, 
+    description: string, 
+    title: string,
+	startupScripts?: ScriptName[]
+}
+
+const { pageFullUrl, description, title, startupScripts } = Astro.props;
+---
+
+
+
+<Head pageTitle={title}
+	  metaTitle=`Tuxborn ${title}`
+	  author="kahootics" 
+	  imageUrl="https://raw.githubusercontent.com/Omni-guides/Tuxborn/refs/heads/main/images/Splash.png"
+	  iconUrl='/Tuxborn_Companion/helmet.svg'
+	  iconType='image/svg+xml'
+	  imageType="image/png"
+	  imageWidth="1280"
+	  imageHeight="720"
+	  {description}
+   	  locale="en_us"
+   	  siteName="Tuxborn Companion" 
+   	  siteType="website"
+   	  {pageFullUrl}>
+	{startupScripts && 
+		<script is:inline set:html={startupScriptsInliner(...startupScripts)}></script>}
+	<slot />
+
+</Head>
