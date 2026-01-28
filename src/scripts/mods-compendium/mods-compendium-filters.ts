@@ -372,6 +372,7 @@ try {
                 ckBox.disabled = false;
                 if(checklist[ckOrder] === 1) {
                     ckBox.checked = true;
+                    ckTarget.is_checked = true;
                     checklist_progress.increase(lengthVal);
                 } else {
                     ckBox.checked = false;
