@@ -1,10 +1,22 @@
 ---
 
+import { undefined } from 'astro:schema';
 import CompanionPanel from '../layouts/CompanionPanel.astro';
 import WikiList from '../scripts/data-management/wiki/WikiList.astro';
 import '../styles/companion-main-navigation.css'
 import DropdownControl from "./navigation/dropdown-control.astro";
 import Settings from './Settings.astro';
+
+
+const pages = [
+    {
+        name: 'Mods Compendium',
+        url: "/Tuxborn_Companion/Mods_Compendium/"
+    }, {
+        name: 'Mods in Beta',
+        url: "/Tuxborn_Companion/Beta_Mods/"
+    }    
+];
 
 ---
 
@@ -27,10 +39,15 @@ import Settings from './Settings.astro';
 
     <nav id="companion-nav" hidden data-shown="false" class="main-menu-nav-section flip-commander" >
         <ul class="flip-scene">
+            {pages.map((page) => 
             <li class="flip-target flip-backwards clip-frame octagone ">
-                <a class="item-dropdown" href="/Tuxborn_Companion/Mods_Compendium/" aria-current="page">Mods Compendium</a>
-                <div aria-hidden="true" class="aria-current-page"></div>
+                <a class="item-dropdown" href={page.url} aria-current={Astro.url.href.includes(page.url) ? "page" : null} >
+                    {page.name}
+                </a>
+                {Astro.url.href.includes(page.url) ? <div aria-hidden="true" class="aria-current-page"></div> : null}
+                
             </li>
+            )}
         </ul>
     </nav>
 

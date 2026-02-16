@@ -27,28 +27,7 @@ droppers.forEach((dropper) => {
 });
 
 
-const centralPanelWrapper = document.getElementById('central-panel-dropdowns-wrapper'); 
-const filtersWrapper = document.getElementById('mods-compendium-filters-wrapper');
-const filtersContainer = document.getElementById('mods-compendium-filters-container');
-const filtersToggle = document.getElementById('filters');
-const filtersCloser = document.getElementById(`${(filtersWrapper?.id)?.replace('wrapper','close')}`);
-const apply = document.getElementById('apply-filters');
 
-if(centralPanelWrapper && filtersWrapper && filtersContainer && filtersToggle && filtersCloser && apply) {
-    const filtersDropdown: Dropdown = {
-        toggle: filtersToggle, 
-        panelWrapper: centralPanelWrapper, 
-        menuWrapper: filtersWrapper, 
-        menuContainer: filtersContainer,
-        menuCloser: filtersCloser
-    }
-    filtersToggle.addEventListener('click', () => panelDropdownMenu(filtersDropdown));
-    apply.addEventListener('click', () => 
-        setTimeout(() => {
-            panelDropdownClose(filtersDropdown, undefined, 0);
-        }, 200)
-    )
-} else throw new Error('Failed to initialize filters dropdown')
 
 if(leftPanelWrapper && mainNavWrapper && mainNavContainer && mainNavTitle && mainNavBack && mainNavControls && droppers && mainNavToggle) {
 
@@ -245,3 +224,31 @@ function atMediaToggle(dropdown: Dropdown, maxWidthPx: number) {
     if(match && currentOpenDropdown === dropdown) currentOpenDropdown = null; 
     panelDropdownForceClose(dropdown, match);
 }
+
+
+
+
+
+
+const centralPanelWrapper = document.getElementById('central-panel-dropdowns-wrapper'); 
+const filtersWrapper = document.getElementById('mods-compendium-filters-wrapper');
+const filtersContainer = document.getElementById('mods-compendium-filters-container');
+const filtersToggle = document.getElementById('filters');
+const filtersCloser = document.getElementById(`${(filtersWrapper?.id)?.replace('wrapper','close')}`);
+const apply = document.getElementById('apply-filters');
+
+if(centralPanelWrapper && filtersWrapper && filtersContainer && filtersToggle && filtersCloser && apply) {
+    const filtersDropdown: Dropdown = {
+        toggle: filtersToggle, 
+        panelWrapper: centralPanelWrapper, 
+        menuWrapper: filtersWrapper, 
+        menuContainer: filtersContainer,
+        menuCloser: filtersCloser
+    }
+    filtersToggle.addEventListener('click', () => panelDropdownMenu(filtersDropdown));
+    apply.addEventListener('click', () => 
+        setTimeout(() => {
+            panelDropdownClose(filtersDropdown, undefined, 0);
+        }, 200)
+    )
+} else throw new Error('Failed to initialize filters dropdown')
