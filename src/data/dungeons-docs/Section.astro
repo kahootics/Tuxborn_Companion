@@ -1,0 +1,25 @@
+---
+const props = Astro.props;
+
+---
+
+<section class="clip-shape octagone mod-section" {...props}><slot /></section>
+
+<style is:global>
+    section:has(>[id^="tags"]) {
+        display: none;
+    }
+    #mods-compendium > section {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 't';
+        gap: 0.5em;
+    }
+    @media screen and (min-width: 675px){
+        #mods-compendium > section {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 't t';
+        }
+    }
+
+</style>

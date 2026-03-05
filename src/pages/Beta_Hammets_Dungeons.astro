@@ -1,0 +1,113 @@
+---
+import '../styles/core-setup.css';
+import '../styles/themes.css';
+import '../styles/layout.css';
+import '../styles/utilities/clip-shapes.css';
+import '../styles/utilities/flip-cards.css';
+
+/* Images import */
+import contentIconsSprite from "/src/assets/mods-compendium/content-icons-sprite.png";
+import icons from "/src/assets/mods-compendium/icons-generic.png";
+/* Image optimization */
+import imageToFormat from '../scripts/utilities/image-to-format';
+const iconsSpriteWebp = (await imageToFormat(contentIconsSprite, 'webp')).src;
+const iconsSpritePng = contentIconsSprite.src;
+const iconsWebp = (await imageToFormat(icons, 'webp')).src;
+const iconsPng = icons.src;
+
+/* SVGs */
+import {getSVGsStyleString} from '../scripts/utilities/import-svgs';
+
+const svgs = getSVGsStyleString(['green-leaves','helmet','waves','butterleaves', 'forest']);
+
+import CompanionHead from "../layouts/CompanionHead.astro";
+import CompanionHeader from "../components/CompanionHeader.astro";
+import LeftPanel from "../layouts/wrappers-containers/left-panel.astro";
+import MainNav from '../components/MainNav.astro';
+
+import Modal from '../layouts/Modal.astro';
+import ImageModal from '../components/mods-compendium/image-modal.astro';
+import MainFooter from '../components/MainFooter.astro';
+import GoogleForm from '../components/utility/googleForm.astro';
+
+import * as Dungeons from '../data/dungeons-docs/dungeons-draft.mdx';
+
+---
+
+<html lang="en" style=`--tx-content-icons-sprite-webp: url('${iconsSpriteWebp}'); --tx-content-icons-sprite-png: url('${iconsSpritePng}');--tx-generic-icons-webp: url("${iconsWebp}"); ${svgs}; `>
+	<CompanionHead 
+        title="Mods in the Beta" 
+		description="A Work in Progress list of mods that Tuxborn is adding to 1.2 Beta; only items relevant to the checklist are present"
+    	pageFullUrl={Astro.url.href}
+        startupScripts={['clips', 'themes', 'flips']}>
+	</CompanionHead>
+	<body style=`--tx-generic-icons: url("${iconsPng}");`>
+
+        <CompanionHeader>
+            
+        </CompanionHeader>
+
+        <LeftPanel>
+            <MainNav />
+        </LeftPanel>
+
+        <div id="modal-backdrop" hidden>
+            <Modal title='Image' id='image-modal' openerId='images' >
+                <ImageModal />
+            </Modal>
+        </div>
+
+        <main id="main-page-content">
+            <div id="central-panel">
+
+                <section class="clip-shape octagone mod-section">
+                    <h2>Notes</h2>
+                    <a style="color: hsl(120, 39%, 63%);" href="#mods-compendium">SKIP</a>
+                    <ul>
+                        <li>This is a work in progress</li>
+                        <li>Items in this list are not guaranteed to be in 1.2 final version nor in the mods compendium</li>
+                        <li>Followers from the dungeon packs have been omitted due to their unlikely presence in final release</li>
+                    </ul>
+                    <p>If you have a minute, consider compiling <a style="color: hsl(120, 39%, 63%);"  href="#feedback-f">this feedback form for the Tuxborn Companion</a></p>
+                </section>
+                <section class="clip-shape octagone mod-section">
+                    <h2>About</h2>
+                    <p>
+                        This page covers the 46 dungeons introduced by the Hammets' Dungeon packs; currently {
+                            (Dungeons.getHeadings().filter(h => h.depth === 2)).length 
+                        } of 46 are covered
+                    </p><p>
+                        Most dungeons feature one or more minibosses and/or one or more minor relic; those relics are not part of base Skyrim and some have unique enchantments (none too powerfull though)
+                    </p><p>
+                        All dungeons are active for radiant quests except the following: 
+                        <ul>
+                            <li><a style="color: hsl(120, 39%, 63%);" href="#direfang-cave">Direfang Cave</a></li>
+                            <li><a style="color: hsl(120, 39%, 63%);" href="#darkmire-crypt">Darkmire Crypt</a></li>
+                            <li><a style="color: hsl(120, 39%, 63%);" href="#verdant-vile-grotto">Verdant Vile Grotto</a></li>
+
+                            <li>Konahl's Burrow</li>
+                            <li>Shadowgrim Burrow</li>
+                            <li>Gloomfall Refuge</li>
+                            <li>Cold Fear Cavern</li>
+                            <li>Silver Gloom Mine</li>
+                            <li>Inkhaznd</li>
+                            <li>Dreadmere Crypt</li>
+                        </ul>
+                    </p>
+                </section>
+
+                
+
+                <div id="mods-compendium">
+                    <Dungeons.Content />
+                </div>
+                <section class="clip-shape octagone mod-section">
+                    <h2 id="feedback-f">Feedback Form</h2>
+                    <GoogleForm />
+                </section>
+                <MainFooter />
+            </div>
+        </main>
+        
+    </body>
+</html>

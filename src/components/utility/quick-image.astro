@@ -1,0 +1,35 @@
+---
+import '../../styles/mod-compendium.css';
+import { Image } from "astro:assets";
+import { toSafeKebab } from "../../scripts/utilities/string-parsers";
+import ModalTrigger from "./modal-trigger.astro";
+import extractImageFromName from '../../scripts/utilities/extract-image-from-name';
+
+interface Props {
+    fileName: string,
+    alt: string,
+}
+
+const { fileName, alt, ...props } = Astro.props;
+let src: ImageMetadata;
+try {
+    src = await extractImageFromName(fileName);
+} catch(e) {
+    src = await extractImageFromName('Sachil');
+}
+
+---
+
+<div class="mod-image-wrapper clip-shape octagone clip-as-border">
+    <ModalTrigger id={toSafeKebab(fileName)} modalId='image-modal' data-ext-src={src.src} classList={['mod-image-container', 'clip-shape', 'octagone']}>
+        <Image {...props}
+            src={src}
+            alt={alt}
+            widths={[240, 540, 720, src.width]}
+            sizes={`(max-width: 360px) 240px,
+                    (max-width: 720px) 540px,
+                    (max-width: 1080px) 720px,
+                    ${src.width}px`}
+        />       
+    </ModalTrigger>
+</div>

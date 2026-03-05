@@ -4,6 +4,7 @@ const images = [
     import.meta.glob<{ default: ImageMetadata }>(`/src/assets/mods-compendium/mods-overviews/*.{jpeg,jpg,png,gif}`),
     import.meta.glob<{ default: ImageMetadata }>(`/src/assets/mods-compendium/general-map/*.{jpeg,jpg,png,gif}`),
     import.meta.glob<{ default: ImageMetadata }>(`/src/assets/mods-compendium/*.{jpeg,jpg,png,gif}`),
+    import.meta.glob<{ default: ImageMetadata }>(`/src/assets/dungeons/*.{jpeg,jpg,png,gif}`),
 ];
 
 
@@ -11,7 +12,8 @@ const paths = [
     '/src/assets/mods-compendium/mods-locations/',
     '/src/assets/mods-compendium/mods-overviews/',
     '/src/assets/mods-compendium/general-map/',
-    '/src/assets/mods-compendium/'
+    '/src/assets/mods-compendium/',
+    '/src/assets/dungeons/',
 ]
 
 const formats = ['jpeg','jpg','png','gif'];

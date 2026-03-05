@@ -1,0 +1,22 @@
+---
+import QuickImage from "../../components/utility/quick-image.astro";
+import { fromSafeKebab } from "../../scripts/utilities/string-parsers.ts";
+const props = Astro.props;
+
+const name = fromSafeKebab(props.id);
+---
+
+<h2 class="clip-shape octagone mod-section" {...props}><slot /></h2>
+{props.id !== 'list' 
+    ? <div><QuickImage fileName={`${name} Location`} alt={name} /></div> 
+    : <style is:global>
+        section:has(>#list) {
+            display: unset;
+        }
+    </style>}
+
+<style>
+    h2 {
+        grid-area: t;
+    }
+</style>

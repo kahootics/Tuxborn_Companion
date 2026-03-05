@@ -7,6 +7,13 @@ export function toSafeKebab(string: string) {
         .replace(/^-+|-+$/g, "");
 }
 
+export function fromSafeKebab(string: string) {
+    return string
+        .split("-")
+        .filter(Boolean)
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+}
 
 export function toNormalized(string: string) {
     return string

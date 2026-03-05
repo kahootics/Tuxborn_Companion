@@ -11,8 +11,10 @@
     "write:wiki": "tsx src/scripts/data-management/node/write-wiki-sitemap.ts"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
     "astro": "^5.16.6",
     "csv-parse": "^6.1.0",
+    "remark-sectionize": "^2.1.0",
     "tsx": "^4.21.0"
   }
 }
