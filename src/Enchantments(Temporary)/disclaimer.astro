@@ -1,0 +1,52 @@
+---
+interface Props {
+    enchNo: number
+}
+const { enchNo } = Astro.props;
+---
+
+
+<section class="clip-shape octagone mod-section">
+    <h2>Notes</h2>
+    <a style="color: hsl(120, 39%, 63%);" href="#mods-compendium">SKIP</a>
+    <ul>
+        <li>This page currently covers all (<strong>{enchNo}</strong>) the armor enchantments available in Tuxborn 1.3 [Beta 3]</li>
+        <li>Items in this list are not guaranteed to be in 1.2 final version</li>
+        <li>Magnitude is <strong>always</strong> rounded half-down</li>
+        <li>All numbers below assume Grand Soul usage</li>
+        <li>Locations for the enchanted items are missing</li>
+        <li><strong>Weapon enchantments will be covered in a later update</strong></li>
+    </ul>
+    <p>If you have a minute, consider compiling 
+        <a style="color: hsl(120, 39%, 63%);"  href="#feedback-f">this feedback form for the Tuxborn Companion</a>
+    </p>
+</section>
+
+<section class="clip-shape octagone mod-section">
+    <h2>Navigation</h2>
+    <ul>
+        <li><strong>Click on an enchantment to view more details</strong></li>
+        <li>Enchantments's magnitudes at different skill levels are estimations; error is limited to ±1 in most casea</li>
+        <li>All enchantments feature a custom rating (S-F)</li>
+        <li>Enchantment values at different skill levels are very rough estimations;
+            <ul>
+                <li>values decrease at higher skill levels</li>
+                <li>effects that increase an enchantment's strenght (such as perks) do not influence their value</li>
+                <li>values displayed reflect those displayed in inventory and are indipendent of Barter proficiency</li>
+            </ul>
+        </li>
+        <li>Filtering options are available to use</li>
+    </ul>
+</section>
+
+<section class="clip-shape octagone mod-section">
+    <h2>Enchanting in Tuxborn</h2>
+    <ul>
+        <li>Tuxborn runs Thaumaturgy to overhaul vanilla enchantments; additionally, many other mods introduce their own learnable enchantments</li>
+        <li>Not all enchantments introduced by mods integrate well with Thaumaturgy, often resulting in them being significantly more powerful and remunerative</li>
+        <li>Most non-Thaumaturgy enchantments have no restriction on what kind of apparel they can be applied to</li>
+        <li>Fortify Spell Absorption is not learnable from Savos Aren's Amulet due to Legacy of the Dragonborn Patches (Official) editing the item</li>
+        <li>For means to further improve your Enchanting see the <a target="_blank" href="https://tuxborn.org/wiki/general-content-topics/crafting/">wiki page on crafting</a></li>
+        
+    </ul>
+</section>

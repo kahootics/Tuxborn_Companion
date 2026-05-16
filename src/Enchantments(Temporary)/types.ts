@@ -14,7 +14,8 @@ export const enchantArmorTest = z.object({
     obtain: z.string().nullable(),
     notes: z.string().nullable(),
     bugs: z.string().nullable(),
-    tier: z.string().nullable() //temporary
+    tier: z.string().nullable(),
+    basePrice: z.number()
 });
 
 export function parseEnchantsArmorTest(raw: {}[]) {

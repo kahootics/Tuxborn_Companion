@@ -4,6 +4,7 @@ import {z} from 'zod';
 import {enchantArmorTest, magEffTest} from './types';
 import ClippedArticle from '../layouts/wrappers-containers/clipped-article.astro';
 import Magnitude from './magnitude.astro';
+import { calcEnchantPrice } from './common';
 
 interface Props {
     enchant: z.infer<typeof enchantArmorTest>,
@@ -27,6 +28,7 @@ const { enchant, effects, default_order } = Astro.props;
     data-name={enchant.name}
     data-mod={enchant.mod}
     data-restrictions={enchant.restrictions?.join('|')}
+    data-value={enchant.basePrice}
     > 
     <button class="dropdown" aria-controls={`${enchant.id}-drop`}>
     <header class="mod-section">
@@ -54,6 +56,11 @@ const { enchant, effects, default_order } = Astro.props;
     </section>
     </button>
     <div class="dropped" id={`${enchant.id}-drop`}>
+
+        <section class="mod-section closer">
+            <h3>Value</h3>
+            <p>Approximately ~<strong id={`${enchant.id}-value`} class="enchantment-value">{calcEnchantPrice(enchant.basePrice,100)}</strong> coins</p>
+        </section>
 
         <section class="mod-section closer">
             <h3>Restrictions</h3>

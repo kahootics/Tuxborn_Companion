@@ -57,15 +57,16 @@ enchRange.addEventListener('input', () => {
     enchLev.innerText = value;
     const pct = (Number(value) - 15) / 85 * 100;
     enchRange.style.setProperty('--range-pct', pct + '%');
-    if(select.value === 'skill') {
-        const skill = Number(enchRange.value);
+    
+    const skill = Number(enchRange.value);
+    if(select.value === 'skill') 
         updateMagnitudes(skill);
-    }
+    updateEnchantsPrices(skill);
 })
 
 /* =================================================================== */
 
-const sort = createFalseSelect('enchantsort', ['default', 'name', 'mod', 'tier'],'Enchantment');
+const sort = createFalseSelect('enchantsort', ['default', 'name', 'mod', 'value', 'tier'],'Enchantment');
 const form = document.getElementById('enchantments-filters');
 const search = document.getElementById('search-input');
 
@@ -82,11 +83,13 @@ enchantments.forEach(enchant => {
     enchsSearch.set(enchant, enchant.getAttribute('data-ench-eff-list')?.toLocaleLowerCase());
     enchsSort.push({
         ench: enchant,
-        default: enchant.getAttribute('data-default'),
-        tier: enchant.getAttribute('data-tier'),
+        default: Number(enchant.getAttribute('data-default')),
+        tier: Number(enchant.getAttribute('data-tier')),
         name: enchant.getAttribute('data-name'),
         mod: enchant.getAttribute('data-mod'),
-        restrictions: enchant.getAttribute('data-restrictions')
+        restrictions: enchant.getAttribute('data-restrictions'),
+        value: Number(enchant.getAttribute('data-value')),
+        valueTxt: document.getElementById(`${enchant.id}-value`)
     })
 })
 
@@ -116,9 +119,22 @@ sort.inputs.forEach(input => input.addEventListener('input',() => {
         const sortKey = sort.value;
         const frag = document.createDocumentFragment();
 
-        enchsSort.sort((a,b) => 
-            a[sortKey].localeCompare(b[sortKey], undefined, { sensitivity: 'base' })
-        )
+        switch(typeof enchsSort[0][sortKey]) {
+            case('string'): enchsSort.sort((a,b) => 
+                a[sortKey].localeCompare(b[sortKey], undefined, { sensitivity: 'base' })
+            ); break;
+            case('number'): {
+                if(sortKey === 'value') {
+                    enchsSort.sort((a,b) => 
+                        b[sortKey] - a[sortKey]
+                    ); 
+                } else enchsSort.sort((a,b) => 
+                    a[sortKey] - b[sortKey]
+                ); 
+            }break;
+        }
+
+        
 
         enchsSort.forEach(ench => {
             frag.appendChild(ench.ench)
@@ -131,7 +147,7 @@ sort.inputs.forEach(input => input.addEventListener('input',() => {
 /* ============================================ */
 
 const restriction = createFalseSelect('enchantrestrict', [
-    'none','Head','Neck','Body','Hands','Finger','Shield'],'Enchantment');
+    'none','Head','Neck','Body','Hands','Finger','Feet','Shield'],'Enchantment');
 let timer_rest: number;
 
 
@@ -165,3 +181,18 @@ toggle?.addEventListener('click',()=> {
     form.hidden = isEx;
     toggle.setAttribute('aria-expanded',`${!isEx}`);
 })
+
+
+
+/* ============================================================ */
+
+function calcEnchantPrice(atZero: number, skill: number) {
+    const skillMult = ((100 - skill)/(1 + skill*0.026) + skill*Math.pow(2.71828,(-skill/82)))/100;
+    return Math.round(atZero * skillMult);
+}
+
+function updateEnchantsPrices(skill: number) {
+    enchsSort.forEach(enchant => {
+        enchant.valueTxt.textContent = calcEnchantPrice(enchant.value,skill);
+    })
+}

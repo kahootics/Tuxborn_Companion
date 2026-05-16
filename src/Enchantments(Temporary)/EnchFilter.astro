@@ -30,7 +30,10 @@ const list = effList.map(eff => eff.Name).filter(eff => typeof eff === 'string' 
             required 
             minlength="0"
             maxlength="64"
-            pattern="^[a-zA-Z0-9 ]+$"/>
+            pattern="^[a-zA-Z ]+$"
+            placeholder="Search enchantment or effect..."
+            />
+
         </span>
     </fieldset>
     <fieldset>
