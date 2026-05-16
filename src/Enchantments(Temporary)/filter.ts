@@ -94,9 +94,12 @@ let timer_search: number;
 
 search.addEventListener('input', () => {
     clearTimeout(timer_search);
+
     timer_search = setTimeout(() => {
-        const input = search.value.toLocaleLowerCase();
+
+        const input = search.value.toLocaleLowerCase().trim();
         enchsSearch.forEach((string, enchant) => {
+
             enchant.hidden = 
             !(string.includes(input));
         })
