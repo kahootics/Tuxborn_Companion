@@ -59,7 +59,7 @@ export function createFalseSelect(baseId: string, radios: string[], name: string
     if(radios.length === 0 || (radios.length === 1 && !(radios[0]))) {
         setValue('No Options');
     } else radios.forEach((rad, i) => {
-        console.log(radios)
+        /* console.log(radios) */
         const li = document.createElement('li');
         const temp = document.createElement('input');
         const label = document.createElement('label');

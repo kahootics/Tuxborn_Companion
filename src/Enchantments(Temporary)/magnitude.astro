@@ -1,0 +1,23 @@
+---
+import { z } from 'zod'
+import {magnitude} from './types';
+
+
+interface Props {
+    mag: z.infer<typeof magnitude>
+}
+
+const {mag} = Astro.props;
+---
+
+<strong 
+  data-mag-base={mag.base}
+  data-mag-growth={mag.growth}
+  data-mag-zero={mag.atZero}>{mag.base}</strong><slot />
+
+
+<style>
+    strong {
+        color: hsl(120, 62%, 74%);
+    }
+</style>

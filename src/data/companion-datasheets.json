@@ -9,7 +9,15 @@
         "gid": "190775733"
     },
     "enchantments": {
-        "id": "",
-        "gid": ""
+        "id": "1eoWTg0yd18E1j6PpSxVsMvNDC8I_xuHIzv9e2uaxGjQ",
+        "gid": "1408996306"
+    },
+    "magEff": {
+        "id": "1eoWTg0yd18E1j6PpSxVsMvNDC8I_xuHIzv9e2uaxGjQ",
+        "gid": "18261940"
+    },
+    "effList": {
+        "id": "1eoWTg0yd18E1j6PpSxVsMvNDC8I_xuHIzv9e2uaxGjQ",
+        "gid": "1494261288"
     }
 }

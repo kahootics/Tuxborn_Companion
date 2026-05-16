@@ -3,16 +3,16 @@
 interface Props {
     name: string,
     id?: string,
-    addClasses?: string[] | null
+    addClasses?: string[] | null,
 }
 
-const { name, id, addClasses } = Astro.props;
+const { name, id, addClasses, ...props } = Astro.props;
 
 const articleClass = `${name}-content clip-shape octagone`;
 
 ---
 
-<div class=`${name}-wrapper` {id}>
+<div class=`${name}-wrapper` {id} {...props}>
     <div class=`${name}-container clip-shape octagone clip-as-border`>
         <article class={(addClasses && addClasses.length > 0) ? `${articleClass} ${addClasses.join(' ')}` : articleClass}>
             <slot />

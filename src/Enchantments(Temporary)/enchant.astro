@@ -1,0 +1,203 @@
+---
+
+import {z} from 'zod';
+import {enchantArmorTest, magEffTest} from './types';
+import ClippedArticle from '../layouts/wrappers-containers/clipped-article.astro';
+import Magnitude from './magnitude.astro';
+
+interface Props {
+    enchant: z.infer<typeof enchantArmorTest>,
+    effects: Map<String,z.infer<typeof magEffTest>>,
+    default_order: number
+}
+const { enchant, effects, default_order } = Astro.props;
+
+
+---
+
+<ClippedArticle name='mod-article' 
+    id={enchant.id} 
+    data-default={default_order}
+    data-ench-eff-list={`${enchant.name}|${enchant.effects.map(effect => {
+        const temp = effects.get(effect);
+        if(!temp) throw new Error(`${effect} is missing from list`);
+        return temp.types.join('|')
+    }).join('|')}`}
+    data-tier={'SABCDEF'.indexOf(enchant.tier ?? 'F')}
+    data-name={enchant.name}
+    data-mod={enchant.mod}
+    data-restrictions={enchant.restrictions?.join('|')}
+    > 
+    <button class="dropdown" aria-controls={`${enchant.id}-drop`}>
+    <header class="mod-section">
+        <div><h2 aria-describedby={`${enchant.id}-desc`}>{enchant.name}</h2>
+            <strong class="enchantment-tier">{enchant.tier}</strong>
+        </div>
+        <i>({enchant.mod})</i>
+    </header>
+    <section class="mod-section description">
+        <p id={`${enchant.id}-desc`}>
+            {enchant.effects.map(effect => {
+                const temp = effects.get(effect);
+                if(!temp) throw new Error(`${effect} is missing from list`);
+                const tempFrags = `${temp.description.og}. `.split('<mag>');
+                return tempFrags.map((frag,i) => {
+                    if(i===0) {
+                        return frag
+                    } else {
+                        return <Magnitude mag={temp.mag}>{frag}</Magnitude>
+                    }
+                });
+            }
+            )}
+        </p>
+    </section>
+    </button>
+    <div class="dropped" id={`${enchant.id}-drop`}>
+
+        <section class="mod-section closer">
+            <h3>Restrictions</h3>
+            <p>{enchant.restrictions === null
+                ? <span>You can apply this enchantment to <strong>any</strong> piece of apparel</span>
+                : <span>You can only apply this enchantment to
+                    {enchant.restrictions.map(rest => <strong>{rest}</strong>).map((rest, i, a) => {
+                        switch(i) {
+                            case(a.length - 1): return rest
+                            case(a.length - 2): return <span>{rest} and </span>
+                            default: return <span>{rest}, </span>
+                        }}
+                    )}
+                    </span>}.</p>
+        </section>
+
+        <section class="mod-section closer">
+            <h3>Effects</h3>
+            {
+                enchant.effects.map(effect => {
+                    const eff = effects.get(effect);
+                    if(!eff) throw new Error(`${effect} is missing from list`);
+                    const tempFrags = `${eff.description.main ?? eff.description.og}.`.split('<mag>');
+                    return  <section class="clip-shape octagone mod-section">
+                                <h4>{eff.name.main ?? eff.name.og}</h4>
+                                <p class="smaller">{tempFrags.map((frag,i) => {
+                                    if(i===0) {
+                                        return frag
+                                    } else {
+                                        return <Magnitude mag={eff.mag}>{frag}</Magnitude>
+                                    }
+                                })}</p>
+                            </section>
+                })
+            }
+            
+        </section>
+        {enchant.disenchant && <section class="mod-section closer">
+        <h3>How to Learn</h3>
+        <p>
+            You can learn this enchantment by disenchanting {
+                enchant.disenchant[0].includes('*') 
+                ? 'any' : 'the'}
+            {enchant.disenchant.join(", ").replaceAll('*','apparel*')}.
+        </p><p>
+            {enchant.obtain}
+        </p>
+    </section>}
+    {enchant.notes && <section class="mod-section closer">
+        <h3>Notes</h3>
+        <p>{enchant.notes}</p>
+    </section>}
+    {enchant.bugs && <section class="mod-section closer">
+        <h3>Bugs</h3>
+        <p>{enchant.bugs}</p>
+    </section>}
+    </div>
+    
+</ClippedArticle>
+
+<script src="./filter.ts"></script>
+
+<style>
+
+button {
+    all: unset;
+    width: 100%;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--tx-clip) var(--tx-clip) 0 0;
+    padding-bottom: 0;
+}
+h2 {
+    display: inline-block;
+}
+h2, h3, h4 {
+    margin-bottom: 0;
+}
+i, p.smaller { 
+    font-size: 80%;
+}
+
+strong {
+    color: hsl(120, 51%, 84%);
+}
+/* TIERS ============================ */
+[data-tier=6] strong.enchantment-tier {
+    color: hsl(120, 24%, 44%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+[data-tier=5] strong.enchantment-tier {
+    color: hsl(0, 100%, 23%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}[data-tier=4] strong.enchantment-tier {
+    color: hsl(72, 63%, 30%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}[data-tier=3] strong.enchantment-tier {
+    color: hsl(120, 50%, 52%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}[data-tier=2] strong.enchantment-tier {
+    color: hsl(220, 50%, 61%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}[data-tier=1] strong.enchantment-tier {
+    color: hsl(26, 78%, 57%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}[data-tier=0] strong.enchantment-tier {
+    color: hsl(48, 77%, 63%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+/* ======================================== */
+section.description {
+    padding-top: 0;
+    border-radius: 0 0 var(--tx-clip) var(--tx-clip);
+}
+button:has(+[hidden=false]) > section.description {
+    border-radius: 0;
+}
+
+.closer h3, h2, h4 {
+    padding-bottom: 0;
+}
+.closer p {
+    padding-top: 0;
+}
+
+div.dropped {
+    border-top: var(--tx-line-width-xxs) solid var(--tx-color-line);
+    overflow: hidden;
+}
+div.dropped > .mod-section:not(:first-child) {
+    border-radius: 0 0 var(--tx-clip) var(--tx-clip);
+    border-top: var(--tx-line-width-xxs) solid var(--tx-color-line);
+}
+
+</style>

@@ -1,0 +1,161 @@
+---
+import FalseSelect from "../components/utility/false-select.astro";
+import fetchSheetDataset from "../scripts/data-management/CSV/fetch-sheet-dataset";
+import companionDatasheets from '../data/companion-datasheets.json';
+
+/* const effList = await fetchSheetDataset(companionDatasheets.effList.id, companionDatasheets.effList.gid, '[//n]', '|');
+
+const list = effList.map(eff => eff.Name).filter(eff => typeof eff === 'string' ); */
+
+---
+
+<form id="enchantments-filters" class="mod-section">
+    <fieldset>
+        <legend class="hide-from-view"><strong>Select magnitude scaling</strong></legend>
+        <span id="checklist-select-label"> Magnitude scaling: </span>
+        <FalseSelect baseId='enchantsd' describedBy='checklist-select-label' />
+    </fieldset>
+    <fieldset>
+        <legend class="hide-from-view"><strong>Select skill level</strong></legend>
+        <span id="checklist-select-label"> Skill level: <span id="enchanting-level">100</span></span>
+        <input class="range-input" id="enchanting-range" type="range" min="15" max="100" step="1" value="100"/>
+    </fieldset>
+    <fieldset>
+        <legend class="hide-from-view"><strong>Search</strong></legend>
+        <span id="checklist-select-label">Search: </span>
+        <span class="clip-shape clip-as-border octagone">
+        <input id='search-input'
+            type="text" 
+            class="clip-shape octagone"
+            required 
+            minlength="0"
+            maxlength="64"
+            pattern="^[a-zA-Z0-9 ]+$"/>
+        </span>
+    </fieldset>
+    <fieldset>
+        <legend class="hide-from-view"><strong>Sort by</strong></legend>
+        <span id="checklist-select-label">Sort by: </span>
+        <FalseSelect baseId='enchantsort' describedBy='checklist-select-label' />
+    </fieldset>
+    <fieldset>
+        <legend class="hide-from-view"><strong>Restriction</strong></legend>
+        <span id="checklist-select-label">Restriction: </span>
+        <FalseSelect baseId='enchantrestrict' describedBy='checklist-select-label' />
+    </fieldset>
+    
+</form>
+
+<style>
+
+form#enchantments-filters {
+    position: sticky; 
+    top: var(--tx-companion-main-header-height); 
+    z-index: 100; 
+    background-color: var(--tx-color-back); 
+    display: flex; 
+    gap: 0.3em; 
+    align-items: center; 
+    flex-wrap: wrap;
+    border: var(--tx-line-width-xs) solid var(--tx-color-line);
+    border-radius: 15px;
+}
+form#enchantments-filters[hidden] {
+    display: none !important;
+}
+
+fieldset {
+    border: 0;
+    gap: inherit;
+    display: flex;
+    align-items: inherit; 
+    flex-wrap: inherit;
+}
+fieldset:has( [type=text]),
+fieldset:has(>[type=range]) {
+    flex-grow: 1;
+    min-width: 50%;
+}
+
+.clip-as-border {
+    display: inline-block;
+    --tx-color-back: var(--tx-color-fiv-background);
+    flex-grow: 1;
+}
+.clip-as-border:focus,
+.clip-as-border:hover {
+    --tx-color-back: var(--tx-color-fiv-background-accent);
+}
+[type=text] {
+    color: inherit;
+    border-radius: inherit;
+    border: 0;
+    display: inline-block;
+    padding: var(--tx-padding-s);
+    width: 100%;
+    transform: none !important;
+}
+
+[type=range] {
+    flex-grow: 1;
+    min-width: 50%;
+}
+
+/* Target Input */
+.range-input {
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+    --track-size: 0.5em;
+    --thumb-size: 1em;
+    --track-color-left: var(--tx-color-scrollbar);
+    --track-color-right: var(--tx-color-line-alpha);
+    --thumb-color: var(--tx-color-fiv-background);
+    --track-border: var(--tx-line-width-xxs) solid var(--tx-color-line);
+    --thumb-border: var(--tx-line-width-xxs) solid var(--tx-color-line);
+    --track-radius: 0.2em;
+    --thumb-radius: 0.25em;
+    --track-box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    --thumb-box-shadow: 0px 4px 18px var(--tx-color-one-background-accent-alpha);
+}
+
+/* --- Webkit Browsers --- */
+.range-input::-webkit-slider-runnable-track {
+    height: var(--track-size);
+    background: linear-gradient(to right, var(--track-color-left) var(--range-pct, 0%), var(--track-color-right) var(--range-pct, 0%));
+    border-radius: var(--track-radius);
+    border: var(--track-border);
+    box-shadow: var(--track-box-shadow);
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: var(--thumb-size, 32px);
+    width: var(--thumb-size, 32px);
+    background: var(--thumb-color);
+    border-radius: var(--thumb-radius);
+    border: var(--thumb-border);
+    box-shadow: var(--thumb-box-shadow);
+    margin-top: calc(-0.6*var(--track-size));
+}
+
+/* --- Firefox --- */
+.range-input::-moz-range-track {
+    height: var(--track-size);
+    background: linear-gradient(to right, #9dd569 var(--range-pct, 0%), #df7768 var(--range-pct, 0%));
+    border-radius: var(--track-radius);
+    border: var(--track-border);
+    box-shadow: var(--track-box-shadow);
+}
+
+.range-input::-moz-range-thumb {
+    height: var(--thumb-size, 32px);
+    width: var(--thumb-size, 32px);
+    background: var(--thumb-color);
+    border-radius: var(--thumb-radius);
+    border: var(--thumb-border);
+    box-shadow: var(--thumb-box-shadow);
+}
+
+</style>

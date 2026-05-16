@@ -7,10 +7,16 @@ interface Props {
     pageFullUrl: string, 
     description: string, 
     title: string,
-	startupScripts?: ScriptName[]
+	startupScripts?: ScriptName[],
+	imageUrl?: string, 
+	imageType?: string, 
+	imageWidth?: string, 
+	imageHeight?: string
 }
 
-const { pageFullUrl, description, title, startupScripts } = Astro.props;
+const { pageFullUrl, description, title, startupScripts, 
+		imageUrl, imageType, imageWidth, imageHeight
+ } = Astro.props;
 ---
 
 
@@ -18,12 +24,12 @@ const { pageFullUrl, description, title, startupScripts } = Astro.props;
 <Head pageTitle={title}
 	  metaTitle=`Tuxborn ${title}`
 	  author="kahootics" 
-	  imageUrl="https://raw.githubusercontent.com/Omni-guides/Tuxborn/refs/heads/main/images/Splash.png"
+	  imageUrl={imageUrl ?? "https://raw.githubusercontent.com/Omni-guides/Tuxborn/refs/heads/main/images/Splash.png"}
 	  iconUrl='/Tuxborn_Companion/helmet.svg'
 	  iconType='image/svg+xml'
-	  imageType="image/png"
-	  imageWidth="1280"
-	  imageHeight="720"
+	  imageType={imageType ?? "image/png"}
+	  imageWidth={imageWidth ?? "1280"}
+	  imageHeight={imageHeight ?? "720"}
 	  {description}
    	  locale="en_us"
    	  siteName="Tuxborn Companion" 

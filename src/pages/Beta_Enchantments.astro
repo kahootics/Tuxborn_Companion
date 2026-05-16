@@ -1,0 +1,185 @@
+---
+import '../styles/core-setup.css';
+import '../styles/themes.css';
+import '../styles/layout.css';
+import '../styles/utilities/clip-shapes.css';
+import '../styles/utilities/flip-cards.css';
+
+import '/src/styles/utilities/false-select.css';
+
+
+/* Images import */
+import contentIconsSprite from "/src/assets/mods-compendium/content-icons-sprite.png";
+import icons from "/src/assets/mods-compendium/icons-generic.png";
+/* Image optimization */
+import imageToFormat from '../scripts/utilities/image-to-format';
+const iconsSpriteWebp = (await imageToFormat(contentIconsSprite, 'webp')).src;
+const iconsSpritePng = contentIconsSprite.src;
+const iconsWebp = (await imageToFormat(icons, 'webp')).src;
+const iconsPng = icons.src;
+
+/* SVGs */
+import {getSVGsStyleString} from '../scripts/utilities/import-svgs';
+
+const svgs = getSVGsStyleString(['green-leaves','helmet','waves','butterleaves', 'forest']);
+
+import CompanionHead from "../layouts/CompanionHead.astro";
+import CompanionHeader from "../components/CompanionHeader.astro";
+import LeftPanel from "../layouts/wrappers-containers/left-panel.astro";
+import MainNav from '../components/MainNav.astro';
+
+import CompanionMod from '../layouts/CompanionMod.astro';
+import Modal from '../layouts/Modal.astro';
+import Checkbox from '../assets/svg/checkbox.astro';
+import IconsLegend from '../components/mods-compendium/icons-legend.astro';
+import ImageModal from '../components/mods-compendium/image-modal.astro';
+import MainFooter from '../components/MainFooter.astro';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import fetchSheetDataset from '../scripts/data-management/CSV/fetch-sheet-dataset.ts';
+import companionDatasheets from '../data/companion-datasheets.json';
+
+/* Mods Compendium fetch & validation */
+import GoogleForm from '../components/utility/googleForm.astro';
+import { magEffMappify, parseEnchantsArmorTest, parseMagEffsTest } from '../Enchantments(Temporary)/types';
+import Enchant from '../Enchantments(Temporary)/enchant.astro';
+
+import '../styles/mod-compendium.css';
+import EnchFilter from '../Enchantments(Temporary)/EnchFilter.astro';
+import Filter from '../assets/svg/filter.astro';
+import DropdownControl from '../components/navigation/dropdown-control.astro';
+import { toSafeKebab } from '../scripts/utilities/string-parsers';
+
+/* ENCHANTMENTS  */
+const enchantsRaw = await fetchSheetDataset(companionDatasheets.enchantments.id, companionDatasheets.enchantments.gid, '[//n]', '|');
+
+const enchants = parseEnchantsArmorTest(enchantsRaw);
+
+/* MAGICAL EFFECTS */
+const magEffsRaw = await fetchSheetDataset(companionDatasheets.magEff.id, companionDatasheets.magEff.gid, '[//n]', '|');
+
+const magEffs = parseMagEffsTest(magEffsRaw);
+---
+
+<html lang="en" style=`--tx-content-icons-sprite-webp: url('${iconsSpriteWebp}'); --tx-content-icons-sprite-png: url('${iconsSpritePng}');--tx-generic-icons-webp: url("${iconsWebp}"); ${svgs}; `>
+	<CompanionHead 
+        title="Enchantments in the Beta" 
+		description="A Work in Progress list of enchantments that Tuxborn is adding to 1.2 Beta"
+    	pageFullUrl={Astro.url.href}
+        imageUrl='https://imgur.com/UY0YL2y.png'
+        imageType='image/png'
+        imageHeight='1152'
+        imageWidth='2048'
+        startupScripts={['clips', 'themes', 'flips']}>
+	</CompanionHead>
+	<body style=`--tx-generic-icons: url("${iconsPng}");`>
+
+        <CompanionHeader>
+            <button 
+            style="background-color: transparent; display: block; aspect-ratio:1;"
+  id='filters'
+  class="octagone clip-frame"
+  type="button" 
+  aria-label=`Open Filters Menu`
+  aria-controls='enchantments-filters' 
+  aria-expanded="true">
+  <span style="background-color: var(--tx-color-two-background-alpha); display: inline-block;">
+    
+                <Filter fill="var(--tx-filters-fill)" stroke="var(--tx-color-line)" />
+    
+  </span>
+</button>
+        </CompanionHeader>
+
+        <LeftPanel>
+            <MainNav />
+        </LeftPanel>
+
+        <div id="modal-backdrop" hidden>
+            <Modal title='Image' id='image-modal' openerId='images' >
+                <ImageModal />
+            </Modal>
+        </div>
+
+        <main id="main-page-content">
+            <div id="central-panel">
+
+                <section class="clip-shape octagone mod-section">
+                    <h2>Notes</h2>
+                    <a style="color: hsl(120, 39%, 63%);" href="#mods-compendium">SKIP</a>
+                    <ul>
+                        <li>This page currently covers all (<strong>{enchants.length}</strong>) the armor enchantments available in Tuxborn 1.3 [Beta 3]</li>
+                        <li>Items in this list are not guaranteed to be in 1.2 final version</li>
+                        <li>Magnitude is <strong>always</strong> rounded half-down</li>
+                        <li>All numbers below assume Grand Soul usage</li>
+                        <li>Locations for the enchanted items are missing</li>
+                        <li><strong>Weapon enchantments will be covered in a later update</strong></li>
+                    </ul>
+                    <p>If you have a minute, consider compiling 
+                        <a style="color: hsl(120, 39%, 63%);"  href="#feedback-f">this feedback form for the Tuxborn Companion</a>
+                    </p>
+                </section>
+
+                <section class="clip-shape octagone mod-section">
+                    <h2>Navigation</h2>
+                    <ul>
+                        <li>Enchantments's magnitudes at different skill levels are extimations; error is limited to ±1 in most casea</li>
+                        <li><strong>Click on an enchantment to view more details</strong></li>
+                        <li>All enchantments feature a custom rating (S-F)</li>
+                        <li>Filtering options are available to use</li>
+                    </ul>
+                </section>
+
+                <section class="clip-shape octagone mod-section">
+                    <h2>Enchanting in Tuxborn</h2>
+                    <ul>
+                        <li>Tuxborn runs Thaumaturgy to overhaul vanilla enchantments; additionally, many other mods introduce their own learnable enchantments</li>
+                        <li>Not all enchantments introduced by mods integrate well with Thaumaturgy, often resulting in them being significantly more powerful</li>
+                        <li>Most non-Thaumaturgy enchantments have no restriction on what kind of apparel they can be applied to</li>
+                        <li>For means to further improve your Enchanting see the <a target="_blank" href="https://tuxborn.org/wiki/general-content-topics/crafting/">wiki page on crafting</a></li>
+                        
+                    </ul>
+                </section>
+
+
+                <div id="mods-compendium">
+                    <Checkbox color='var(--tx-color-line)'/>
+                    
+                    <EnchFilter />
+
+                    {enchants.map((enchant, i) => 
+                        <Enchant {enchant} 
+                            effects={magEffMappify(magEffs)}
+                            default_order={i}></Enchant>
+                    )}
+                </div>
+                <section class="clip-shape octagone mod-section">
+                    <h2 id="feedback-f">Feedback Form</h2>
+                    <GoogleForm />
+                </section>
+                <MainFooter />
+            </div>
+        </main>
+        
+    </body>
+</html>
+
+<style>
+        #filters[aria-expanded=true] {
+    --tx-filters-fill: var(--tx-color-frame);
+        }
+    </style>
