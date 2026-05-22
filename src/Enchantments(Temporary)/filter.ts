@@ -1,30 +1,55 @@
+
 import { createFalseSelect } from "../scripts/utilities/DOM"
+import { enchantingSkill, ArmoMag, WeapMag, WeapCharges, ArmoPrice, WeapPrice } from "./enchantments";
 
 // All the variable magnitudes displayed
-const magnis = document.querySelectorAll<HTMLElement>('[data-mag-base]');
-const magnitudes: Map<HTMLElement, {
-    base: string,
-    growth: number,
-    zero: number,
-    mag: Function
-}> = new Map();
-
-magnis.forEach(mag => {
-    magnitudes.set(mag, {
-        base: mag.getAttribute('data-mag-base') ?? '0',
-        growth: Number(mag.getAttribute('data-mag-growth')) ?? 0,
-        zero: Number(mag.getAttribute('data-mag-zero')) ?? 0,
-        mag(val: number) {
-            return Math.floor(this.zero*(1 + this.growth*Math.pow(val/100,2)))
-        }
-    })
+let base, zero, hundred, growth: string | null;
+const armoMags: Set<ArmoMag> = new Set();
+const weapMags: Set<WeapMag> = new Set();
+const armoValues: Set<ArmoPrice> = new Set();
+const weapValues: Set<WeapPrice> = new Set();
+const weapCharges: Set<WeapCharges> = new Set();
+document.querySelectorAll<HTMLElement>('.armo-magnitude').forEach(mag=> {
+    base = mag.getAttribute('data-mag-base');
+    zero = mag.getAttribute('data-mag-zero');
+    //hundred = mag.getAttribute('data-mag-hundred');
+    growth = mag.getAttribute('data-mag-growth');
+    if(!(base && zero && growth)) {
+        mag.id = 'sbaglio'
+        mag.style.backgroundColor = 'black'
+        mag.textContent = 'ggfvbggfecdvfbghgtvrfdcvfbgnhytgrfcdvf bghtrfcd errore'
+        throw new Error(`Could not find magnitude relative data of enchantment ${mag.id}`)
+    } armoMags.add(new ArmoMag(mag,base,Number(zero),Number(growth)))
 })
-function updateMagnitudes(skill: number) {
-    magnitudes.forEach((data,mag) => {
-
-        mag.textContent = data.mag(skill);
-
-    })
+document.querySelectorAll<HTMLElement>('.weap-magnitude').forEach(mag=> {
+    base = mag.getAttribute('data-mag-base');
+    zero = mag.getAttribute('data-mag-zero');
+    hundred = mag.getAttribute('data-mag-hundred');
+    growth = mag.getAttribute('data-mag-growth');
+    if(!(base && zero && growth)) throw new Error(`Could not find magnitude relative data of enchantment ${mag.id}`)
+    weapMags.add(new WeapMag(mag,base,Number(zero),Number(hundred),Number(growth)))
+})
+document.querySelectorAll<HTMLElement>('.armo-enchantment-value').forEach(val=> {
+    zero = val.getAttribute('data-value-zero');
+    if(!zero) throw new Error(`Could not find value at 0 skill of enchantment ${val.id}`);
+    armoValues.add(new ArmoPrice(val,Number(zero)));
+})
+document.querySelectorAll<HTMLElement>('.weap-enchantment-value').forEach(val=> {
+    hundred = val.getAttribute('data-charges-hundred');
+    if(!hundred) throw new Error(`Could not find charges at 100 skill of enchantment ${val.id}`);
+    weapValues.add(new WeapPrice(val,Number(hundred)));
+})
+document.querySelectorAll<HTMLElement>('.weap-enchantment-charges').forEach(val=> {
+    hundred = val.getAttribute('data-charges-hundred');
+    if(!hundred) throw new Error(`Could not find charges at 100 skill of enchantment ${val.id}`);
+    weapCharges.add(new WeapCharges(val,Number(hundred)));
+})
+const chargesSections = {
+    list: document.querySelectorAll<HTMLElement>('.ench-charges-section'),
+    set hidden(attribute: boolean) {
+        requestAnimationFrame(() => 
+        this.list.forEach((sec => sec.hidden = attribute)))
+    }
 }
 
 // The filters inputs
@@ -40,12 +65,15 @@ select.inputs.forEach(input => input.addEventListener('change', () => {
 
     switch(select.value) {
         case('base'): {
-            magnitudes.forEach((data,mag) => {
-                mag.innerText = data.base;
-            })
+            ArmoMag.resetSet(armoMags);
+            WeapMag.resetSet(weapMags);
+            chargesSections.hidden = true;
         } break;
         case('skill'): {
-            updateMagnitudes(Number(enchRange.value));
+            ArmoMag.updateSet(armoMags);
+            WeapMag.updateSet(weapMags);
+            WeapCharges.updateSet(weapCharges);
+            chargesSections.hidden = false;
         } break;
     }
     
@@ -55,13 +83,17 @@ select.inputs.forEach(input => input.addEventListener('change', () => {
 enchRange.addEventListener('input', () => {
     const value = enchRange.value;
     enchLev.innerText = value;
+    enchantingSkill.level = Number(value);
     const pct = (Number(value) - 15) / 85 * 100;
     enchRange.style.setProperty('--range-pct', pct + '%');
     
-    const skill = Number(enchRange.value);
-    if(select.value === 'skill') 
-        updateMagnitudes(skill);
-    updateEnchantsPrices(skill);
+    if(select.value === 'skill') {
+        ArmoMag.updateSet(armoMags);
+        WeapMag.updateSet(weapMags);
+        WeapCharges.updateSet(weapCharges);
+    }
+    ArmoPrice.updateSet(armoValues);
+    WeapPrice.updateSet(weapValues);
 })
 
 /* =================================================================== */
@@ -76,12 +108,10 @@ form.addEventListener('submit', e => {e.preventDefault()});
 
 const enchantments = document.querySelectorAll<HTMLElement>('[data-ench-eff-list]');
 
-const enchsSearch = new Map();
-const enchsSort: any[] = [];
+const enchs: any[] = [];
 
 enchantments.forEach(enchant => {
-    enchsSearch.set(enchant, enchant.getAttribute('data-ench-eff-list')?.toLocaleLowerCase());
-    enchsSort.push({
+    enchs.push({
         ench: enchant,
         default: Number(enchant.getAttribute('data-default')),
         tier: Number(enchant.getAttribute('data-tier')),
@@ -89,7 +119,17 @@ enchantments.forEach(enchant => {
         mod: enchant.getAttribute('data-mod'),
         restrictions: enchant.getAttribute('data-restrictions'),
         value: Number(enchant.getAttribute('data-value')),
-        valueTxt: document.getElementById(`${enchant.id}-value`)
+        searchStr: enchant.getAttribute('data-ench-eff-list')?.toLocaleLowerCase(),
+        _searchFlag: true,
+        _restrFlag: true,
+        set searchFlag(flag: boolean) {
+            this._searchFlag = flag;
+            enchant.hidden = !(this._searchFlag && this._restrFlag);
+        },
+        set restrFlag(flag: boolean) {
+            this._restrFlag = flag;
+            enchant.hidden = !(this._searchFlag && this._restrFlag);
+        }
     })
 })
 
@@ -98,13 +138,12 @@ let timer_search: number;
 search.addEventListener('input', () => {
     clearTimeout(timer_search);
 
-    timer_search = setTimeout(() => {
+    timer_search = window.setTimeout(() => {
 
         const input = search.value.toLocaleLowerCase().trim();
-        enchsSearch.forEach((string, enchant) => {
-
-            enchant.hidden = 
-            !(string.includes(input));
+        enchs.forEach(enchant => {
+            enchant.searchFlag =
+            enchant.searchStr.includes(input);
         })
     }, 500);
 })
@@ -114,29 +153,28 @@ let timer_sort: number;
 
 sort.inputs.forEach(input => input.addEventListener('input',() => {
     clearTimeout(timer_sort);
-    timer_sort = setTimeout(() => {
+    timer_sort = window.setTimeout(() => {
 
         const sortKey = sort.value;
         const frag = document.createDocumentFragment();
 
-        switch(typeof enchsSort[0][sortKey]) {
-            case('string'): enchsSort.sort((a,b) => 
+        switch(typeof enchs[0][sortKey]) {
+            case('string'): enchs.sort((a,b) => 
                 a[sortKey].localeCompare(b[sortKey], undefined, { sensitivity: 'base' })
             ); break;
             case('number'): {
                 if(sortKey === 'value') {
-                    enchsSort.sort((a,b) => 
+                    enchs.sort((a,b) => 
                         b[sortKey] - a[sortKey]
                     ); 
-                } else enchsSort.sort((a,b) => 
+                } else enchs.sort((a,b) => 
                     a[sortKey] - b[sortKey]
                 ); 
             }break;
         }
 
         
-
-        enchsSort.forEach(ench => {
+        enchs.forEach(ench => {
             frag.appendChild(ench.ench)
         })
 
@@ -147,27 +185,32 @@ sort.inputs.forEach(input => input.addEventListener('input',() => {
 /* ============================================ */
 
 const restriction = createFalseSelect('enchantrestrict', [
-    'none','Head','Neck','Body','Hands','Finger','Feet','Shield'],'Enchantment');
+    'none','Apparel','Weapon','Head','Neck','Body','Hands','Finger','Feet','Shield'],'Enchantment');
 let timer_rest: number;
 
 
 restriction.inputs.forEach(input => input.addEventListener('input',() => {
     clearTimeout(timer_rest);
-    timer_rest = setTimeout(() => {
+    timer_rest = window.setTimeout(() => {
         const rest = restriction.value;
 
-        if(rest === 'none') {
-            enchsSort.forEach(enchant => enchant.ench.hidden = false)
+        switch(rest) {
+            case('none'): {
+                enchs.forEach(enchant => enchant.restrFlag = true);
+            }; break;
+            case('Weapon'): {
+                enchs.forEach(enchant => enchant.restrFlag = enchant.restrictions.includes(rest));
+            }; break;
+            default: {
+               
+                enchs.forEach(enchant => { 
+                    const temp = enchant.restrictions;
+                    enchant.restrFlag = temp.includes(rest) || temp === 'Apparel'
+                });
+                
 
-        } else {
-            enchsSort.forEach(enchant => {
-                const temp = enchant.restrictions;
-                enchant.ench.hidden = 
-                !(temp === null 
-                || temp.includes(rest))
-                 
-            })
-        }
+            }
+        } 
         
     }, 300);
 }))
@@ -186,13 +229,3 @@ toggle?.addEventListener('click',()=> {
 
 /* ============================================================ */
 
-function calcEnchantPrice(atZero: number, skill: number) {
-    const skillMult = ((100 - skill)/(1 + skill*0.026) + skill*Math.pow(2.71828,(-skill/82)))/100;
-    return Math.round(atZero * skillMult);
-}
-
-function updateEnchantsPrices(skill: number) {
-    enchsSort.forEach(enchant => {
-        enchant.valueTxt.textContent = calcEnchantPrice(enchant.value,skill);
-    })
-}

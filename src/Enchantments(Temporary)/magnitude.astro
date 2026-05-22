@@ -1,23 +1,23 @@
 ---
 import { z } from 'zod'
-import {magnitude} from './types';
-
+import {magnitude, RecordType} from './types';
 
 interface Props {
     mag: z.infer<typeof magnitude>
+    recordType: z.infer<typeof RecordType>
+    enchantmentId: string
+    effectId: string
 }
 
-const {mag} = Astro.props;
+const {mag, recordType, enchantmentId, effectId} = Astro.props;
 ---
 
 <strong 
+  id={`${enchantmentId}-${effectId}`}
   data-mag-base={mag.base}
   data-mag-growth={mag.growth}
-  data-mag-zero={mag.atZero}>{mag.base}</strong><slot />
+  data-mag-zero={mag.atZero}
+  data-mag-hundred={recordType === 'WEAP' ? mag.atHundred : null}
+  class={recordType === 'ARMO' ? 'armo-magnitude' : 'weap-magnitude' }
+  >{mag.base}</strong><slot />
 
-
-<style>
-    strong {
-        color: hsl(120, 62%, 74%);
-    }
-</style>

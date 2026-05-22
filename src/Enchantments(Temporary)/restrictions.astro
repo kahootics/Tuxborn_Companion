@@ -1,0 +1,37 @@
+---
+
+import type { z } from 'astro:content';
+import { RecordType } from './types.ts';
+
+interface Props {
+    restrictionList: String[],
+    recordType: z.infer<typeof RecordType>
+}
+
+const { restrictionList, recordType } = Astro.props;
+
+---
+
+<h3>Restrictions</h3>
+<p>{((restrictionList[0] === 'Apparel' && restrictionList.length === 1)|| restrictionList[0] === 'Weapon' ) 
+    ? <span>You can apply this enchantment to <strong>any</strong> {recordType === 'ARMO' ? 'piece of apparel' : 'weapon'}.</span>
+    : <span>You can only apply this enchantment to
+        {restrictionList
+        .filter((rest) => rest !== 'Apparel')
+        .map((rest, i, a) => {
+            rest = <strong>{rest}</strong>
+            switch(i) {
+                case(a.length - 1): return rest
+                case(a.length - 2): return <span>{rest} and </span>
+                default: return <span>{rest}, </span>
+            }}
+        )}.
+     </span>}
+</p>
+
+<style>
+
+strong {
+    color: hsl(120, 51%, 84%);
+}
+</style>

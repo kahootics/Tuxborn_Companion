@@ -1,0 +1,30 @@
+---
+
+import type { z } from 'astro:content';
+import { WeapPrice, ArmoPrice } from './enchantments'
+import type { RecordType } from './types';
+
+interface Props {
+    enchantId: string,
+    enchantingLevel: number,
+    recordType: z.infer<typeof RecordType>,
+    enchValueAtZero: number,
+    enchChargesAtHundred: number
+}
+
+const { enchantId, enchantingLevel, recordType, enchValueAtZero, enchChargesAtHundred } = Astro.props;
+
+---
+
+<h3>Value</h3>
+<p>~<strong id={`${enchantId}-value`} 
+        class=`${recordType.toLocaleLowerCase()}-enchantment-${(enchChargesAtHundred > 0 || recordType === 'ARMO') ? 'value' : 'price'}` 
+        data-value-zero={enchValueAtZero}
+        data-charges-hundred={enchChargesAtHundred}
+        >
+        {enchValueAtZero && (recordType === 'ARMO') 
+        ? ArmoPrice.calcValue(enchantingLevel, enchValueAtZero)
+        : WeapPrice.calcValue(enchantingLevel, enchChargesAtHundred)
+        }
+    </strong> coins
+</p>

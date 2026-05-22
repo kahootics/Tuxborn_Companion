@@ -119,7 +119,10 @@ const magEffs = parseMagEffsTest(magEffsRaw);
         <main id="main-page-content">
             <div id="central-panel">
 
-                <Disclaimer enchNo={enchants.length} />
+                <Disclaimer 
+                    enchArmoNo={enchants.map(ench => ench.recordType).filter(a=>a==='ARMO').length} 
+                    enchWeapNo={enchants.map(ench => ench.recordType).filter(a=>a==='WEAP').length}
+                     />
 
                 <div id="mods-compendium">
                     <Checkbox color='var(--tx-color-line)'/>
@@ -132,10 +135,6 @@ const magEffs = parseMagEffsTest(magEffsRaw);
                             default_order={i}></Enchant>
                     )}
                 </div>
-                <section class="clip-shape octagone mod-section">
-                    <h2 id="feedback-f">Feedback Form</h2>
-                    <GoogleForm />
-                </section>
                 <MainFooter />
             </div>
         </main>

@@ -35,7 +35,8 @@ export function createFalseSelect(baseId: string, radios: string[], name: string
     list.id = listId; 
     
     select.setAttribute('aria-controls', listId);
-    const DURATION = Number(container.computedStyleMap().get('--js-time'));
+    const DURATION = Number(window.getComputedStyle(container).getPropertyValue('--js-time'));
+    console.log(DURATION)
 
     let _value: string;
 

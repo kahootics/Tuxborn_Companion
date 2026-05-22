@@ -4,7 +4,14 @@ import {z} from 'zod';
 import {enchantArmorTest, magEffTest} from './types';
 import ClippedArticle from '../layouts/wrappers-containers/clipped-article.astro';
 import Magnitude from './magnitude.astro';
-import { calcEnchantPrice } from './common';
+import { calcEnchantPrice, calcEnchantPriceSkillMult } from './enchantments';
+import Restrictions from './restrictions.astro';
+import HowToLearn from './howToLearn.astro';
+import './common.css';
+import EnchEffect from './enchEffect.astro';
+import EnchFilter from './EnchFilter.astro';
+import EnchValue from './enchValue.astro';
+import EnchCharges from './enchCharges.astro';
 
 interface Props {
     enchant: z.infer<typeof enchantArmorTest>,
@@ -28,26 +35,30 @@ const { enchant, effects, default_order } = Astro.props;
     data-name={enchant.name}
     data-mod={enchant.mod}
     data-restrictions={enchant.restrictions?.join('|')}
-    data-value={enchant.basePrice}
+    data-value={enchant.priceAtZero}
     > 
-    <button class="dropdown" aria-controls={`${enchant.id}-drop`}>
+    <button class="dropdown no-style-button" aria-controls={`${enchant.id}-drop`}>
     <header class="mod-section">
         <div><h2 aria-describedby={`${enchant.id}-desc`}>{enchant.name}</h2>
             <strong class="enchantment-tier">{enchant.tier}</strong>
         </div>
-        <i>({enchant.mod})</i>
+        <span>{enchant.bugs && <b>⚠️ </b>}<i>({enchant.mod})</i></span>
     </header>
     <section class="mod-section description">
         <p id={`${enchant.id}-desc`}>
             {enchant.effects.map(effect => {
                 const temp = effects.get(effect);
                 if(!temp) throw new Error(`${effect} is missing from list`);
+                if(temp.recordType !== enchant.recordType) throw new Error(`Mismatching record types for ${
+        enchant.id} and effect ${temp.name}`);
+
                 const tempFrags = `${temp.description.og}. `.split('<mag>');
                 return tempFrags.map((frag,i) => {
                     if(i===0) {
                         return frag
                     } else {
-                        return <Magnitude mag={temp.mag}>{frag}</Magnitude>
+                        return <Magnitude effectId={temp.id} enchantmentId={enchant.id}
+                        recordType={temp.recordType} mag={temp.mag}>{frag}</Magnitude>
                     }
                 });
             }
@@ -57,102 +68,61 @@ const { enchant, effects, default_order } = Astro.props;
     </button>
     <div class="dropped" id={`${enchant.id}-drop`}>
 
+        <section class="mod-section same-lined">
+            <EnchValue 
+                enchantId={enchant.id}
+                enchantingLevel={100}
+                recordType={enchant.recordType}
+                enchValueAtZero={enchant.priceAtZero}
+                enchChargesAtHundred={enchant.chargesAtHundred}
+            />
+        </section>
+
+        {enchant.recordType === 'WEAP' && <section class="mod-section same-lined ench-charges-section" hidden>
+            <EnchCharges
+                enchantId={enchant.id}
+                enchantingLevel={100}
+                recordType={enchant.recordType}
+                enchChargesAtHundred={enchant.chargesAtHundred}
+            />
+        </section>}
+
         <section class="mod-section closer">
-            <h3>Value</h3>
-            <p>Approximately ~<strong id={`${enchant.id}-value`} class="enchantment-value">{calcEnchantPrice(enchant.basePrice,100)}</strong> coins</p>
+            <Restrictions 
+                restrictionList={enchant.restrictions} 
+                recordType={enchant.recordType} />
         </section>
 
         <section class="mod-section closer">
-            <h3>Restrictions</h3>
-            <p>{enchant.restrictions === null
-                ? <span>You can apply this enchantment to <strong>any</strong> piece of apparel</span>
-                : <span>You can only apply this enchantment to
-                    {enchant.restrictions.map(rest => <strong>{rest}</strong>).map((rest, i, a) => {
-                        switch(i) {
-                            case(a.length - 1): return rest
-                            case(a.length - 2): return <span>{rest} and </span>
-                            default: return <span>{rest}, </span>
-                        }}
-                    )}
-                    </span>}.</p>
-        </section>
-
-        <section class="mod-section closer">
-            <h3>Effects</h3>
-            {
-                enchant.effects.map(effect => {
-                    const eff = effects.get(effect);
-                    if(!eff) throw new Error(`${effect} is missing from list`);
-                    const tempFrags = `${eff.description.main ?? eff.description.og}.`.split('<mag>');
-                    return  <section class="clip-shape octagone mod-section">
-                                <h4>{eff.name.main ?? eff.name.og}</h4>
-                                <p class="smaller">{tempFrags.map((frag,i) => {
-                                    if(i===0) {
-                                        return frag
-                                    } else {
-                                        return <Magnitude mag={eff.mag}>{frag}</Magnitude>
-                                    }
-                                })}</p>
-                            </section>
-                })
-            }
-            
+            <EnchEffect 
+                recordType={enchant.recordType}
+                enchantmentId={enchant.id}
+                effectsList={effects}
+                enchEffects={enchant.effects}
+             />
         </section>
         {enchant.disenchant && <section class="mod-section closer">
-        <h3>How to Learn</h3>
-        <p>
-            You can learn this enchantment by disenchanting {
-                enchant.disenchant[0].includes('*') 
-                ? 'any' : 'the'}
-            {enchant.disenchant.join(", ").replaceAll('*','apparel*')}.
-        </p><p>
-            {enchant.obtain}
-        </p>
-    </section>}
-    {enchant.notes && <section class="mod-section closer">
-        <h3>Notes</h3>
-        <p>{enchant.notes}</p>
-    </section>}
-    {enchant.bugs && <section class="mod-section closer">
-        <h3>Bugs</h3>
-        <p>{enchant.bugs}</p>
-    </section>}
+            <HowToLearn 
+                disenchantList={enchant.disenchant}
+                recordType={enchant.recordType}
+                obtainMethod={enchant.obtain} />
+        </section>}
+        {enchant.notes && <section class="mod-section closer">
+            <h3>Notes</h3>
+            <p>{enchant.notes}</p>
+        </section>}
+        {enchant.bugs && <section class="mod-section closer">
+            <h3>Bugs ⚠️</h3>
+            <p>{enchant.bugs}</p>
+        </section>}
     </div>
     
 </ClippedArticle>
 
 <script src="./filter.ts"></script>
-
+<!-- 
 <style>
-
-button {
-    all: unset;
-    width: 100%;
-    cursor: pointer;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: var(--tx-clip) var(--tx-clip) 0 0;
-    padding-bottom: 0;
-}
-h2 {
-    display: inline-block;
-}
-h2, h3, h4 {
-    margin-bottom: 0;
-}
-i, p.smaller { 
-    font-size: 80%;
-}
-
-strong {
-    color: hsl(120, 51%, 84%);
-}
-/* TIERS ============================ */
-[data-tier=6] strong.enchantment-tier {
+    [data-tier="6"] strong.enchantment-tier {
     color: hsl(0, 98%, 43%);
     padding-bottom: 0;
     margin-bottom: 0;
@@ -161,50 +131,30 @@ strong {
     color: hsl(317, 75%, 48%);
     padding-bottom: 0;
     margin-bottom: 0;
-}[data-tier=4] strong.enchantment-tier {
+}
+[data-tier=4] strong.enchantment-tier {
     color: hsl(72, 81%, 52%);
     padding-bottom: 0;
     margin-bottom: 0;
-}[data-tier=3] strong.enchantment-tier {
+}
+[data-tier=3] strong.enchantment-tier {
     color: hsl(120, 71%, 60%);
     padding-bottom: 0;
     margin-bottom: 0;
-}[data-tier=2] strong.enchantment-tier {
+}
+[data-tier=2] strong.enchantment-tier {
     color: hsl(205, 100%, 73%);
     padding-bottom: 0;
     margin-bottom: 0;
-}[data-tier=1] strong.enchantment-tier {
+}
+[data-tier=1] strong.enchantment-tier {
     color: hsl(26, 100%, 57%);
     padding-bottom: 0;
     margin-bottom: 0;
-}[data-tier=0] strong.enchantment-tier {
+}
+[data-tier=0] strong.enchantment-tier {
     color: hsl(48, 100%, 63%);
     padding-bottom: 0;
     margin-bottom: 0;
 }
-/* ======================================== */
-section.description {
-    padding-top: 0;
-    border-radius: 0 0 var(--tx-clip) var(--tx-clip);
-}
-button:has(+[hidden=false]) > section.description {
-    border-radius: 0;
-}
-
-.closer h3, h2, h4 {
-    padding-bottom: 0;
-}
-.closer p {
-    padding-top: 0;
-}
-
-div.dropped {
-    border-top: var(--tx-line-width-xxs) solid var(--tx-color-line);
-    overflow: hidden;
-}
-div.dropped > .mod-section:not(:first-child) {
-    border-radius: 0 0 var(--tx-clip) var(--tx-clip);
-    border-top: var(--tx-line-width-xxs) solid var(--tx-color-line);
-}
-
-</style>
+</style> -->

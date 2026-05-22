@@ -19,7 +19,7 @@
         'header header header header header header header'
         'image image image overview overview overview overview'
         'extra extra extra extra extra extra extra';
-    --mod-article-grid-large: 
+    --mod-article-grid-large: /* Unused */
         'image image image header header header header'
         'image image image overview overview overview overview'
         'extra extra extra extra extra extra extra';
@@ -84,7 +84,7 @@
 @media screen and (min-width: 876px) and (max-width: 1024px), screen and (min-width: 1200px) {
     /* LARGE SCREEN LAYOUT */
     #mods-compendium {
-        --mod-article-grid: var(--mod-article-grid-large);
+        --mod-article-grid: var(--mod-article-grid-medium);
         font-size: 110%;
     }
     .mod-extra-section-wrapper.mod-has-where-to-start-image {

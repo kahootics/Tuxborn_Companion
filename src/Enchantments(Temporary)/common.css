@@ -1,0 +1,97 @@
+
+button.no-style-button {
+    all: unset;
+    width: 100%;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--tx-clip) var(--tx-clip) 0 0;
+    padding-bottom: 0;
+}
+h2 {
+    display: inline-block;
+}
+h2, h3, h4 {
+    margin-bottom: 0;
+}
+i, p.smaller { 
+    font-size: 80%;
+}
+
+[data-tier="6"] strong.enchantment-tier {
+    color: hsl(0, 98%, 43%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+[data-tier="5"] strong.enchantment-tier {
+    color: hsl(317, 75%, 48%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+[data-tier="4"] strong.enchantment-tier {
+    color: hsl(72, 81%, 52%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+[data-tier="3"] strong.enchantment-tier {
+    color: hsl(120, 71%, 60%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+[data-tier="2"] strong.enchantment-tier {
+    color: hsl(205, 100%, 73%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+[data-tier="1"] strong.enchantment-tier {
+    color: hsl(26, 100%, 57%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+[data-tier="0"] strong.enchantment-tier {
+    color: hsl(48, 100%, 63%);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* ======================================== */
+
+section.description {
+    padding-top: 0;
+    border-radius: 0 0 var(--tx-clip) var(--tx-clip);
+}
+button:has(+[hidden=false]) > section.description {
+    border-radius: 0;
+}
+
+.closer :where(h3, h2, h4) {
+    padding-bottom: 0;
+}
+.closer p {
+    padding-top: 0;
+}
+.same-lined {
+    display: flex;
+    gap: 0.2em;
+}
+.same-lined :where(h3, h2, h4)::after {
+    content: ': ';
+}
+
+div.dropped {
+    border-top: var(--tx-line-width-xxs) solid var(--tx-color-line);
+    overflow: hidden;
+}
+div.dropped > .mod-section:not(:first-child) {
+    border-radius: 0 0 var(--tx-clip) var(--tx-clip);
+    border-top: var(--tx-line-width-xxs) solid var(--tx-color-line);
+}
+
+strong {
+    color: hsl(120, 51%, 84%);
+}

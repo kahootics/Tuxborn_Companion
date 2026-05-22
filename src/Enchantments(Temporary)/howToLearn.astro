@@ -1,0 +1,25 @@
+---
+import type { z } from 'astro:content';
+import type { RecordType } from './types';
+
+
+interface Props {
+    disenchantList: string[],
+    recordType: z.infer<typeof RecordType>
+    obtainMethod: string | null
+}
+const { disenchantList, recordType, obtainMethod } = Astro.props;
+
+---
+
+<h3>How to Learn</h3>
+<p>
+    You can learn this enchantment by disenchanting {
+        disenchantList[0].includes('*') 
+        ? 'any' : 'the'}
+    {disenchantList.join(", ").replaceAll('*',
+    recordType === 'ARMO' ? 'apparel*' : 'weapon*')}.
+</p>
+{obtainMethod && <p>
+    {obtainMethod}
+</p>}

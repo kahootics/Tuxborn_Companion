@@ -1,6 +1,8 @@
 
 import {z} from 'zod';
 
+export const RecordType = z.string().regex(/^(ARMO|WEAP)/g);
+
 // ENCHANTMENTS ===========================
 
 export const enchantArmorTest = z.object({
@@ -9,13 +11,15 @@ export const enchantArmorTest = z.object({
     effects: z.array(z.string()),
     disenchant: z.array(z.string()).nullable(),
     mod: z.string(),
-    restrictions: z.array(z.string()).nullable(),
+    restrictions: z.array(z.string()),
     unique: z.boolean(),
-    obtain: z.string().nullable(),
+    obtain: z.string().nullable(), // temporary
     notes: z.string().nullable(),
     bugs: z.string().nullable(),
-    tier: z.string().nullable(),
-    basePrice: z.number()
+    tier: z.string().nullable(), // temporary
+    recordType: RecordType,
+    priceAtZero: z.number().min(0),
+    chargesAtHundred: z.number().min(-1)
 });
 
 export function parseEnchantsArmorTest(raw: {}[]) {
@@ -31,10 +35,12 @@ export function parseEnchantArmorTest(record: {}) {
 export const magnitude = z.object({
     base: z.number().nullable(),
     atZero: z.number().nullable(),
-    growth: z.number().min(0).max(1),
+    atHundred: z.number().nullable(),
+    growth: z.number().min(-1).max(100),
 })
 
 export const magEffTest = z.object({
+    id: z.string(),
     name: z.object({
         og: z.string(),
         main: z.string().nullable()
@@ -44,6 +50,7 @@ export const magEffTest = z.object({
         main: z.string().nullable()
     }),
     types: z.array(z.string()),
+    recordType: RecordType,
     mag: magnitude
 })
 

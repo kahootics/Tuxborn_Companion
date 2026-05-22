@@ -1,5 +1,6 @@
 
-const DURATION = Number(document.documentElement.computedStyleMap().get('--js-anim-time'));
+const DURATION = Number(window.getComputedStyle(document.documentElement).getPropertyValue('--js-anim-time'));
+console.log(DURATION);
 import { slideDown, slideUp } from "./dropdowns";
 
 const leftPanelWrapper = document.getElementById('left-panel-wrapper');
@@ -71,6 +72,9 @@ if(leftPanelWrapper && mainNavWrapper && mainNavContainer && mainNavTitle && mai
         toggle.setAttribute('aria-expanded', 'true');
         controlled.hidden = false;
         back.hidden = false;
+
+        void controlled.offsetHeight; // Force reflow
+
         titleSwap(title, toggle.textContent);
         requestAnimationFrame(()=> {
             controlled.setAttribute('data-shown', 'true');
@@ -156,6 +160,8 @@ function panelDropdownOpen(dropdown: Dropdown) {
     currentOpenDropdown = dropdown;
     dropdown.panelWrapper.style.display = 'block';
     dropdown.menuWrapper.hidden = false;
+
+    void dropdown.menuContainer.offsetHeight; // Firefox offset to force reflow
 
     requestAnimationFrame(() => {
     dropdown.toggle.setAttribute('aria-expanded', 'true');

@@ -1,0 +1,43 @@
+---
+import type { z } from 'astro/zod';
+import type { magEffTest, RecordType } from './types';
+import Magnitude from './magnitude.astro';
+
+interface Props {
+    enchantmentId: string,
+    effectsList: Map<String,z.infer<typeof magEffTest>>,
+    enchEffects: string[],
+    recordType: z.infer<typeof RecordType>
+}
+const { enchantmentId, effectsList, enchEffects, recordType } = Astro.props;
+
+
+---
+
+<h3>Effects</h3>
+{ enchEffects.map(effect => {
+    
+    const eff = effectsList.get(effect);
+    // Verification
+    if(!eff) throw new Error(`${effect} is missing from list`);
+    if(eff.recordType !== recordType) throw new Error(`Mismatching record types for ${
+        enchantmentId} and effect ${eff.name}`);
+    
+    const tempFrags = `${eff.description.main ?? eff.description.og}.`.split('<mag>');
+    
+    return  <section class="clip-shape octagone mod-section">
+            <h4>{eff.name.main ?? eff.name.og}</h4>
+            <p class="smaller">{tempFrags.map((frag,i) => {
+                if(i===0) {
+                    return frag
+                } else {
+                    return <Magnitude 
+                        {enchantmentId}
+                        effectId={eff.id}
+                        recordType={eff.recordType} 
+                        mag={eff.mag}>{frag}</Magnitude>
+                }
+            })}</p>
+        </section>
+                })
+            }

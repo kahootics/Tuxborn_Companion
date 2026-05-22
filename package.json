@@ -16,5 +16,8 @@
     "csv-parse": "^6.1.0",
     "remark-sectionize": "^2.1.0",
     "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1"
   }
 }
