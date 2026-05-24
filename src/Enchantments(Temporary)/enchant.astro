@@ -42,7 +42,7 @@ const { enchant, effects, default_order } = Astro.props;
         <div><h2 aria-describedby={`${enchant.id}-desc`}>{enchant.name}</h2>
             <strong class="enchantment-tier">{enchant.tier}</strong>
         </div>
-        <span>{enchant.bugs && <b>⚠️ </b>}<i>({enchant.mod})</i></span>
+        <span>{enchant.recordType === 'ARMO' ? "👚": "🪓"}{enchant.bugs && <b>⚠️ </b>}<i>({enchant.mod})</i></span>
     </header>
     <section class="mod-section description">
         <p id={`${enchant.id}-desc`}>
@@ -120,41 +120,3 @@ const { enchant, effects, default_order } = Astro.props;
 </ClippedArticle>
 
 <script src="./filter.ts"></script>
-<!-- 
-<style>
-    [data-tier="6"] strong.enchantment-tier {
-    color: hsl(0, 98%, 43%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-[data-tier=5] strong.enchantment-tier {
-    color: hsl(317, 75%, 48%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-[data-tier=4] strong.enchantment-tier {
-    color: hsl(72, 81%, 52%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-[data-tier=3] strong.enchantment-tier {
-    color: hsl(120, 71%, 60%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-[data-tier=2] strong.enchantment-tier {
-    color: hsl(205, 100%, 73%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-[data-tier=1] strong.enchantment-tier {
-    color: hsl(26, 100%, 57%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-[data-tier=0] strong.enchantment-tier {
-    color: hsl(48, 100%, 63%);
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-</style> -->
