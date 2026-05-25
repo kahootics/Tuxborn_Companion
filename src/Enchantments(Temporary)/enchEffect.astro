@@ -27,6 +27,18 @@ const { enchantmentId, effectsList, enchEffects, recordType } = Astro.props;
     
     return  <section class="clip-shape octagone mod-section">
             <h4>{eff.name.main ?? eff.name.og}</h4>
+            {eff.recordType === 'WEAP' && 
+            <div class="weap-ench-stats smaller closer">
+                <section class="same-lined">
+                    <h5>Damage<span class="hide-on-small-screens"> Type</span>: </h5>
+                    <p class="smaller stat">{eff.kwda?.replace('Magic Damage','').trim()}</p>
+                </section>
+                <section class="same-lined">
+                    <h5>Resist<span class="hide-on-small-screens"> Value</span>: </h5>
+                    <p class="smaller stat">{eff.resist?.replace('Resist','').trim()}</p>
+                </section>
+            </div>
+            }
             <p class="smaller">{tempFrags.map((frag,i) => {
                 if(i===0) {
                     return frag
@@ -41,3 +53,33 @@ const { enchantmentId, effectsList, enchEffects, recordType } = Astro.props;
         </section>
                 })
             }
+
+
+<style>
+
+h4 {
+    text-shadow: 1px 1px 0.1em rgb(61, 55, 0);
+    border-bottom: var(--tx-line-width-xxs) solid var(--tx-color-line);
+}
+h4 + * {
+    margin-top: 0.2em;
+}
+
+.weap-ench-stats {
+    display: flex;
+    gap: 0.4em;
+    max-width: fit-content;
+    flex-wrap: wrap;
+    border-bottom: var(--tx-line-width-xxs) solid var(--tx-color-line);
+}
+.weap-ench-stats section {
+    align-items: baseline;
+}
+.weap-ench-stats h5 {
+    padding: 0;
+    margin: 0;
+}
+.stat {
+    color: rgb(235, 255, 206);
+}
+</style>

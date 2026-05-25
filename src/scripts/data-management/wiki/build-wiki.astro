@@ -25,6 +25,11 @@ if(clip) {
 {skip !== false ? 
 
 <ul>
+    <li class="flip-target flip-backwards clipped-dropdown clip-frame octagone">
+        <div class="menu-dropdown">
+            <a href="https://Tuxborn.org" target="_blank">Home</a>
+        </div>
+    </li>
     {wikiMap.children &&
     wikiMap.children.map(child => <Astro.self wikiMap={child} skip={false} clip={true}/>)}
 </ul> : 

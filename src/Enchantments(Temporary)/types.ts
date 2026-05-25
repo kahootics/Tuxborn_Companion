@@ -51,7 +51,9 @@ export const magEffTest = z.object({
     }),
     types: z.array(z.string()),
     recordType: RecordType,
-    mag: magnitude
+    mag: magnitude,
+    kwda: z.string().nullable(),
+    resist: z.string().nullable()
 })
 
 export const magEffCompleteTest = magEffTest.merge(z.object({id: z.string()}));

@@ -1,6 +1,5 @@
 
 const DURATION = Number(window.getComputedStyle(document.documentElement).getPropertyValue('--js-anim-time'));
-console.log(DURATION);
 import { slideDown, slideUp } from "./dropdowns";
 
 const leftPanelWrapper = document.getElementById('left-panel-wrapper');

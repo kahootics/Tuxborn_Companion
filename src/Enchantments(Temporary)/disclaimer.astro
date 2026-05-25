@@ -11,7 +11,7 @@ const { enchArmoNo, enchWeapNo } = Astro.props;
     <h2>Notes</h2>
     <a style="color: hsl(120, 39%, 63%);" href="#mods-compendium">SKIP</a>
     <ul>
-        <li>This page currently covers all the <strong>{enchArmoNo}</strong> armor enchantments and <strong>{enchWeapNo}</strong> of the weapon enchantments available in Tuxborn 1.3 [Beta 3]</li>
+        <li>This page currently covers all the <strong>{enchArmoNo}</strong> armor enchantments and all relevant <strong>{enchWeapNo}</strong> weapon enchantments available in Tuxborn 1.3 [Beta 3]</li>
         <li>Items in this list are not guaranteed to be in 1.2 final version</li>
         <li>Magnitude is <strong>always</strong> rounded half-down</li>
         <li>All numbers below assume Grand Soul usage</li>
@@ -33,6 +33,7 @@ const { enchArmoNo, enchWeapNo } = Astro.props;
                 <li>Final value of an enchanted item is the sum of the base item's value with the enchantment's net value</li>
             </ul>
         </li>
+        <li>Weapon enchantment effects are also tagged with the relevant damage keyword and resist value</li>
         <li>Filtering options are available to use</li>
     </ul>
 </section>

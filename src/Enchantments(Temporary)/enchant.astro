@@ -52,7 +52,7 @@ const { enchant, effects, default_order } = Astro.props;
                 if(temp.recordType !== enchant.recordType) throw new Error(`Mismatching record types for ${
         enchant.id} and effect ${temp.name}`);
 
-                const tempFrags = `${temp.description.og}. `.split('<mag>');
+                const tempFrags = temp.description.og === '.' ? [''] : `${temp.description.og}. `.split('<mag>');
                 return tempFrags.map((frag,i) => {
                     if(i===0) {
                         return frag
