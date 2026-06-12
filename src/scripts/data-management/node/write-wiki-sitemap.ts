@@ -24,13 +24,22 @@ export type PageNode = {
 
 const visited = new Set<string>();
 
-async function extractLinksDeep(page: string, maxDepth: number): Promise<PageNode | null> {
+async function extractLinksDeep(page: string, maxDepth: number, parentPage?: string): Promise<PageNode | null> {
     if (visited.has(page) || maxDepth === 0) return null;
     visited.add(page);
 
+    if(page.endsWith('.png')) return null;
     const url = rawUrl(page.endsWith('.md') ? page : `${page}.md`);
     const res = await fetch(url);
-    if (!res.ok) throw new Error('fetch fail: ' + url + res.status) ;
+    if (!res.ok) {
+        console.error('Failed to fetch [' + 
+            page + ']' + 
+            (parentPage ? `(from [${parentPage}])` : '')
+            + ' at: ' + url 
+            + ' with status: ' + res.status);
+        return null;
+    }
+
 
     const markdown = await res.text();
     const links = extractLinks(markdown);
@@ -40,7 +49,7 @@ async function extractLinksDeep(page: string, maxDepth: number): Promise<PageNod
 
     for (const link of links) {
 
-        const child = await extractLinksDeep(link, maxDepth - 1);
+        const child = await extractLinksDeep(link, maxDepth - 1, page);
         if (child) {
             children.push(child);
         }
@@ -52,7 +61,7 @@ async function extractLinksDeep(page: string, maxDepth: number): Promise<PageNod
     };
 }
 
-const sitemap = await extractLinksDeep('_Sidebar.md', 3);
+const sitemap = await extractLinksDeep('_Sidebar.md', 10);
 
 
 writeStaticAsJson(sitemap, './src/data/wiki-sitemap.json', false);

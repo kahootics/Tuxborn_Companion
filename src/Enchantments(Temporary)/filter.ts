@@ -15,9 +15,6 @@ document.querySelectorAll<HTMLElement>('.armo-magnitude').forEach(mag=> {
     //hundred = mag.getAttribute('data-mag-hundred');
     growth = mag.getAttribute('data-mag-growth');
     if(!(base && zero && growth)) {
-        mag.id = 'sbaglio'
-        mag.style.backgroundColor = 'black'
-        mag.textContent = 'ggfvbggfecdvfbghgtvrfdcvfbgnhytgrfcdvf bghtrfcd errore'
         throw new Error(`Could not find magnitude relative data of enchantment ${mag.id}`)
     } armoMags.add(new ArmoMag(mag,base,Number(zero),Number(growth)))
 })
@@ -224,8 +221,6 @@ toggle?.addEventListener('click',()=> {
     form.hidden = isEx;
     toggle.setAttribute('aria-expanded',`${!isEx}`);
 })
-
-
 
 /* ============================================================ */
 

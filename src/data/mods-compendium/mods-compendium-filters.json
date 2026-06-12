@@ -178,7 +178,6 @@
       "matches": [
         "modId_0010",
         "modId_0030",
-        "modId_0040",
         "modId_0060",
         "modId_0090",
         "modId_0110",
@@ -1123,6 +1122,7 @@
       "matches": [
         "modId_0000",
         "modId_0020",
+        "modId_0040",
         "modId_0050",
         "modId_0070",
         "modId_0080",

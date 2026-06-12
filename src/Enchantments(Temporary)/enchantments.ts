@@ -8,29 +8,31 @@
 /* GLOBAL GAME VARIABLES ========================================== */
 
 const SOUL_CHARGE = {
-    get GRAND() {return 3000},
+    get GRAND()   {return 3000},
     get GREATER() {return 2000},
-    get COMMON() {return 1000},
-    get LESSER() {return 500},
-    get PETTY() {return 250}
+    get COMMON()  {return 1000},
+    get LESSER()  {return 500},
+    get PETTY()   {return 250}
 }
 
 const fEnchantingSkillCostMult = 3
 const fEnchantingSkillCostBase = 0.005
-const fEnchantingSkillFactor = 1.25 // Where is this supposed to used??
+const fEnchantingSkillFactor = 1.25 // Where is this supposed to be used??
 const fEnchantingCostExponent = 1.1
 const fEnchantmentPointsMult = 0.12
 const fEnchantmentEffectPointsMult = 8
 
-export let enchantingSkill = {
-    _level: 100,
-    get level() {
-        return this._level;
-    },
-    set level(value: number) {
-        value % 1 === 0 ? this._level = value : null;
+export let enchantingSkill = (() => {
+    let _level = 100;
+    return {
+        get level() {
+            return _level;
+        },
+        set level(value: number) {
+            value % 1 === 0 ? _level = value : null;
+        }
     }
-};
+})();
 
 /* END GV ========================================================= */
 const fEnchantingCostExponent_reverse = 1/fEnchantingCostExponent;
@@ -45,14 +47,6 @@ const one_min_sqrt = {
     }
 }
 const MIN_PRICE = SOUL_CHARGE.GRAND*fEnchantmentPointsMult;
-/* END GV Derivates =============================================== */
-
-export function calcEnchantPrice(atZero: number, skillMult: number) {
-    return Math.round(atZero * skillMult);
-}
-export function calcEnchantPriceSkillMult(skill: number) {
-    return (100 - skill)/(1 + skill*0.026) + skill*Math.exp(-skill/82)/100;
-}
 
 /* Base Class ==================================================================== */
 
@@ -89,7 +83,7 @@ class EnchDisplayedParameter {
 }
 
 
-/* = MAGNITUDES ================================================================= */
+/* MAGNITUDES =================================================================== */
 
 class EnchMagnitude extends EnchDisplayedParameter {
     _base: string;

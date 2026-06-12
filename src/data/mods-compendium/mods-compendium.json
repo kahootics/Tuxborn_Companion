@@ -601,8 +601,7 @@
         "Dismiss Followers",
         "Horror",
         "Themed Spells",
-        "Quest Markers",
-        "No Displays"
+        "Quest Markers"
       ],
       "content": [
         "Dungeon(s)",
@@ -676,7 +675,7 @@
       "order": 2.1
     },
     "length": 8,
-    "displays": 0,
+    "displays": 142,
     "req": {
       "level": 40,
       "misc": null
