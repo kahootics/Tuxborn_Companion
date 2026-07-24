@@ -1,107 +1,123 @@
 ---
-import '../styles/core-setup.css';
-import '../styles/themes.css';
-import '../styles/layout.css';
-import '../styles/utilities/clip-shapes.css';
-import '../styles/utilities/flip-cards.css';
+import "../styles/core-setup.css";
+import "../styles/themes.css";
+import "../styles/layout.css";
+import "../styles/utilities/clip-shapes.css";
+import "../styles/utilities/flip-cards.css";
 
 /* Images import */
 import contentIconsSprite from "/src/assets/mods-compendium/content-icons-sprite.png";
 import icons from "/src/assets/mods-compendium/icons-generic.png";
 /* Image optimization */
-import imageToFormat from '../scripts/utilities/image-to-format';
-const iconsSpriteWebp = (await imageToFormat(contentIconsSprite, 'webp')).src;
+import imageToFormat from "../scripts/utilities/image-to-format";
+const iconsSpriteWebp = (await imageToFormat(contentIconsSprite, "webp")).src;
 const iconsSpritePng = contentIconsSprite.src;
-const iconsWebp = (await imageToFormat(icons, 'webp')).src;
+const iconsWebp = (await imageToFormat(icons, "webp")).src;
 const iconsPng = icons.src;
 
 /* SVGs */
-import {getSVGsStyleString} from '../scripts/utilities/import-svgs';
+import { getSVGsStyleString } from "../scripts/utilities/import-svgs";
 
-const svgs = getSVGsStyleString(['green-leaves','helmet','waves','butterleaves', 'forest']);
+const svgs = getSVGsStyleString([
+    "green-leaves",
+    "helmet",
+    "waves",
+    "butterleaves",
+    "forest",
+]);
 
 import CompanionHead from "../layouts/CompanionHead.astro";
 import CompanionHeader from "../components/CompanionHeader.astro";
 import LeftPanel from "../layouts/wrappers-containers/left-panel.astro";
-import MainNav from '../components/MainNav.astro';
+import MainNav from "../components/MainNav.astro";
 
-import CompanionMod from '../layouts/CompanionMod.astro';
-import Modal from '../layouts/Modal.astro';
-import Checkbox from '../assets/svg/checkbox.astro';
-import IconsLegend from '../components/mods-compendium/icons-legend.astro';
-import ImageModal from '../components/mods-compendium/image-modal.astro';
-import MainFooter from '../components/MainFooter.astro';
+import CompanionMod from "../layouts/CompanionMod.astro";
+import Modal from "../layouts/Modal.astro";
+import Checkbox from "../assets/svg/checkbox.astro";
+import IconsLegend from "../components/mods-compendium/icons-legend.astro";
+import ImageModal from "../components/mods-compendium/image-modal.astro";
+import MainFooter from "../components/MainFooter.astro";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import fetchSheetDataset from '../scripts/data-management/CSV/fetch-sheet-dataset.ts';
-import companionDatasheets from '../data/companion-datasheets.json';
+import fetchSheetDataset from "../scripts/data-management/CSV/fetch-sheet-dataset.ts";
+import companionDatasheets from "../data/companion-datasheets.json";
 
 /* Mods Compendium fetch & validation */
-import { validateTypeMod } from '../scripts/data-management/types/mods-compendium-types.ts';
-import GoogleForm from '../components/utility/googleForm.astro';
+import { validateTypeMod } from "../scripts/data-management/types/mods-compendium-types.ts";
+import GoogleForm from "../components/utility/googleForm.astro";
 
 /* MODS  */
-const modsCompendiumRaw = await fetchSheetDataset(companionDatasheets.modsCompendium.id, companionDatasheets.modsCompendium.gid, '[//n]', '|');
+const modsCompendiumRaw = await fetchSheetDataset(
+    companionDatasheets.modsCompendium.id,
+    companionDatasheets.modsCompendium.gid,
+    "[//n]",
+    "|",
+);
 
-const modsCompendiumTypeless = modsCompendiumRaw.filter((record) => record.version.added === 1.2 && record.id != 'modId_1570');
+const modsCompendiumTypeless = modsCompendiumRaw.filter(
+    (record) => record.version.added === 1.2 && record.id != "modId_1570",
+);
 
-const modsCompendium = modsCompendiumTypeless.map(mod => {mod.searchable = ''; return mod;}).map(validateTypeMod);
+const modsCompendium = modsCompendiumTypeless
+    .map((mod) => {
+        mod.searchable = "";
+        return mod;
+    })
+    .map(validateTypeMod);
 
 const sortedModsCompendium = modsCompendium.sort((a, b) => {
-    return a.category.order - b.category.order
-})
-
+    return a.category.order - b.category.order;
+});
 ---
 
-<html lang="en" style=`--tx-content-icons-sprite-webp: url('${iconsSpriteWebp}'); --tx-content-icons-sprite-png: url('${iconsSpritePng}');--tx-generic-icons-webp: url("${iconsWebp}"); ${svgs}; `>
-	<CompanionHead 
-        title="Mods in the Beta" 
-		description="A Work in Progress list of mods that Tuxborn is adding to 1.2 Beta; only items relevant to the checklist are present"
-    	pageFullUrl={Astro.url.href}
-        startupScripts={['clips', 'themes', 'flips']}>
-	</CompanionHead>
-	<body style=`--tx-generic-icons: url("${iconsPng}");`>
-
-        <CompanionHeader>
-            
-        </CompanionHeader>
+<html
+    lang="en"
+    style=`--tx-content-icons-sprite-webp: url('${iconsSpriteWebp}'); --tx-content-icons-sprite-png: url('${iconsSpritePng}');--tx-generic-icons-webp: url("${iconsWebp}"); ${svgs}; `
+>
+    <CompanionHead
+        title="Mods in the Beta"
+        description="A Work in Progress list of mods that Tuxborn is adding to 1.2 Beta; only items relevant to the checklist are present"
+        pageFullUrl={Astro.url.href}
+        startupScripts={["clips", "themes", "flips"]}
+    />
+    <body style=`--tx-generic-icons: url("${iconsPng}");`>
+        <CompanionHeader />
 
         <LeftPanel>
             <MainNav />
         </LeftPanel>
 
         <div id="modal-backdrop" hidden>
-            <Modal title='Image' id='image-modal' openerId='images' >
+            <Modal title="Image" id="image-modal" openerId="images">
                 <ImageModal />
             </Modal>
         </div>
 
         <main id="main-page-content">
             <div id="central-panel">
-
                 <section class="clip-shape octagone mod-section">
                     <h2>Notes</h2>
-                    <a style="color: hsl(120, 39%, 63%);" href="#mods-compendium">SKIP</a>
+                    <a
+                        style="color: hsl(120, 39%, 63%);"
+                        href="#mods-compendium">SKIP</a
+                    >
                     <ul>
                         <li>This is a work in progress</li>
-                        <li>Items in this list are not guaranteed to be in 1.2 final version nor in the mods compendium</li>
-                        <li>Details about mods may be minimal, absent or excessive</li>
-                        <li>A follower mod has been omitted from this list to leave it as a surprise</li>
-                        <li>Unslaad has now a display room in the museum, but the mod itself should be the same</li>
+                        <li>
+                            Items in this list are not guaranteed to be in 1.2
+                            final version nor in the mods compendium
+                        </li>
+                        <li>
+                            Details about mods may be minimal, absent or
+                            excessive
+                        </li>
+                        <li>
+                            A follower mod has been omitted from this list to
+                            leave it as a surprise
+                        </li>
+                        <li>
+                            Unslaad has now a display room in the museum, but
+                            the mod itself should be the same
+                        </li>
                         <li>The Breathing Abyss was completely remade</li>
                     </ul>
                 </section>
@@ -114,35 +130,74 @@ const sortedModsCompendium = modsCompendium.sort((a, b) => {
                         <li>Added The Midnight Sun quest mod</li>
                         <li>Added The Frozen Heart quest mod</li>
                     </ul>
-                    <p>For more details on changes made by the new beta release consult the <a style="color: hsl(120, 39%, 63%);" href="https://github.com/Omni-guides/Tuxborn/wiki/Tuxborn-1.2-beta-information" target="_blank">wiki page</a></p>
                 </section>
                 <section class="clip-shape octagone mod-section">
-                    <h2>Notice</h2>
+                    <h2>Changes between Beta-3 and Release Candidate 1</h2>
+                    <ul>
+                        <li>
+                            Removed enemy NPC mods Madmen (Forsworn overhaul),
+                            The Restless Dead (Undead overhaul; replaced with
+                            Bonebound), More Werewolves and Dwarven Colossus
+                        </li>
+                        <li>
+                            Added
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/156866"
+                                target="_blank">Bonebound</a
+                            >,
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/47087"
+                                target="_blank">Additional Clockwork</a
+                            >
+                        </li>
+                        <li>
+                            QOL additions:
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/176475"
+                                >Save Reminder</a
+                            >,
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/178689"
+                                target="_blank">Show Player in Inventory</a
+                            >,
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/178748"
+                                target="_blank">Overencumberance Fixes</a
+                            > and
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/61321"
+                                target="_blank">Autobody</a
+                            >.
+                        </li>
+                        <li>
+                            Added followers
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/103669"
+                                target="_blank">Val Serano</a
+                            > and
+                            <a
+                                href="https://www.nexusmods.com/skyrimspecialedition/mods/132350"
+                                target="_blank">Astrid</a
+                            >
+                        </li>
+                    </ul>
                     <p>
-                        The mods compendium will no longer cover: extensive dungeon mods (they will have a dedicated page), armor or spell mods that intrioduce no quest or explorable content (they might get a dedicated page);
-                    </p><p>
-                        minor quest tweaks will not be covered unless they introduce important changes to the story or progression of the quest;
-                    </p><p>
-                        creature mods that do not add followers or quests will also not be covered
-                    </p><br>
-                    <section>
-                        <h3>About the spreadsheet</h3>
-                        <p>The Tuxborn Companion spreadsheet will continue to be updated (when 1.2 drops) at least until the companion website can fully replicate all its features (it's missing in particular the possibility to link your checklist to some account)</p>
-                    </section>
+                        For more details on changes made by the new release candidate
+                        consult the <a
+                            style="color: hsl(120, 39%, 63%);"
+                            href="https://tuxborn.org/wiki/tuxborn-1-2-rc-information/"
+                            target="_blank">wiki page</a
+                        >
+                    </p>
                 </section>
-
-                
-
-                <div id="mods-compendium">
-                    <Checkbox color='var(--tx-color-line)'/>
-                    <IconsLegend />
-                    {sortedModsCompendium.map((mod) => 
-                        <CompanionMod {mod} />
-                    )}
-                </div>
-                <MainFooter />
             </div>
+
+            <div id="mods-compendium">
+                <Checkbox color="var(--tx-color-line)" />
+                <IconsLegend />
+                {sortedModsCompendium.map((mod) => <CompanionMod {mod} />)}
+            </div>
+            <MainFooter />
         </main>
-        
     </body>
 </html>
