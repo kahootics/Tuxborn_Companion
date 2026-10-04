@@ -13,7 +13,7 @@
     "overview": "Travel beyond Skyrim to explore Bruma, the northernmost county in Cyrodiil. Delve into Ayleid ruins, meddle in local affairs or explore the wild. The mod features all new dungeons and secrets, many quests and storylines.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/10917",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-beyond-skyrim-bruma/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#beyond-skyrim-bruma",
       "misc": {
         "url": null,
         "name": null
@@ -112,8 +112,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -147,7 +146,7 @@
     "overview": "In the east of High Rock, in the land known as The Reach, despair curses Arnima and its people. Explore a vast new land and experience a new original story.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/3008",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#beyond-reach",
       "misc": {
         "url": null,
         "name": null
@@ -265,8 +264,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -398,16 +396,14 @@
     "id": "modId_0020",
     "relatedMods": [
       "Glenmoril",
-      "Unslaad",
-      "DAc0da"
+      "Unslaad"
     ],
     "creator": "Vicn",
     "version": {
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -439,7 +435,7 @@
     "overview": "Join the witch hunters in the second part of Vicn's trilogy; fend off a curse and fight nightmarish creatures. The mod takes inspiration from Bloodborne and Dark Souls.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/32998",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-glenmoril/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Glenmoril",
       "misc": {
         "url": null,
         "name": null
@@ -535,16 +531,14 @@
     "id": "modId_0030",
     "relatedMods": [
       "Vigilant",
-      "Unslaad",
-      "DAc0da"
+      "Unslaad"
     ],
     "creator": "Vicn",
     "version": {
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -610,7 +604,6 @@
         "Quest Markers"
       ],
       "content": [
-        "LotD Displays",
         "Dungeon(s)",
         "Quest(s)",
         "Main Questline",
@@ -667,16 +660,14 @@
     "id": "modId_0040",
     "relatedMods": [
       "Vigilant",
-      "Glenmoril",
-      "DAc0da"
+      "Glenmoril"
     ],
     "creator": "Vicn",
     "version": {
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -710,7 +701,7 @@
     "overview": "The Champion of Cyrodiil was the last known to have claimed the Gray Cowl of Nocturnal at the end of the Third Era, but now it's calling for a new owner. You will explore the Alik'r Desert and other mysterious places to follow the call.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/141327",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-the-gray-cowl-of-nocturnal/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#the-gray-cowl-of-nocturnal",
       "misc": {
         "url": null,
         "name": null
@@ -828,8 +819,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -931,8 +921,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -964,7 +953,7 @@
     "overview": "Travel to the island of Falskaar where conflict is brewing and the presence of a true hero is required. The island is full of new dungeons, quests and people.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/2057",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-falskaar/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#falskaar",
       "misc": {
         "url": null,
         "name": null
@@ -1054,8 +1043,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -1089,7 +1077,7 @@
     "overview": "A dragon has been attacking the East Empre Company trade lanes; you are quested to rid of the dragon but things aren't so easy. You will travel to the Wyrmstooth island north of Solitude across the Sea of Ghosts.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/45565",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-wyrmstooth/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Wyrmstooth",
       "misc": {
         "url": null,
         "name": null
@@ -1186,8 +1174,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -1214,12 +1201,12 @@
     },
     "image": {
       "int": null,
-      "ext": "https://files.catbox.moe/4juy9s.png"
+      "ext": "https://i.imgur.com/6Q1NTh2.jpg"
     },
     "overview": "North-west of Tamriel is the home of the Sunmer; Midwood Isle. Discover their culture, history and their troubles. A dark power menaces the island; will you save it?",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/28120",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-midwood-isle/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#midwood-isle",
       "misc": {
         "url": null,
         "name": null
@@ -1317,8 +1304,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -1350,7 +1336,7 @@
     "overview": "Only the Khajiit know the secret paths of the moon that lead the followers of the Mane back to Elsweyr. Explore burning deserts, emerald jungles and cerulean skies and join the Khajit resistance as the Dragonborn and aid them in their fight.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/4341",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-moonpath-to-elsweyr/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview:-Moonpath-to-Elsweyr",
       "misc": {
         "url": null,
         "name": null
@@ -1433,8 +1419,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -1556,8 +1541,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -1589,7 +1573,7 @@
     "overview": "Completely overhauled and expanded the Saints & Seducers Creation. This mod will take you to the homeland of these two types of daedra: the daedric realm known as the Shvering Isles, the Asylum, The Realm Of Madness.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/72772",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-saints-and-seducers-extended-cut/",
+      "wiki": null,
       "misc": {
         "url": null,
         "name": null
@@ -1619,7 +1603,6 @@
         "Lore-Friendly",
         "DLC-sized",
         "Gore commentary",
-        "Val Serano commentary",
         "Daedric Prince",
         "Dark Fantasy",
         "Themed Spells",
@@ -1688,8 +1671,7 @@
       "added": 0.3,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -1787,8 +1769,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2011,8 +1992,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2118,8 +2098,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2234,8 +2213,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2296,8 +2274,6 @@
         "Epic Boss",
         "Puzzle-oriented",
         "Xelzaz commentary",
-        "Water Levels",
-        "Quick Money",
         "Ayleid Ruins",
         "Multiple Paths",
         "Quest Markers",
@@ -2349,8 +2325,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2384,7 +2359,7 @@
     "overview": "Embark on a journey to retreive the mighty Keening, Sunder and Wraithguard; the artifacts forged by Lord Kagrenac in his attempt to bend the power of the Heart of Lorkhan to the benefit of the Dwemer.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/14168",
-      "wiki": "https://tuxborn.org/wiki/mod-overview-the-tools-of-kagrenac/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Tools-of-Kagrenac",
       "misc": {
         "url": null,
         "name": null
@@ -2463,8 +2438,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2496,7 +2470,7 @@
     "overview": "You will be introduced to a hidden settlement of House Telvanni, Sadrith Kegran. The city is build on Dwemer Ruins and you will discover many of their inventions.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/15996",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-project-aho/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Project-AHO",
       "misc": {
         "url": null,
         "name": null
@@ -2590,8 +2564,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2623,7 +2596,7 @@
     "overview": "Embark on an adventure for treasure, make unusual acquaintances and be tested with the trial of the Daedra. You will explore the Daedric realm of Periyte and the Faceted Stones, another smaller Oblivion realm, once inhabited by the Snow Elves, now belonging to the Goblin.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/24351",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-carved-brink/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Carved-Brink",
       "misc": {
         "url": null,
         "name": null
@@ -2711,8 +2684,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2746,7 +2718,7 @@
     "overview": "Deep beneath the Throat of the World something dangerous is stirring; the Chronographers of Lull-Mor have no choice but to seek outside help to stop a mad mystic and his army from unmaking the very foundations of the world!",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/748",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-the-wheels-of-lull/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Wheels-of-Lull",
       "misc": {
         "url": null,
         "name": null
@@ -2841,8 +2813,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -2876,7 +2847,7 @@
     "overview": "A chance encounter in the wilds of Skyrim sets you on the path to the abandoned Clockwork Castle; built by a very successful merchant family from faraway High Rock, the castle is filled with Dwemer technology, but what happened to the owners?",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/4155",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-clockwork/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Clockwork",
       "misc": {
         "url": null,
         "name": null
@@ -2967,8 +2938,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -3000,7 +2970,7 @@
     "overview": "Help rebuild Helgen! You'll reunite two old friends, uncover an underground slavery ring, battle in an arena and take part in many other adventures!",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/5673",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-helgen-reborn/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#helgen-reborn",
       "misc": {
         "url": null,
         "name": null
@@ -3079,8 +3049,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -3112,7 +3081,7 @@
     "overview": "Discover secrets, mysteries, and relics that are thousands of years old while solving a murder mystery in an ancient underground city. It has a dark, non-linear story in which you'll interrogate suspects, explore the city and its many secrets, and navigate challenging moral dilemmas.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/1179",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-the-forgotten-city/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-The-Forgotten-City",
       "misc": {
         "url": null,
         "name": null
@@ -3193,15 +3162,14 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "New Story",
       "order": 2.1
     },
-    "length": 4,
+    "length": 3,
     "displays": 7,
     "req": {
       "level": 25,
@@ -3226,7 +3194,7 @@
     "overview": "Travel to an isolated island, earn the loyalty of your 9 companions, stop a daedric lord from returning to power, and close shut the jaws of Oblivion once more!",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/79828",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-warden-of-the-coast/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#warden-of-the-coast",
       "misc": {
         "url": null,
         "name": null
@@ -3334,8 +3302,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -3367,7 +3334,7 @@
     "overview": "A mysterious and powerful criminal has been spotted in Skyrim, his trail dogged by hunters from Morrowind. However, there may be more at stake than it seems, and this criminal may be familiar...",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/4301",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-moon-and-star/",
+      "wiki": null,
       "misc": {
         "url": null,
         "name": null
@@ -3449,8 +3416,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -3493,7 +3459,7 @@
       "title": null
     },
     "where": {
-      "desc": "At the Silver-Blood Inn in Markarth; starting from the main entrance, turn left and enter the first room on the left; the note will be on the ground by the bed.",
+      "desc": "Between Riften and Ivarstead",
       "title": null,
       "image": {
         "int": null,
@@ -3576,7 +3542,7 @@
       "misc": null
     },
     "quest": {
-      "initial": "In Their Footsteps",
+      "initial": null,
       "other": null
     }
   },
@@ -3697,8 +3663,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -3727,7 +3692,7 @@
     },
     "image": {
       "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/103559/103559-1698534759-1083959482.png"
+      "ext": "https://i.imgur.com/Jyq4sTu.png"
     },
     "overview": "Discover the north's most fearsome warriors: the berserkers. Encounter new enemies, armors, and quests, and receive the power to transform into a werebear.",
     "link": {
@@ -3913,8 +3878,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -4020,8 +3984,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -4043,7 +4006,7 @@
     "enabled": true,
     "name": {
       "short": "The Breathing Abyss",
-      "full": "The Breathing Abyss (old)",
+      "full": "The Breathing Abyss",
       "alias": null
     },
     "image": {
@@ -4081,7 +4044,6 @@
         "Short",
         "Story-Driven",
         "Mystery",
-        "Water Levels",
         "No Quest Markers",
         "No Displays"
       ],
@@ -4224,8 +4186,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -4322,15 +4283,14 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "Immersion",
       "order": 13.1
     },
-    "length": 0,
+    "length": 1,
     "displays": 0,
     "req": {
       "level": 5,
@@ -4435,15 +4395,14 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "Immersion",
       "order": 13.1
     },
-    "length": 3,
+    "length": 4,
     "displays": 0,
     "req": {
       "level": 0,
@@ -4534,15 +4493,14 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "Small Quest",
       "order": 9.1
     },
-    "length": 0,
+    "length": 1,
     "displays": 0,
     "req": {
       "level": 0,
@@ -4642,8 +4600,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -4675,7 +4632,7 @@
     "overview": "A mysterious old Nordic legend tells of Orkey, walking shadows, and the death of an old priestess countless centuries ago. At the heart of it all, the strange realm of Gravewind; will you survive to the end?",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/129582",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-gravewind/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-overview%3A-Gravewind",
       "misc": {
         "url": null,
         "name": null
@@ -4768,8 +4725,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -4884,8 +4840,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -4917,7 +4872,7 @@
     "overview": "The story is focused entirely on Daumbra: the newest incarnation of the cursed sword Umbra. She can be your follower, but she can also be your weapon or neither.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/89089",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Known-quest%E2%80%90blocking-bugs-in-Tuxborn#there-is-no-umbra",
       "misc": {
         "url": null,
         "name": null
@@ -4936,7 +4891,7 @@
       }
     },
     "notes": {
-      "text": "You will obtain a new Follower: Daumbra. This is no ordinary follower (it's a floating sword); you can find out more details on the mod page or discover everything by playing.\nYou may need to progress in A Daedra's Best Friend and Blood on the Ice quests to reach certain objectives in the questline.\nThe Umbra you obtain from this mod is not displayable; the CC version is.",
+      "text": "You will obtain a new Follower: Daumbra. This is no ordinary follower (it's a floating sword); you can find out more details on the mod page or discover everything by playing.\nYou may need to progress in A Daedra's Best Friend and Blood on the Ice quests to reach certain objectives in the questline.",
       "title": null
     },
     "tags": {
@@ -4992,8 +4947,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5109,15 +5063,14 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "More Dungeons",
       "order": 8.1
     },
-    "length": 3,
+    "length": 2,
     "displays": 0,
     "req": {
       "level": 0,
@@ -5167,9 +5120,7 @@
     "tags": {
       "misc": [
         "Exploration",
-        "Collectibles",
         "Epic Boss",
-        "Hardcore",
         "Dismiss Followers",
         "Horror",
         "Mystery",
@@ -5229,8 +5180,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5262,7 +5212,7 @@
     "overview": "Journey in the footsteps of a group of mercenaries in search of a powerful ring known in the possession of a necromancer who took possession of the abandoned Fort Icemoth.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/109541",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-siege-at-icemoth/",
+      "wiki": null,
       "misc": {
         "url": null,
         "name": null
@@ -5346,8 +5296,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5379,7 +5328,7 @@
     "overview": "Explore hidden Dwemer ruins in Blackreach, find new spells and fend off dark apparitions across The Reach.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/77718",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/How-to-start-various-quests-in-Tuxborn#depths-of-the-reach",
       "misc": {
         "url": null,
         "name": null
@@ -5463,8 +5412,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5576,8 +5524,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5686,8 +5633,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5799,8 +5745,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -5908,8 +5853,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6014,8 +5958,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6123,8 +6066,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6229,8 +6171,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6336,8 +6277,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6445,8 +6385,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6553,8 +6492,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6659,8 +6597,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6773,8 +6710,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6806,7 +6742,7 @@
     "overview": "At the northmost clime of Tamriel, shrouded by fog and buried in ice, the Northern Asylum of Julianos quietly awaits you... Investigate the madness afflicting the Asylum and earn the boon of the Madgod himself.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/39634",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-player-homes-available-in-Tuxborn#the-asylum",
       "misc": {
         "url": null,
         "name": null
@@ -6886,8 +6822,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -6919,7 +6854,7 @@
     "overview": "In the depths of the Ratway, a madman sorcerer has recently entered into a compact with Vaermina; venture into his nightmare and decide if such a place might serve a worthy domicile...",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/34329",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-player-homes-available-in-Tuxborn#the-tower-of-eyes",
       "misc": {
         "url": null,
         "name": null
@@ -6998,8 +6933,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7031,7 +6965,7 @@
     "overview": "Beyond the desolate precincts of Winterhold, the remains of a temple once dedicated to the worship of Molag Bal lies dormant beneath the ice. Claim Krovaxis as your own and debase yourself in the name of your one true master!",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/34750",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-player-homes-available-in-Tuxborn#krovaxis",
       "misc": {
         "url": null,
         "name": null
@@ -7109,8 +7043,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7142,7 +7075,7 @@
     "overview": "Explore a world contained within the pages of a sorcerous text, and earn the favor of the Daedric Prince Hermaeus Mora.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/36707",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Mod-player-homes-available-in-Tuxborn#the-annals",
       "misc": {
         "url": null,
         "name": null
@@ -7221,8 +7154,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7254,7 +7186,7 @@
     "overview": "Take a journey through time in the lost Dragon Priest temple, Revakheim. Unlock unique gear and create armor not seen since the First Era. Fight ancient enemies and fulfill your destiny as the true \"Konahrik\" Warlord.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/22206",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-konahriks-accoutrements/",
+      "wiki": null,
       "misc": {
         "url": null,
         "name": null
@@ -7289,7 +7221,7 @@
         "LotD Displays",
         "Dungeon(s)",
         "Quest(s)",
-        "Minor Quest(s)",
+        "Main Questline",
         "Weapons",
         "1H Weapon(s)",
         "2H Weapon(s)",
@@ -7298,9 +7230,6 @@
         "Light Armor(s)",
         "Clothing",
         "Clothes",
-        "Jewelry",
-        "Buffs",
-        "Permabuffs",
         "Alchemy",
         "Ingredient(s)",
         "Scroll(s)"
@@ -7328,7 +7257,7 @@
         "alt": null
       },
       "E": {
-        "int": 4,
+        "int": 0,
         "alt": null
       }
     },
@@ -7353,7 +7282,7 @@
       "misc": "have acquired all dragon priests masks"
     },
     "quest": {
-      "initial": "Konahrik's Accountrements",
+      "initial": null,
       "other": null
     }
   },
@@ -7447,8 +7376,7 @@
       "added": 0.3,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7480,7 +7408,7 @@
     "overview": "Auriel is a Bosmer (Wood Elf) follower. She is a true traditionalist and a great archer. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/11278",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-auri/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Auri",
       "misc": {
         "url": null,
         "name": null
@@ -7552,8 +7480,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7580,12 +7507,12 @@
     },
     "image": {
       "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/63619/63619-1644935556-686047268.png"
+      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/77863/77863-1732183675-1297131419.jpeg"
     },
     "overview": "Remiel is a breton dwemer-specialist follower; she will fight aided by her automaton Scrap and ask you to explore Dwemer ruins with her. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/51874",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-remiel/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Remiel",
       "misc": {
         "url": null,
         "name": null
@@ -7617,8 +7544,6 @@
         "Auri commentary",
         "Dwemer",
         "Gore commentary",
-        "Val Serano commentary",
-        "Redcap commentary",
         "Generic Quest Marker(s)"
       ],
       "content": [
@@ -7662,8 +7587,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7695,7 +7619,7 @@
     "overview": "Inigo is an ex-skooma-addict Khajiit follower; he prefers archery, but any weapon will do. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/1461",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-inigo/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Followers-available-in-Tuxborn#inigo",
       "misc": {
         "url": null,
         "name": null
@@ -7765,8 +7689,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7798,7 +7721,7 @@
     "overview": "Xelzaz is an Argonian Lawman of House Telvanni follower; he mainly uses spells (summoning ones mostly) in battle. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/62893",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-xelzaz/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Xelzaz",
       "misc": {
         "url": null,
         "name": null
@@ -7826,7 +7749,6 @@
         "Lore-Friendly",
         "Remiel commentary",
         "Lucien commentary",
-        "Redcap commentary",
         "Quest Markers"
       ],
       "content": [
@@ -7871,8 +7793,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -7904,7 +7825,7 @@
     "overview": "Expands the character diversity with many new NPC integrated into the world, with a backstory and an extensive dialogue tree to explore.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/29194",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-interesting-npcs/",
+      "wiki": null,
       "misc": {
         "url": "https://3dnpc.fandom.com/wiki/3dnpc_Wiki",
         "name": "3DNPC wiki"
@@ -7987,8 +7908,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8089,8 +8009,7 @@
       "added": 0.3,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8196,7 +8115,7 @@
       "name": "Immersion",
       "order": 13.1
     },
-    "length": 0,
+    "length": 1,
     "displays": 6,
     "req": {
       "level": 0,
@@ -8295,7 +8214,7 @@
       "name": "Immersion",
       "order": 13.1
     },
-    "length": 0,
+    "length": 1,
     "displays": 3,
     "req": {
       "level": 0,
@@ -8396,8 +8315,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8523,8 +8441,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8556,7 +8473,7 @@
     "overview": "Gore is a child-soldier grown adult with a deep backstory to explore; he fights mainly with two-handed weapons and uses heavy armour but will adapt to the equipment he is given. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/85298",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-gore/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Gore",
       "misc": {
         "url": null,
         "name": null
@@ -8629,8 +8546,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8662,7 +8578,7 @@
     "overview": "Lucien is a scholar and will ask to accompany you while serving as his bodyguard; he will eventually get more confident and strong. Lucien has completely customizable combat system. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/20035",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-lucien/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Lucien",
       "misc": {
         "url": "https://josephrussellauthor.com/Lucien.php",
         "name": "Lucien's wiki"
@@ -8735,8 +8651,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8768,7 +8683,7 @@
     "overview": "Completely overhauled Lydia follower interactions for a more immersive experience to match the circumstances she joins you in. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/38473",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-lydia/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Lydia",
       "misc": {
         "url": null,
         "name": null
@@ -8839,8 +8754,7 @@
       "added": 0.3,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8872,7 +8786,7 @@
     "overview": "Aviendha is a follower inspired by the lore of The Wheel of Time series of books; she is a \"Maiden of the Spear\". See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/55404",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-aviendha/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Follower-overview%3A-Aviendha",
       "misc": {
         "url": null,
         "name": null
@@ -8945,8 +8859,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -8978,7 +8891,7 @@
     "overview": "Introduce followers Katana, Megara and Shale to the world of Skyrim. The trio has an associated questline but also dynamically interacts with their surroundings. See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/69622",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-katana/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Followers-available-in-Tuxborn#katana",
       "misc": {
         "url": null,
         "name": null
@@ -9050,8 +8963,7 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -9083,7 +8995,7 @@
     "overview": "Jesper is a Whiterun guard doing his best, but his fellows don't seem to take him seriously; looking at the wooden sword there...  See the wiki or Nexus page for more info.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/132362",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-jesper-the-guard/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Followers-available-in-Tuxborn#jesper",
       "misc": {
         "url": null,
         "name": null
@@ -9151,15 +9063,14 @@
       "added": 1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "New Follower",
       "order": 10.1
     },
-    "length": 0,
+    "length": 1,
     "displays": 0,
     "req": {
       "level": 0,
@@ -9361,8 +9272,7 @@
       "added": 0.3,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -9606,7 +9516,7 @@
       "name": "Armoury & Grimoires",
       "order": 12.1
     },
-    "length": 3,
+    "length": 2,
     "displays": 7,
     "req": {
       "level": 0,
@@ -9698,8 +9608,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -9808,8 +9717,7 @@
       "added": 0,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -9841,7 +9749,7 @@
     "overview": "You have been cordially invited to dinner and drinks at Bloodchill Manor. As an honored guest, you are encouraged to come early and mingle with the other attendees. When you are ready to feast, ask the house waiter for a menu. Come for the dinner, stay for the drinks.",
     "link": {
       "nexus": "https://en.uesp.net/wiki/Skyrim:Bloodchill_Manor",
-      "wiki": null,
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Player-homes-available-in-Tuxborn#bloodchill-cavern",
       "misc": {
         "url": null,
         "name": null
@@ -9912,15 +9820,14 @@
       "added": 0,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "Settling Down",
       "order": 11.1
     },
-    "length": 0,
+    "length": 1,
     "displays": 0,
     "req": {
       "level": 12,
@@ -9928,6 +9835,201 @@
     },
     "quest": {
       "initial": "Guests for Dinner",
+      "other": null
+    }
+  },
+  {
+    "enabled": true,
+    "name": {
+      "short": "Daedroths",
+      "full": "Daedroths",
+      "alias": null
+    },
+    "image": {
+      "int": null,
+      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/44816/106399-1611578918-1545668020.jpeg"
+    },
+    "overview": "Daedroths are large reptilian Daedra that commonly serve the Daedric Prince Molag Bal. \nYou will be able to encounter several of them in the wilds.",
+    "link": {
+      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/44816",
+      "wiki": null,
+      "misc": {
+        "url": null,
+        "name": null
+      }
+    },
+    "howTo": {
+      "text": null,
+      "title": null
+    },
+    "where": {
+      "desc": null,
+      "title": null,
+      "image": {
+        "int": null,
+        "ext": null
+      }
+    },
+    "notes": {
+      "text": "Daedroths are randomly encountered in open areas and some caves similarly to trolls. They will drop a Spell Tome that teaches you how to summon them (there are 4 leveled versions)",
+      "title": "Details"
+    },
+    "tags": {
+      "misc": [
+        "Themed Spells",
+        "Lore-Friendly",
+        "No Quest Markers",
+        "No Displays"
+      ],
+      "content": [
+        "Spells",
+        "Conjuration Spell(s)"
+      ],
+      "location": [
+        "Skyrim"
+      ]
+    },
+    "icon": {
+      "A": {
+        "int": 3,
+        "alt": null
+      },
+      "B": {
+        "int": 0,
+        "alt": null
+      },
+      "C": {
+        "int": 4,
+        "alt": null
+      },
+      "D": {
+        "int": 0,
+        "alt": null
+      },
+      "E": {
+        "int": 0,
+        "alt": null
+      }
+    },
+    "id": "modId_0900",
+    "relatedMods": null,
+    "creator": "4thUnknown",
+    "version": {
+      "added": 0.5,
+      "available": [
+        "v1.0",
+        "v1.1"
+      ]
+    },
+    "category": {
+      "name": "Immersion",
+      "order": 13.1
+    },
+    "length": 1,
+    "displays": 0,
+    "req": {
+      "level": 0,
+      "misc": null
+    },
+    "quest": {
+      "initial": null,
+      "other": null
+    }
+  },
+  {
+    "enabled": true,
+    "name": {
+      "short": "Bogmort",
+      "full": "Bogmort",
+      "alias": null
+    },
+    "image": {
+      "int": null,
+      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/22447/95505-1546926524-53731027.jpeg"
+    },
+    "overview": "The dead emerge from the muck in the swamps of Morthal. The more you are splattered with their flesh, the harder it will be to escape. Can you master their power for yourself?",
+    "link": {
+      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/22447",
+      "wiki": null,
+      "misc": {
+        "url": null,
+        "name": null
+      }
+    },
+    "howTo": {
+      "text": "Head to the Summoning Stones in Morthal's swamp and find the Knapsack with the Call of the Marsh Spell Tome; use the spell on a corpse to teleport it to the Stones then wait 8 hours to make it turn into a Bogmort Thrall and speak to it to make it follow you.",
+      "title": null
+    },
+    "where": {
+      "desc": null,
+      "title": null,
+      "image": {
+        "int": "Bogmort",
+        "ext": "https://imgur.com/XxPCd6r.png"
+      }
+    },
+    "notes": {
+      "text": "In case the sacrificed NPC had quest items in their inventory they will be brought to the Strongbox near the knapsack. The Bogmort Thrall doesn't count against your follower limit as it's considered as an animal follower.",
+      "title": null
+    },
+    "tags": {
+      "misc": [
+        "Necromancy",
+        "No Quest Markers",
+        "No Displays"
+      ],
+      "content": [
+        "Creature Follower"
+      ],
+      "location": [
+        "Skyrim",
+        "Hjaalmarch"
+      ]
+    },
+    "icon": {
+      "A": {
+        "int": 3,
+        "alt": null
+      },
+      "B": {
+        "int": 0,
+        "alt": null
+      },
+      "C": {
+        "int": 0,
+        "alt": null
+      },
+      "D": {
+        "int": 0,
+        "alt": null
+      },
+      "E": {
+        "int": 0,
+        "alt": null
+      }
+    },
+    "id": "modId_0910",
+    "relatedMods": null,
+    "creator": "opusGlass",
+    "version": {
+      "added": 0.5,
+      "available": [
+        "v1.0",
+        "v1.1"
+      ]
+    },
+    "category": {
+      "name": "Immersion",
+      "order": 13.1
+    },
+    "length": 1,
+    "displays": 0,
+    "req": {
+      "level": 0,
+      "misc": null
+    },
+    "quest": {
+      "initial": null,
       "other": null
     }
   },
@@ -10020,15 +10122,14 @@
       "added": 0.1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "Quest Expansion",
       "order": 4.1
     },
-    "length": 2,
+    "length": 1,
     "displays": 0,
     "req": {
       "level": 0,
@@ -10125,8 +10226,7 @@
       "added": 0.1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -10230,8 +10330,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -10337,8 +10436,7 @@
       "added": 0.1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -10372,7 +10470,7 @@
     "overview": "This mod turns the Destroy the Dark Brotherhood quest into a Penitus Oculatus questline. Hunt down all the members of the faction and conquer their sanctuary!",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/117478",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-unfaltered-virtue/",
+      "wiki": null,
       "misc": {
         "url": null,
         "name": null
@@ -10584,7 +10682,7 @@
     "overview": "Greatly expanded Markarth's Cidhna Mine and improved related quest along with new characters and available followers.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/20269",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-blood-and-silver/",
+      "wiki": null,
       "misc": {
         "url": null,
         "name": null
@@ -10655,8 +10753,7 @@
       "added": 0.5,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -10762,8 +10859,7 @@
       "added": 0.1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -10870,8 +10966,7 @@
       "added": 0.1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -10892,1016 +10987,6 @@
   {
     "enabled": true,
     "name": {
-      "short": "DAc0da",
-      "full": "DAc0da",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/134405/134405-1732535355-1219559877.png"
-    },
-    "overview": "The Numidium has appeared in the Sea of Ghosts and it's your job to investigate. Travel through time for a short but intense adventure and experience various parts of the history of Tamriel.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/134405",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Approaching Solitude after meeting the requirements, you'll get a quest objective to investigate the panic outside the Bards College and that will start the mod's questline.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": null,
-        "ext": null
-      }
-    },
-    "notes": {
-      "text": "The mod deals with many aspects of the Elder Scrolls' lore.   \nThis mod is a prequel to the Vicn series of mods (Vigilant, Glenmoril and Unslaad).",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Exploration",
-        "AI-Voiced",
-        "Lore-Friendly",
-        "Story-Driven",
-        "Multiple Paths",
-        "Mystery",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Spells",
-        "Alteration Spell(s)",
-        "Destruction Spell(s)",
-        "Conjuration Spell(s)",
-        "Illusion Spell(s)",
-        "Weapons",
-        "1H Weapon(s)",
-        "2H Weapon(s)",
-        "Bow(s)",
-        "Gun(s)",
-        "Armors",
-        "Heavy Armor(s)",
-        "Light Armor(s)",
-        "Clothing",
-        "Clothes",
-        "Jewelry",
-        "Buffs",
-        "Permabuffs",
-        "Alchemy",
-        "Ingredient(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "Solitude"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": null
-      },
-      "C": {
-        "int": 6,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 4,
-        "alt": null
-      }
-    },
-    "id": "modId_1030",
-    "relatedMods": [
-      "Vigilant",
-      "Unslaad",
-      "Glenmoril"
-    ],
-    "creator": "vicn",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 4,
-    "displays": 0,
-    "req": {
-      "level": 25,
-      "misc": null
-    },
-    "quest": {
-      "initial": "The Call of Landfall",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Miasma",
-      "full": "Miasma",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/149879/149879-1747163000-1874899298.png"
-    },
-    "overview": "Travel through the Ashlands of Solstheim as you assist a member of Argonia's An-Xileel in taking down a rogue Telvanni wizard. Explore new locations and unveil the mistery of the miasma; you may become able to wield it yourself!",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/149879",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "The quest can be started by speaking to Haj-Xul at the Retching Netch in Solstheim.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": null,
-        "ext": null
-      }
-    },
-    "notes": {
-      "text": "The Corroded Claw will not auto-unlock the nordic gate",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Short",
-        "Voiced",
-        "Lore-Friendly",
-        "Themed Spells",
-        "Xelzaz commentary",
-        "Nordic Ruins",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Dungeon(s)",
-        "Quest(s)",
-        "Minor Quest(s)",
-        "Spells",
-        "Conjuration Spell(s)",
-        "Restoration Spell(s)",
-        "Power(s)",
-        "Weapons",
-        "Bow(s)",
-        "Armors",
-        "Heavy Armor(s)",
-        "Shout(s)"
-      ],
-      "location": [
-        "Solstheim"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 6,
-        "alt": null
-      },
-      "C": {
-        "int": 4,
-        "alt": null
-      },
-      "D": {
-        "int": 2,
-        "alt": null
-      },
-      "E": {
-        "int": 2,
-        "alt": null
-      }
-    },
-    "id": "modId_1040",
-    "relatedMods": null,
-    "creator": "Renacles",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 3,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "Miasma",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Call of The Deep",
-      "full": "Call of The Deep",
-      "alias": [
-        "R'lyend"
-      ]
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/154194/154194-1751718371-481031386.jpg"
-    },
-    "overview": "Dive in the Sea of Ghost to explore a vast submerged Dwemer Ruin. The place is a labyrinth concealing a horror that should never see the surface, or should it?",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/154194",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Once you have completed The Lost Expedition, a courier will approach you with a letter from Calcelmo directing you towards the Alecton to start the quest; alternatively, you can start the quest anytime you want by entering the Alecton and waiting a bit (the quest will start automatically).",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "The Alecton",
-        "ext": "https://imgur.com/Nj4PK9t.png"
-      }
-    },
-    "notes": {
-      "text": "Make sure to stay on the elevator when you pull the lever as it does not reset and will leave you behind if you fall off.\nOne step of the quest is not marked on your map; simply return to the main hub (R'lyend, just outside of the Aquarium) and dive as if to go to the R'lyend Catacombs, then follow the path opposite to the door until you reach the Marinium Themae, there you will find The Abyss.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Exploration",
-        "Collectibles",
-        "Daedric Prince",
-        "Water Levels",
-        "Quick Money",
-        "Epic Boss",
-        "Voiced",
-        "Puzzle-oriented",
-        "Dwemer",
-        "Mystery",
-        "Multiple Paths",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Dungeon(s)",
-        "Quest(s)",
-        "Main Questline",
-        "Spells",
-        "Destruction Spell(s)",
-        "Conjuration Spell(s)",
-        "Power(s)",
-        "Weapons",
-        "1H Weapon(s)",
-        "2H Weapon(s)",
-        "Bow(s)",
-        "Staff(s)",
-        "Armors",
-        "Heavy Armor(s)",
-        "Clothing",
-        "Jewelry",
-        "Player House",
-        "Alchemy",
-        "Potion(s)",
-        "Ingredient(s)",
-        "Creature Follower"
-      ],
-      "location": [
-        "Skyrim",
-        "Sea of Ghosts"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": null
-      },
-      "C": {
-        "int": 6,
-        "alt": null
-      },
-      "D": {
-        "int": 3,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1050",
-    "relatedMods": null,
-    "creator": "arminZX12",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "More Dungeons",
-      "order": 8.1
-    },
-    "length": 4,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "Into the Unknown",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Val Serano",
-      "full": "Val Serano",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/103669/103669-1699845663-818728538.png"
-    },
-    "overview": "Embark on an pirate-themed adventure with Val Serano, a charming yet ambiguous elvish pirate that will join your party, should you let him. See the wiki or Nexus page for more info.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/103669",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-val-serano/",
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Loot the message in a bottle at White River Watch. If you have alredy finished the Legacy of the Dragonborn introductory quest, you will be able to ask Auryen about tracking other Relic Hunters, a quest that will lead you to Val Serano eventually.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": "Book",
-      "image": {
-        "int": null,
-        "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/103669/103669-1699845647-220452162.png"
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Voiced",
-        "Daedric Prince",
-        "Romance",
-        "Corsairs",
-        "Remiel commentary",
-        "Multiple Paths",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Main Questline",
-        "Spells",
-        "Weapons",
-        "Armors",
-        "Alchemy",
-        "Potion(s)",
-        "Ingredient(s)",
-        "Follower(s)",
-        "Scroll(s)"
-      ],
-      "location": null
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 6,
-        "alt": null
-      },
-      "C": {
-        "int": 6,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 1,
-        "alt": null
-      }
-    },
-    "id": "modId_1060",
-    "relatedMods": null,
-    "creator": "Axarien and Krimson",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Follower",
-      "order": 10.1
-    },
-    "length": 6,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "Bet Ween Daedra and the Deep Blue Sea",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "The Breathing Abyss",
-      "full": "The Breathing Abyss",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/141216/141216-1739053542-2102005559.png"
-    },
-    "overview": "A mysterious entity resides within a large underwater cavern. Manias, a researcher of the paranormal, is investigating the creature and requires your help!",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/141216",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Talk to Manias at his camp near Yngvild, north-east of Winterhold",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Manias Camp",
-        "ext": "https://imgur.com/v4Sh5wE.png"
-      }
-    },
-    "notes": {
-      "text": "It is recommended to bring waterbreathing potions or enchanted apparel; you will be provided with the former by Manias.\nA minimum of 2 days must pass between each interaction.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Short",
-        "Voiced",
-        "Mystery",
-        "Story-Driven",
-        "Water Levels",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Minor Quest(s)",
-        "Buffs",
-        "Permabuffs"
-      ],
-      "location": [
-        "Skyrim",
-        "The Pale",
-        "Sea of Ghosts"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 0,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 4,
-        "alt": null
-      }
-    },
-    "id": "modId_1070",
-    "relatedMods": null,
-    "creator": "nimwraith & EXIT",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "The Breathing Abyss",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Once We Were Here",
-      "full": "Once We Were Here",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/149820/149820-1747068196-259295797.png"
-    },
-    "overview": "Take a deep-dive into the lore behind the Falmers and uncover their history with the Dwemer and Snow Elves by aiding the bosmer scholar Sillas in his pursue of knowledge!",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/149820",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Encounter Sillas down the valley below Sightless Pit, at altar of Xrib.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Once We Were Here",
-        "ext": "https://imgur.com/z22ilUS.png"
-      }
-    },
-    "notes": {
-      "text": "A minimum of 2 days must pass between each interaction.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Short",
-        "Voiced",
-        "Exploration",
-        "Story-Driven",
-        "Lore-Friendly",
-        "Dwemer",
-        "Story-Driven",
-        "No Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Minor Quest(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "The Rift",
-        "Winterhold (Hold)",
-        "Solstheim"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 3,
-        "alt": null
-      },
-      "B": {
-        "int": 0,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1080",
-    "relatedMods": null,
-    "creator": "nimwraith",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": null,
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Behind and Beyond",
-      "full": "Behind and Beyond",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/137361/137361-1735247894-1356185149.png"
-    },
-    "overview": "Solve the riddles of a peaceful Dragon and learn more about Skyrim's history.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/137361",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Once you reach the end of Ustengrav, pull the chain lever to access Jurgen's tomb and enable the dragon; he will be outside the entrance to Dead Man’s Respite.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": null,
-        "ext": null
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Short",
-        "Voiced",
-        "Story-Driven",
-        "Lore-Friendly",
-        "Dragons",
-        "Puzzle-oriented",
-        "Generic Quest Marker(s)",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Minor Quest(s)",
-        "Weapons",
-        "1H Weapon(s)"
-      ],
-      "location": null
-    },
-    "icon": {
-      "A": {
-        "int": 2,
-        "alt": null
-      },
-      "B": {
-        "int": 4,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1090",
-    "relatedMods": null,
-    "creator": "nimwraith",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": "have completed The Horn of Jurgen Windcaller"
-    },
-    "quest": {
-      "initial": "Know your Enemy",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Demon of Dream",
-      "full": "Demon of Dream",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/118719/118719-1715631137-2009658365.jpeg"
-    },
-    "overview": "An adventure across reality will have you explore the nightmares of three of Vaerimina's ex cultists.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/118719",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Head to Cragwallow Slope near Ivarstead and find the Idol of Vaermina inside it; read the note near the idol to start the quest and get information about it.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Demon of Dream",
-        "ext": "https://imgur.com/LztSqvL.png"
-      }
-    },
-    "notes": {
-      "text": "The three locations will be signed on your map once you read the note; Fort Greenwall should be the last by design.\nA special crafting station is present in the Courier's dream: you will be able to craft unique spell tomes and equipment using materials found during the mod quest; also you can craft Ebony Ores with Straw.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Themed Spells",
-        "Themed Spells",
-        "Horror",
-        "Daedric Prince",
-        "Dismiss Followers",
-        "No Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Main Questline",
-        "Destruction Spell(s)",
-        "Conjuration Spell(s)",
-        "Restoration Spell(s)",
-        "Power(s)",
-        "Weapons",
-        "1H Weapon(s)",
-        "Armors",
-        "Heavy Armor(s)",
-        "Light Armor(s)",
-        "Clothing",
-        "Jewelry"
-      ],
-      "location": [
-        "Skyrim",
-        "Eastmarch",
-        "The Rift"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 3,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1100",
-    "relatedMods": null,
-    "creator": "rune sentinel",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 3,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": null,
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Grave of the Toucouleur",
-      "full": "Grave of the Toucouleur",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/161988/161988-1760884114-12127783.png"
-    },
-    "overview": "Deep in the Sea of Ghosts lies the derelict of the Toucouleur, terror of the Northwestern seas for nearly two decades. The ship is said to have vanished long ago, along with its treasures...",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/161988",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "The main entrance is underwater, north of the Dawnstar Sanctuary",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Wreck of the Troucouleur",
-        "ext": "https://imgur.com/u5Y7138.png"
-      }
-    },
-    "notes": {
-      "text": "There is a second entrance west of Hela's Folly, underwater; it will take you near the final boss area where most of the loot is, so it is not recommended to use it before taking on the rest of the dungeon. \nThe main entrance is one-way; in order to exit the dungeon you will have to find the second entrance within it. \nRaised stones are scattered around the dungeon; activating them will summon minions to aid you in combat.\nThe final boss arena can be accessed by interacting with the sword at the bottom level of the big ship at the center of the map.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Exploration",
-        "Voiced",
-        "Themed Spells",
-        "Epic Boss",
-        "Necromancy",
-        "Hardcore",
-        "Quick Money",
-        "Horror",
-        "Corsairs",
-        "Dismiss Followers",
-        "No Displays"
-      ],
-      "content": [
-        "Dungeon(s)",
-        "Spells",
-        "Destruction Spell(s)",
-        "Conjuration Spell(s)",
-        "Power(s)",
-        "Weapons",
-        "1H Weapon(s)",
-        "2H Weapon(s)",
-        "Gun(s)",
-        "Armors",
-        "Clothing",
-        "Jewelry",
-        "Enchantment(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "The Pale",
-        "Sea of Ghosts"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 0,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": "https://imgur.com/ujWu2f2.png"
-      },
-      "C": {
-        "int": 5,
-        "alt": null
-      },
-      "D": {
-        "int": 2,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1110",
-    "relatedMods": null,
-    "creator": "ENR",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "More Dungeons",
-      "order": 8.1
-    },
-    "length": 4,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": null,
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
       "short": "Demon Slayer Armor",
       "full": "Demon Slayer Armor Mashup",
       "alias": null
@@ -11913,7 +10998,7 @@
     "overview": "A new complete set of silver armor and weapons along with a full set of necromancer themed summons await you in the depths of Heroes Rest Crypt.",
     "link": {
       "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/97731",
-      "wiki": "https://tuxborn.org/wiki/quest-mod-overviews/mod-overview-demon-slayer-armor-mashup/",
+      "wiki": "https://github.com/Omni-guides/Tuxborn/wiki/Armor-and-weapons-available-in-Tuxborn#demon-slayer-armor-and-weapons",
       "misc": {
         "url": null,
         "name": null
@@ -11989,224 +11074,14 @@
       "added": 0.1,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
       "name": "More Dungeons",
       "order": 8.1
     },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": null,
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Varinia",
-      "full": "Varinia",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/150300/150300-1747478815-1024327615.png"
-    },
-    "overview": "An ex-spy and Mephala follower who is looking for a change of path, but old habits are difficult to let go of. See the wiki or Nexus page for more info.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/148853",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-varinia/",
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Talk to Varinia in Candlehearth Hall in Windhelm.",
-      "title": null
-    },
-    "where": {
-      "desc": "Candlehearth Hall is directly in front of Windhelm main gate",
-      "title": null,
-      "image": {
-        "int": null,
-        "ext": null
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Voiced",
-        "Daedric Prince",
-        "Lore-Friendly",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Minor Quest(s)",
-        "Follower(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "Eastmarch",
-        "Windhelm"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 0,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 1,
-        "alt": null
-      }
-    },
-    "id": "modId_1150",
-    "relatedMods": null,
-    "creator": "Maplespice",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Follower",
-      "order": 10.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "Now I Know This Must Be Fate",
-      "other": [
-        "Work Too Hard",
-        "Then Play is Too Hard"
-      ]
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Sa'chil",
-      "full": "Sa'chil",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/106892/106892-1703181039-2050678277.png"
-    },
-    "overview": "A khajiiti spellsword wants to follow you during your adventures; she also likes to chat and set enemies on fire. See the wiki or Nexus page for more info.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/106892",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-sachil/",
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Talk to Sa'chil on a cliff near Reachwind Eyrie, south-east of Markarth.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Sachil",
-        "ext": "https://imgur.com/NOoL3oK.png"
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Voiced",
-        "Romance",
-        "Thief Themed",
-        "Khajiit",
-        "Generic Quest Marker(s)",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Main Questline",
-        "Weapons",
-        "1H Weapon(s)",
-        "Player House",
-        "Enchantment(s)",
-        "Follower(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "The Reach"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 2,
-        "alt": null
-      },
-      "B": {
-        "int": 4,
-        "alt": null
-      },
-      "C": {
-        "int": 1,
-        "alt": null
-      },
-      "D": {
-        "int": 1,
-        "alt": null
-      },
-      "E": {
-        "int": 1,
-        "alt": null
-      }
-    },
-    "id": "modId_1160",
-    "relatedMods": null,
-    "creator": "Scarundy",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Follower",
-      "order": 10.1
-    },
-    "length": 3,
+    "length": 1,
     "displays": 0,
     "req": {
       "level": 0,
@@ -12304,8 +11179,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -12416,8 +11290,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -12523,8 +11396,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -12633,8 +11505,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -12741,8 +11612,7 @@
       "added": 0.4,
       "available": [
         "v1.0",
-        "v1.1",
-        "v1.2"
+        "v1.1"
       ]
     },
     "category": {
@@ -12757,858 +11627,6 @@
     },
     "quest": {
       "initial": null,
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Astrid",
-      "full": "Astrid",
-      "alias": [
-        "Heart of Ice"
-      ]
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/132350/132350-1729977368-1058468420.jpeg"
-    },
-    "overview": "Astrid is a tough and skilled warrior from Roscrea island; she came to Skyrim to retrieve a unique artifact that was stolen from her village. See the wiki or Nexus page for more info.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/132350",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-astrid/",
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Ask \"What happened here?\" to the innkeeper at Rorikstead's Frostfruit Inn to begin the intro quest. Alternatively, you can head directly towards Bluewater Cave, which is situated at the end of the road from Rorikstead to Lake Ilinalta.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Bluewater Cave",
-        "ext": "https://raw.githubusercontent.com/kahootics/Tuxborn_Companion/refs/heads/main/src/assets/mods-compendium/mods-locations/Bluewater%20Cave.png"
-      }
-    },
-    "notes": {
-      "text": "You can fail Astrid's introductory quest and lose her; chack thw wiki for more info on that.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Dungeon(s)",
-        "Spells",
-        "Illusion Spell(s)",
-        "Clothing",
-        "Jewelry",
-        "Buffs",
-        "Temporary Buffs"
-      ],
-      "location": null
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 1,
-        "alt": null
-      },
-      "C": {
-        "int": 4,
-        "alt": null
-      },
-      "D": {
-        "int": 2,
-        "alt": null
-      },
-      "E": {
-        "int": 4,
-        "alt": null
-      }
-    },
-    "id": "modId_1480",
-    "relatedMods": null,
-    "creator": "Smashman",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Follower",
-      "order": 10.1
-    },
-    "length": 3,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "The Outlander",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Redeeming Fultheim",
-      "full": "Redeeming Fultheim",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/136788/136788-1734684969-1764089071.png"
-    },
-    "overview": "Fultheim has been known to wield one of the Blades' swords, but he seems to be too full of regrets (and alcohol) to join back, will you help change his mind and life?",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/136788",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Talk to Fultheim to point out the fact that he has an Akaviri sword.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": null,
-        "ext": null
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "No Displays"
-      ],
-      "content": null,
-      "location": null
-    },
-    "icon": {
-      "A": {
-        "int": 0,
-        "alt": null
-      },
-      "B": {
-        "int": 0,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1550",
-    "relatedMods": null,
-    "creator": "MadArborModding",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "Quest Expansion",
-      "order": 4.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": "have completed Alduin's Wall"
-    },
-    "quest": {
-      "initial": "A Forgotten Blade",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Redcap",
-      "full": "Redcap the Riekling",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/73441/73441-1750082767-593603876.jpeg"
-    },
-    "overview": "\"Redcap was in cage, yes, but now with friend!\". See the wiki or Nexus page for more info.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/73441",
-      "wiki": "https://tuxborn.org/wiki/followers/follower-overview-redcap/",
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Free him from the cellar of Anise's Cabin (north of the Guardian Stones).",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Anises Cabin",
-        "ext": "https://imgur.com/eMPkNdD.png"
-      }
-    },
-    "notes": {
-      "text": "Redcap has a spell tome that teaches how to summon him in his inventory",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Voiced",
-        "Xelzaz commentary",
-        "Remiel commentary",
-        "Generic Quest Marker(s)",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Minor Quest(s)",
-        "Follower(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "Whiterun Hold"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 2,
-        "alt": null
-      },
-      "B": {
-        "int": 0,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 1,
-        "alt": null
-      }
-    },
-    "id": "modId_1590",
-    "relatedMods": null,
-    "creator": "PixieBomb",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Follower",
-      "order": 10.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "The Cabin in the Woods",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Midnight Sun",
-      "full": "Midnight Sun",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/163295/163295-1761989263-2090428511.png"
-    },
-    "overview": "A new adventure awaits you in the Boreal Valley. Face necromancers, chauruses and more horrors in a new land!",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/163295",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Head to Moorside Inn in Morthal and read the book on the counter \"The Other Side, Vol. 1\".",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Midnight Sun",
-        "ext": "https://imgur.com/qGlROTo.png"
-      }
-    },
-    "notes": {
-      "text": "You can use an Enchanted Cauldron to craft Spiders.\nYou have the option to side with both the necromancers' leaders and kill them after obtaining their rewards to maximize gains.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Exploration",
-        "Voiced",
-        "Necromancy",
-        "Werebeasts",
-        "Multiple Paths",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Main Questline",
-        "Spells",
-        "Conjuration Spell(s)",
-        "Power(s)",
-        "Weapons",
-        "1H Weapon(s)",
-        "2H Weapon(s)",
-        "Staff(s)",
-        "Armors",
-        "Light Armor(s)",
-        "Clothing",
-        "Clothes",
-        "Jewelry",
-        "Buffs",
-        "Temporary Buffs",
-        "Permabuffs",
-        "Alchemy",
-        "Potion(s)",
-        "Ingredient(s)",
-        "New Worldspace",
-        "Scroll(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "Hjaalmarch",
-        "Morthal"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": null
-      },
-      "C": {
-        "int": 6,
-        "alt": null
-      },
-      "D": {
-        "int": 4,
-        "alt": null
-      },
-      "E": {
-        "int": 4,
-        "alt": null
-      }
-    },
-    "id": "modId_1600",
-    "relatedMods": null,
-    "creator": "Kittytail",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "New Story",
-      "order": 2.1
-    },
-    "length": 3,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "Midnight Sun",
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "The Devil's in the Details",
-      "full": "The Devil's in the Details",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/146620/146620-1743625106-869329384.png"
-    },
-    "overview": "Help a scholar in aiding the victims of Clavicus Vile, but be mindful not to get caught in the prince's schemes, unless that is what you're after.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/146620",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "To start the quest, speak to Calithar at the Abandoned Homestead, north-west of Morthal; between Tall-Mast Tavern and The Apprentice Stone.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Abandoned Homestead",
-        "ext": "https://imgur.com/iHdAVls.png"
-      }
-    },
-    "notes": {
-      "text": "When told to leave by the door at the very beginning of the quest, say \"Fine, I'll go\" to skip a persuasion check.\nIf you get the \"bad\" ending, you can still pickpocket the reward of the \"good\" ending from Calithar .",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Short",
-        "Voiced",
-        "Story-Driven",
-        "Daedric Prince",
-        "Werebeasts",
-        "Multiple Paths",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Dungeon(s)",
-        "Quest(s)",
-        "Minor Quest(s)",
-        "Clothing",
-        "Jewelry"
-      ],
-      "location": [
-        "Skyrim",
-        "Hjaalmarch"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 1,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 2,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1610",
-    "relatedMods": [
-      "Starlight Farm",
-      "Thornpact Cave"
-    ],
-    "creator": "nimwraith",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "More Side Quests",
-      "order": 6.1
-    },
-    "length": 2,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": "The Devil's in the Details",
-      "other": [
-        "Missing Pieces"
-      ]
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "The Heart's Toll",
-      "full": "The Heart's Toll",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/169076/169076-1767833341-993199359.png"
-    },
-    "overview": "A curious basket-headed woman is trying to find a cure for her sick brother; she is willing to do anything, but is she ready to pay such price?",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/169076",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "Speak to Tia in Lumberjack's Cabin.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "Lumberjacks Cabin",
-        "ext": "https://imgur.com/MiB0IbB.png"
-      }
-    },
-    "notes": {
-      "text": "You must wait at least one day between each interaction.\nYou can wait inside the house, however, when a new interaction becomes available, the interiors will change and this may cause glitches with the spawned objects.",
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Short",
-        "Voiced",
-        "Story-Driven",
-        "No Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Minor Quest(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "Falkreath Hold"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 3,
-        "alt": null
-      },
-      "B": {
-        "int": 0,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 0,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1620",
-    "relatedMods": null,
-    "creator": "nimwraith",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "More Side Quests",
-      "order": 6.1
-    },
-    "length": 1,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": null
-    },
-    "quest": {
-      "initial": null,
-      "other": null
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "Frozen Heart",
-      "full": "Frozen Heart",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/159911/159911-1758881534-745186898.png"
-    },
-    "overview": "Beyond the glass of a mirror, a puzzle themed adventure awaits you! You will help the snow elf Othriel in her struggle with a curse and explore a new snowy land.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/159911",
-      "wiki": null,
-      "misc": {
-        "url": null,
-        "name": null
-      }
-    },
-    "howTo": {
-      "text": "The quest starts as soon as you purchase the \"Snow Elf Mirror (Labyrinthian Passages)\" from Belethor’s General Goods.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": null,
-        "ext": null
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Voiced",
-        "Story-Driven",
-        "Puzzle-oriented",
-        "Generic Quest Marker(s)",
-        "No Displays"
-      ],
-      "content": [
-        "Quest(s)",
-        "Main Questline",
-        "Weapons",
-        "1H Weapon(s)",
-        "Staff(s)",
-        "Armors",
-        "Heavy Armor(s)",
-        "Clothing",
-        "Clothes",
-        "Mechanic(s)",
-        "Player House",
-        "New Worldspace",
-        "Follower(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "Whiterun Hold",
-        "Whiterun"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 2,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": null
-      },
-      "C": {
-        "int": 0,
-        "alt": null
-      },
-      "D": {
-        "int": 5,
-        "alt": null
-      },
-      "E": {
-        "int": 1,
-        "alt": null
-      }
-    },
-    "id": "modId_1630",
-    "relatedMods": null,
-    "creator": "wSkeever and Kreiste",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "More Side Quests",
-      "order": 6.1
-    },
-    "length": 4,
-    "displays": 0,
-    "req": {
-      "level": 0,
-      "misc": "know at least 1 word of Slow Time and 1 word of Fire Breath"
-    },
-    "quest": {
-      "initial": "The Frozen Heart",
-      "other": [
-        "Seeking Out Shards",
-        "Book for Othriel"
-      ]
-    }
-  },
-  {
-    "enabled": true,
-    "name": {
-      "short": "The Rot Below",
-      "full": "The Rot Below",
-      "alias": null
-    },
-    "image": {
-      "int": null,
-      "ext": "https://staticdelivery.nexusmods.com/mods/1704/images/169298/169298-1768407171-419944222.jpg"
-    },
-    "overview": "Somewhere, in the depths of Skyrim, an ancient evil promise to resurface. You will face undead, liches and mad scientists to get to the bottom of this matter.",
-    "link": {
-      "nexus": "https://www.nexusmods.com/skyrimspecialedition/mods/169298",
-      "wiki": null,
-      "misc": {
-        "url": "https://youtu.be/sbxVDVSX4k4",
-        "name": "trailer"
-      }
-    },
-    "howTo": {
-      "text": "Find and read \"Elroy's Journal 1\" from one of the Skyrim's court wizards' room to begin the quest.",
-      "title": null
-    },
-    "where": {
-      "desc": null,
-      "title": null,
-      "image": {
-        "int": "The Rot Below",
-        "ext": "https://imgur.com/sCpy3iG.png"
-      }
-    },
-    "notes": {
-      "text": null,
-      "title": null
-    },
-    "tags": {
-      "misc": [
-        "Voiced",
-        "Necromancy",
-        "Exploration",
-        "Epic Boss",
-        "Daedric Prince",
-        "Multiple Paths",
-        "Lich",
-        "Horror",
-        "Quest Markers",
-        "No Displays"
-      ],
-      "content": [
-        "Dungeon(s)",
-        "Quest(s)",
-        "Main Questline",
-        "Spells",
-        "Conjuration Spell(s)",
-        "Weapons",
-        "1H Weapon(s)",
-        "2H Weapon(s)",
-        "Staff(s)",
-        "Armors",
-        "Heavy Armor(s)",
-        "Clothing",
-        "Jewelry",
-        "Alchemy",
-        "Potion(s)",
-        "Enchantment(s)"
-      ],
-      "location": [
-        "Skyrim",
-        "The Rift"
-      ]
-    },
-    "icon": {
-      "A": {
-        "int": 1,
-        "alt": null
-      },
-      "B": {
-        "int": 7,
-        "alt": null
-      },
-      "C": {
-        "int": 7,
-        "alt": null
-      },
-      "D": {
-        "int": 2,
-        "alt": null
-      },
-      "E": {
-        "int": 0,
-        "alt": null
-      }
-    },
-    "id": "modId_1640",
-    "relatedMods": null,
-    "creator": "TheCrowKnight",
-    "version": {
-      "added": 1.2,
-      "available": [
-        "v1.2"
-      ]
-    },
-    "category": {
-      "name": "More Dungeons",
-      "order": 8.1
-    },
-    "length": 3,
-    "displays": 0,
-    "req": {
-      "level": 30,
-      "misc": null
-    },
-    "quest": {
-      "initial": "The Rot Below",
       "other": null
     }
   }

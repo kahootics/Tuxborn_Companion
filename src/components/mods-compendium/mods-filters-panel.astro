@@ -58,14 +58,13 @@ import FalseSelect from '../utility/false-select.astro';
             {/* Version filters */}
 
             <ul>
-                <li class="clip-shape clip-as-border octagone">
-                    <input data-type="version" id={modsCompendiumFilters.version[0].id} type="radio" value={modsCompendiumFilters.version[1].number} name="version"  />    
-                    <label for={modsCompendiumFilters.version[0].id} class="clip-shape octagone">{modsCompendiumFilters.version[0].number}</label>
+                {
+                modsCompendiumFilters.version.map((v,i) => 
+                    <li class="clip-shape clip-as-border octagone">
+                    <input data-type="version" id={v.id} type="radio" value={v.number} name="version" checked={modsCompendiumFilters.version.length - 1 === i ? true : undefined} />    
+                    <label for={v.id} class="clip-shape octagone">{v.number}</label>
                 </li>
-                <li class="clip-shape clip-as-border octagone">
-                    <input data-type="version" id={modsCompendiumFilters.version[1].id} type="radio" value={modsCompendiumFilters.version[1].number} name="version" checked/>    
-                    <label for={modsCompendiumFilters.version[1].id} class="clip-shape octagone">{modsCompendiumFilters.version[1].number}</label>
-                </li>
+                )}
             </ul>
         </fieldset>
 

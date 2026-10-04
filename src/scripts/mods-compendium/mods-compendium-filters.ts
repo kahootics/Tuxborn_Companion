@@ -345,13 +345,13 @@ try {
             if(!mod.hidden) {
                 showableMods.add(key);
                 show_no_locMods.add(key);
-                show_no_verMods.add(key);
             }
+            show_no_verMods.add(key);
             modsCompendiumMap.set(key, { ...value, 
                 element: mod, 
                 matchCount: 0,
                 is_location: true, 
-                is_version: true,
+                is_version: !mod.hidden, 
                 is_checked: false,
                 is_found: true 
             });
@@ -579,7 +579,7 @@ try {
     /* Radio input event (a radio cannot be unchecked manually) */
     function radioTagSwitch(radioElement: HTMLInputElement, radioName: string) {
         const currentRadio = activeRadios.get(radioElement.name);
-        /* only act if the radio is different fom currently active one */
+        /* only act if the radio is different from currently active one */
         if(radioElement === currentRadio) return;
         /* if it is, remove previous from filters */
         if(currentRadio) {
@@ -601,6 +601,7 @@ try {
                 case('version'): {
                     for(const [id, modObj] of modsCompendiumMap) {
                         modObj.is_version = matches.has(id);
+                        console.log(`${matches.has(id)}: ${id}`)
                     }
                     break;
                 }
@@ -778,7 +779,7 @@ try {
         updateTagsDisabled();
         filterMods();
         sortMods(sort_type.value, sort_dir.value);
-    }
+    } else updateTagsDisabled();
 
     let _remember = rememberMe.checked;
     rememberMe.addEventListener('input', () => {
